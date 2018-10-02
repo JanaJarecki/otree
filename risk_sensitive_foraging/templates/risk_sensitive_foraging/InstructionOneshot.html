@@ -1,0 +1,39 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>Information</h1>
+{% endblock %}
+
+
+{% block content %}
+  {% blocktrans trimmed %}
+  <p>
+  Nun folgt die gleiche Aufgabe, mit einem leicht veränderten Ablauf.
+  </p>
+
+  <p>
+    Sie sehen ab jetzt <b>eine Entscheidungssituation</b>, als ob Sie sich in der Mitte der Entscheidungen wieder finden. Sie sehen einen Punktestand zu einer bestimmten Zeit und mit zwei bestimmten Optionen zur Auswahl.
+  </p>
+
+  <p>
+    Bitte sehen Sie sich die Situation gut an und entscheiden sich, wie bisher, für die Option die Sie in dieser Situation wählen würden.
+  </p>
+
+  <p>
+  Im Gegensatz zu gerade treffen Sie in jeder dieser Situationen nur eine Entscheidung. Sie erhalten nach der Entscheidung <b>keine Rückmeldung</b>. Auch geht danach die <b>Runde nicht weiter</b>, sondern es folgt eine andere und <b>neue Situation</b>. In der ersten Situation könnten Sie in Entscheidung 4 von 5 sein, in der nächsten Situation könnten sie in Entscheidung 1 von 5 sein. Bitte sehen Sie sich diese Situation gut an. Insgesamt zeigen wir Ihnen 10 solcher neuen Situationen.
+  </p>
+
+  <h3>Ihre Aufgabe</h3>
+  <p>
+    Wie bisher ist es Ihre Aufgabe - gegeben jeder Situation - sich für die Option zu entscheiden mit der Sie das Ziel nach fünf Entscheidungen bestmöglich erreichen werden.
+  </p>
+  {% endblocktrans %}
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

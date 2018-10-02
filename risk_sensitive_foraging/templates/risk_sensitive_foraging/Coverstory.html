@@ -1,0 +1,102 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+  {% blocktrans trimmed %}
+  Ihr Ziel in dieser Studie ist es Punkte zu sammeln um ein Punkteziel zu erreichen. Sie sammeln Punkte indem Sie sich zwischen zwei Optionen entscheiden. Sie haben 5 Entscheidungen Zeit, das Ziel zu erreichen.
+  {% endblocktrans %}
+
+  <div class = 'flex-col'><img src='{% static "risk_sensitive_foraging/example_timeEN.png" %}'/ width = "170px"> <img src='{% static "risk_sensitive_foraging/example_earningsEN.png" %}'/ width = '400px'> 
+  </div>
+
+  <p class = 'example'> {% blocktrans trimmed %}
+  Sie haben aktuell <u>null</u> Punkte, ihr Ziel ist es, <u>neun</u> Punkte zu erreichen. Sie befinden sich gerade in der <u>ersten von fünf</u> Entscheidung.
+  {% endblocktrans %}
+  </p>
+
+  
+
+<!-- 0,2,0.1,0.9,0,4,0.5,0.5,9
+1,3,0.1,0.9,1,5,0.1,0.9,12
+1,2,0.5,0.5,0,3,0.5,0.5,11 -->
+
+  <h3>{% blocktrans trimmed %}Punkte sammeln{% endblocktrans %}</h3>
+  <p>
+  {% blocktrans trimmed %}
+  Sie sammeln Punkte indem Sie sich zwischen zwei Optionen entscheiden (Option A und Option B). Beide Optionen können verschiedene Punktebeträge auszahlen, aber nur mit einer bestimmten Wahrscheinlichkeit. Wir informieren Sie immer genau darüber wie viele Punkte Sie mit welchen Wahrscheinlichkeiten von Option A und Option B erhalten können. {% endblocktrans %}
+  </p>
+
+   <div class = "flex-row">
+    <div>
+      <img class = 'center' src='{% static "risk_sensitive_foraging/example_action.png" %}'/ width = '70%'>
+      <p class = 'example'>
+      {% blocktrans trimmed %}
+      Option A gibt Ihnen entweder +2&nbsp;Punkte in 30&nbsp;% der Fälle oder aber +1 Punkt in 70&nbsp;% der Fälle.
+      {% endblocktrans %}  
+      </p>
+    </div>
+    <div>
+      <img class = 'center' src='{% static "risk_sensitive_foraging/example_action2.png" %}'/ width = '70%'>
+       <p class = 'example'>
+        {% blocktrans trimmed %}
+        Option B gibt Ihnen entweder +4&nbsp;Punkte in 50&nbsp;% der Fälle, oder aber 0&nbsp;Punkte in 50&nbsp;% der Fälle.
+      {% endblocktrans %}  
+      </p>
+    </div>
+   </div>
+
+  
+
+  <p>{% blocktrans trimmed %}
+    Welcher Fall eintreten wird, ist vorab nicht klar, aber nachdem Sie eine Option gewählt haben, wird einer der Fälle mit der gegebenen Chance realisiert: das heissts Sie erhalten entweder den ersten oder den zweiten Punktewert der gewählten Option mit der angegebenen Wahrscheinlichkeit.{% endblocktrans %}
+  </p>
+
+    <h3>{% blocktrans trimmed %}
+   Auswahl{% endblocktrans %}</h3>
+
+   <p>{% blocktrans trimmed %}
+      Wählen Sie eine Option, indem Sie auf die Option klicken. Nach Ihrer Wahl sehen Sie wie viele Punkte Sie erhalten. Ihr aktueller Punktestand passt sich dann an, gegeben Ihrer Wahl und den realisierten Punkten.
+  {% endblocktrans %}
+  </p>
+
+  <img class = 'center' src='{% static "risk_sensitive_foraging/point_feedback.jpg" %}' width = '70%'>
+  <img class = "center " src='{% static "risk_sensitive_foraging/example_earnings_added.png" %}' width = "400px">
+  <p class = 'example'>
+    {% blocktrans trimmed %}
+    Sie wählen Option B (die rechte Option). Die Option wurde realisiert und ergab +4&nbsp;Punkte. Ihr aktueller Punktestand ist jetzt 4 statt 0 Punkte. {% endblocktrans %}  
+  </p>
+
+  <p> {% blocktrans trimmed %}
+     Danach entscheiden Sie sich wieder zwischen Option A und Option B, ihr aktueller Punktestand ist der neue Punktestand. Sie treffen insgesamt 5 solcher Entscheidungen, nach jeder Entscheidung passt sich ihr aktueller Punktestand an. Die Wahrscheinlichkeiten der Optionen bleiben jedoch unverändert, unabhängig davon was Sie gerade gewählt und erhalten haben. {% endblocktrans %}    
+  </p> 
+
+  <h3>{% blocktrans trimmed %}Ihr Ziel und bonus{% endblocktrans %}</h3>
+
+  <p>{% blocktrans trimmed %}
+  Was zählt ist, ob Sie am <b>nach 5 Entscheidungen das Puntkeziel erreicht</b> haben (im Beispiel ist das Punkteziel 9 Punkte). Wenn Sie nach der 5. Entscheidung über dem Puntkeziel liegen, können Sie eine Bonuszahlung für diesen Durchgang erhalten. Wenn sie darunter liegen, erhalten Sie keinen Bonus.{% endblocktrans %}
+
+  <h3>{% blocktrans trimmed %}Neue Runde{% endblocktrans %}</h3>
+
+  <p>{% blocktrans trimmed %} Nach der fünften Entscheidung endet der Durchgang. Es beginnt eine neue Runde mit neuem Punkteziel und neuen Optionen. Jeder neue Runde ist wie ein 'neues Leben': Sie starten wieder mit null Punkten, haben fünf Entscheidungen Zeit, es gibt zwei neue Optionen und eine neues Punkteziel. Sie haben immer fünf Entscheidungen Zeit um das gegebene Ziel durch wiederholte Wahl zwischen Option A und Option B zu erreichen.{% endblocktrans %}
+  </p>
+  
+
+  
+
+
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

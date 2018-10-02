@@ -1,0 +1,169 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+<!--   {% if multitrial %}
+    <span class = "goal parent lightorange">
+      <p class = "center">
+      {% blocktrans trimmed %}
+        Ziel <br> {{ successes }} von {{ num_blocks }} x erreicht.
+      {% endblocktrans %}
+      </p>
+    </span>
+  {% endif %} -->
+{% endblock %}
+
+{% block content %}
+  <div class = "row1 parent center-children">
+    <div class = 'center-children flex-row-flex-start center-me-h'>
+      <div class = "chart-icon"><i class="far fa-2x fa-clock center-me-v"></i></div>
+      <div class="chart-trial" id = "chart-trial"></div>
+    </div>
+  </div>
+
+  <div class = "row parent center-children">
+    <div class = 'center-children flex-row-flex-start center-me-h'>
+      <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
+      <div class="chart-earnings" id="chart-earnings"></div>
+    </div>
+  </div>
+
+  <div class = "row parent flex-row">
+    <button type="button" value="0" class="option rsft-btn-choices">
+      <span class = "rsft-span-choices">
+        <div id = "option1">
+        </div>
+      </span>
+    </button>
+      
+    <button type="button" value="1" class="option rsft-btn-choices">
+      <span class = "rsft-span-choices">
+        <div id = "option2">
+        </div>
+      </span>
+    </button>
+  </div>
+  </div>
+
+  <span class = 'hidden' formnovalidate="formnovalidate">{% next_button %}</span>
+
+ <div class = 'hidden'>
+  {% for field in form %}
+    {% formfield field %}
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    var trial = {{ trial }};
+    var state = {{ state }};
+    var outcomes = {{ outcomes }};
+    var b = {{ budget }};
+    $('#id_state' +trial).val(state);
+
+    $('.rsft-btn-choices').click(function() {
+      var choice = $(this).val();
+      $('#id_choice' +trial).val(choice);
+      outcome = outcomes[choice][trial];
+      state += outcome
+      $('#id_state' + (trial + 1)).val(state);
+      hideTrial(trial);
+      hideActions();
+      showOutcome($(this));
+      updateState(state);
+
+      var x = $(this);
+
+      setTimeout(function () {
+        if (trial < {{ Constants.num_trials }}) {
+          hideOutcome(x);
+          showActions();
+        }        
+        if (trial == {{ Constants.num_trials }}) {
+          $('#id_successes').val({{ successes }} + (state >= b) );
+          clickNext()
+        } else {
+          trial += 1;
+          showTrial(trial);
+        }
+      }, 1200);
+      
+    });
+
+    var clickNext = function() {
+      $('.otree-btn-next').click();
+    };
+
+    var hideTrial = function(t) {
+      chart = $('#chart-trial').highcharts();
+      chart.series[1].data[t-1].update({
+        marker: {
+          fillColor: 'rgba(56,56,56,.5)'
+        }
+      });
+    }
+
+    var showTrial = function(t) {
+      chart = $('#chart-trial').highcharts();
+      chart.series[1].addPoint([ t-1, 1 ]);
+    };
+
+    var hideStateAxis = function() {
+
+    }
+    
+
+    var updateState = function(state) {
+      chart = $('#chart-earnings').highcharts();
+      chart.yAxis[0].update({
+          tickPositions: [{{ budget }}, {{ max_earning }}]
+        });
+      series = chart.series[0];
+      series.setData([ state ]);
+      setTimeout(function () {
+        chart.yAxis[0].update({
+          tickPositions: [state, {{ budget }}, {{ max_earning }}]
+        });
+        if ( state >= b ) {
+          series.update({
+            color: 'rgb(141, 230, 230)',
+            borderColor: 'rgb(141, 230, 230)'
+          });
+        }}, 600 );
+    };
+
+
+    var hideActions = function() {
+      $('.rsft-btn-choices').prop('disabled', true);
+      $('#option1').hide();
+      $('#option2').hide();
+    };
+
+    var showActions = function() {
+        $('.rsft-btn-choices').prop('disabled', false);       
+        $('#option1').show();
+        $('#option2').show();      
+    };
+
+    var showOutcome = function(x) {
+      x.append( '<p class = "o">' + outcome + '</p>' );
+      x.addClass('rsft-btn-chosen');
+    };
+
+    var hideOutcome = function(x) {
+      x.find('.o').remove();
+      x.removeClass('rsft-btn-chosen');
+    };
+
+    drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, {{ Constants.trial_label|json }});
+
+    drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
+    drawAction('option1', {{ x1|json }}, {{ p1|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} +" A");
+    drawAction('option2', {{ x2|json }}, {{ p2|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} + " B");
+
+
+  </script>
+{% endblock %}

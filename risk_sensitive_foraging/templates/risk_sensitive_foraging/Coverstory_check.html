@@ -1,0 +1,153 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+  {% blocktrans trimmed %}
+  Verständnisfragen
+  {% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+  {% blocktrans trimmed %} Wir geben Ihnen die  Informationen für Ihre Entscheidungen wie unten dargestellt. Bitte sehen Sie sich das Bild gut an. Es ist wichtig, dass Sie die Darstellung verstehen. {% endblocktrans %}
+  
+  </p>
+
+  <img class = "center img" src='{% static "risk_sensitive_foraging/attention_check.png" %}'/>
+
+
+  <h3>
+  {% blocktrans trimmed %}Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:  {% endblocktrans %}
+  </h3>
+
+  <form id = "check">
+    <fieldset class = "rsft-form">
+    <legend>  {% blocktrans trimmed %}Im obigen Bild, wo sehen Sie ...
+  {% endblocktrans %}</legend>
+    <p>
+      <label for="q1">  {% blocktrans trimmed %}... die verbleibende Zeit?
+  {% endblocktrans %}</label>
+      <input id="q1" name="q1" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D,  E') this.placeholder='';">
+    </p>
+    <p>
+      <label for="q2">{% blocktrans trimmed %}... das Punkteziel?
+  {% endblocktrans %}</label>
+      <input id="q2" name="q2" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
+    </p>
+    <p>
+      <label for="q3">{% blocktrans trimmed %}... den aktuellen Punktestand?
+  {% endblocktrans %}</label>
+      <input id="q3" name="q3" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
+    </p>
+    <p>
+      <label for="q4">... Option A?</label>
+      <input id="q4" name="q4" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
+    </p>
+    <p>
+      <label for="q5">... Option B?</label>
+      <input id="q5" name="q5" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
+    </p>
+  </fieldset>
+
+    <fieldset class = "rsft-form">
+    <legend>{% blocktrans trimmed %}Im oben gezeigten Beispiel ...
+  {% endblocktrans %}</legend>
+    <p>
+      <label for="q6">{% blocktrans trimmed %}Die wievielte Entscheidung treffen Sie gerade?{% endblocktrans %}</label>
+      <input id="q6" name="q6" minlength="1" maxlength="1" type="number" required placeholder="N" onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q7">{% blocktrans trimmed %}Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?{% endblocktrans %}</label>
+      <input id="q7" name="q7" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q8">{% blocktrans trimmed %}Wie hoch ist Ihr Punkteziel?{% endblocktrans %}</label>
+      <input id="q8" name="q8" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q9">{% blocktrans trimmed %}Wie hoch ist Ihr aktueller Punktestand?{% endblocktrans %}</label>
+      <input id="q9" name="q9" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q10">{% blocktrans trimmed %}Wie viele Punkte können Sie von Option B maximal erhalten?{% endblocktrans %}</label>
+      <input id="q10" name="q10" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q11">{% blocktrans trimmed %}Wie hoch ist die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in %)?{% endblocktrans %}</label>      
+      <input id="q11" name="q11" minlength="1" maxlength="2" type="number" required placeholder="%" onfocus="if (this.placeholder=='%') this.placeholder='';">
+    </p>
+  </fieldset>
+  </form>
+
+
+
+<div class = "right">
+  <button id = "submitcheck" class = "btn" type = "button" >
+    {% blocktrans %} Überprüfen{% endblocktrans %}
+  </button>
+  <span class = 'hidden'>{% next_button %}</span>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+
+  <script>
+    var answers = ["a", "c", "b", "d", "e", "3", "2", "9", "4", "4", "20"];
+    var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11"];
+
+    function check_answers(i) {
+      var qid = "#" + questions[i];
+      var value = $(qid).val().toLowerCase();
+
+
+      if (value == answers[i]) {
+        $(qid).parent('p').css({"color": "#9CBA7F"});       
+        $(qid).css("border", ".5px solid rgba(240,240,240,.5)");
+      } else {
+        $(qid).parent('p').css("color", "red");       
+        $(qid).css("border", ".5px solid red");
+      }
+    };
+
+    $("#submitcheck").click( function() {
+
+      var arr = $('.rsft-form :input').map(function () {
+        return this.value.toLowerCase();
+      }).get();
+      
+      var alert_ok = {% blocktrans trimmed %}"Richtig! Weiter geht es mit Klick auf OK."{% endblocktrans %}
+      var alert_notok = {% blocktrans trimmed %}"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten Feldern bitte noch einmal an und korrigieren Sie diese."{% endblocktrans %}
+
+      if ( arraysEqual(arr, answers) ) {
+        alert(alert_ok);
+        $('.otree-btn-next').click();
+      } else {
+        alert(alert_notok);
+
+      for (var i = 0; i < arr.length; ++i) {
+        check_answers(i);
+      }
+    }
+
+    });
+
+    function arraysEqual(a, b) {
+      if (a === b) return true;
+      if (a == null || b == null) return false;
+      if (a.length != b.length) return false;
+
+      for (var i = 0; i < a.length; ++i) {
+        if (a[i] !== b[i]) return false;
+      }
+      return true;
+    };
+
+  </script>
+{% endblock %}
+

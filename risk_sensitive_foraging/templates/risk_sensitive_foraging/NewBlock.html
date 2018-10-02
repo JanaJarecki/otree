@@ -1,0 +1,72 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <span class = "round goal-reached-info parent lightgrey shadow">
+    <p class = "center">{% blocktrans trimmed %}Ziel in<br>{{ successes }} von {{ num_blocks }} Runden erreicht.
+      {% endblocktrans %}</p>
+  </span>
+  <h1>
+    {% blocktrans trimmed %}Neue Runde{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <div>
+  <p>
+  {% if self.player.block > 1 %}
+    {% if currentstate >= player.budget %} 
+    {% blocktrans trimmed %}
+        Sie haben das Ziel in der letzten Runde erreicht.
+    {% endblocktrans %}
+
+    {% else %}
+    {% blocktrans trimmed %}
+        Sie haben das Ziel in der letzten Runde nicht erreicht.
+    {% endblocktrans %}
+    {% endif %}
+    {% blocktrans trimmed %}
+       Weiter zur nächsten Runde (runde 
+    {% endblocktrans %}
+    {{ currentblock }}).
+  {% endif %}
+  </p>
+  
+  <h3>
+    {% blocktrans trimmed %}Punkteziel für nächste Runde{% endblocktrans %}
+  </h3>
+
+  <div class = "center">
+    <p>
+      {% blocktrans with nt=Constants.num_trials %}Erreiche <span class = "orange lightgrey shadow round-edge new-goal-info">{{ budget }}</span> Punkte in {{ nt }} Entscheidungen{% endblocktrans %}.
+    </p>
+  </div>
+
+  <h3>
+    {% blocktrans trimmed %}Optionen für nächste Runde{% endblocktrans %}
+  </h3>
+  </div>
+
+  <div class = "flex row lightgrey shadow round-edge" style = "margin: 20px; padding: 1rem; background: #FAFAFA;">
+    <div class = "option orange-border" id = "option1">
+    </div>
+    <div class = "option orange-border" id = "option2">
+    </div>
+  </div>
+
+
+  <div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  drawAction('option1', {{ x1|json }}, {{ p1|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} +" A");
+  drawAction('option2', {{ x2|json }}, {{ p2|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} + " B");
+
+</script>
+{% endblock %}

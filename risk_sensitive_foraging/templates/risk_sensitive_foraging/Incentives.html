@@ -1,0 +1,123 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>{% blocktrans trimmed %}Bonuszahlung{% endblocktrans %}</h1>
+{% endblock %}
+
+
+{% block content %}
+
+  <p> {% blocktrans with fee=participation_fee|c %}
+    Nach Beendigung der Studie erhalten Sie {{ fee }} und zusätzlich eine <b>Bonuszahlung</b>, die von Ihren Entscheidungen abhängt
+  {% endblocktrans %}</p>
+
+  <p> {% blocktrans with rwc_s=real_world_currency_per_success|c rwc_pp=real_world_currency_per_point|c %}
+    Für den Bonus werden zufällig fünf der nachfolgenden Runden ausgewählt. Für jede der gewählten Runden, in der Sie das Punkteziel erreicht haben, erhalten Sie <b>+&nbsp;{{ rwc_s }}</b> dafür, dass Sie das Ziel erreicht haben, plus <b>+&nbsp;{{ rwc_pp }} </b> für jeden Punkt der über das Ziel hinausgeht. In den Runden, in denen Sie das Punkteziel nicht erreicht haben, ist der Bonus 0.
+  {% endblocktrans %}</p>
+
+  <p class = 'example'>
+  {% blocktrans with currency=0.50|c rwc_s=real_world_currency_per_success|c rwc_pp=real_world_currency_per_point|c %}
+    Ihr Punkteziel ist 8 Punkte, Sie haben nach der fünften Entscheidung 12 Punkte gesammelt, dann ist ihr Bonus für die Runde {{ currency }} wenn diese Runde zu den fünf Runden gehört die am Ende als Bonus gewählt werden. Das bedeutet {{ rwc_s }} for reaching the goal plus  {{ rwc_pp }} x 4, da Sie 4 Punkte mehr als das Punkteziel gesammelt haben.
+   {% endblocktrans %}
+  </p>
+
+
+
+  <h3>
+  {% blocktrans trimmed %}Bitte beantworten Sie diese Verständnisfragen richtig:{% endblocktrans %}
+  </h3>
+
+  <form id = "check">
+    <fieldset class = "rsft-form">
+    <legend>{% blocktrans trimmed %} 
+      Wie hoch ist Ihr Bonus für eine Runde mit ...
+    {% endblocktrans %}</legend>
+    <p>
+      <label for="q1">  {% blocktrans trimmed %}... einem Punkteziel von 5, wenn Sie 4 Punkte gesammelt haben? {% endblocktrans %}</label>
+      <input id="q1" name="q1" min="0" max="10" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" required placeholder={% blocktrans trimmed %}"Zahl"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Zahl"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q2">{% blocktrans trimmed %}... einem Punkteziel von 5, wenn Sie 5 Punkte gesammelt haben? {% endblocktrans %}</label>
+      <input id="q2" name="q2" min="0" max="10" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" required placeholder={% blocktrans trimmed %}"Zahl"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Zahl"{% endblocktrans %}) this.placeholder='';">
+    </p>
+    <p>
+      <label for="q3">{% blocktrans trimmed %}... einem Punkteziel von 5 wenn Sie 7 Punkte gesammelt haben? {% endblocktrans %}</label>
+      <input id="q3" name="q3" min="1" max="10" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" required placeholder={% blocktrans trimmed %}"Zahl"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Zahl"{% endblocktrans %}) this.placeholder='';">
+    </p>
+  </fieldset>
+
+
+  <div class = "right">
+    <button id = "submitcheck" class = "btn" type = "button" >
+      {% blocktrans %} Überprüfen{% endblocktrans %}
+    </button>
+    <span style = "display: none; visibility: hidden;">{% next_button %}
+    </span>
+  </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+
+  <script>
+    var answers   = ["0", "0.10", "0.30"];
+    var questions = ["q1", "q2", "q3"];
+
+    function check_answers(i) {
+      var qid = "#" + questions[i];
+      var value = $(qid).val().toLowerCase();
+
+      if (value == answers[i]) {
+        $(qid).parent('p').css({"color": "#9CBA7F"});       
+        $(qid).css("border", "0px");
+      } else {
+        $(qid).parent('p').css("color", "red");       
+        $(qid).css("border", ".5px solid red");
+      }
+    };
+
+    $("#submitcheck").click( function() {
+
+      var arr = $('.rsft-form :input').map(function () {
+        return this.value.toLowerCase();
+      }).get();
+      
+      var alert_ok = {% blocktrans trimmed %}"Richtig! Weiter geht es mit Klick auf OK."{% endblocktrans %}
+      var alert_notok = {% blocktrans trimmed %}"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten Feldern bitte noch einmal an und korrigieren Sie diese."{% endblocktrans %}
+
+
+      /*.map(Number) transforms the values to numbers*/
+      if ( arraysEqual(arr.map(Number), answers.map(Number)) ) {
+        alert(alert_ok);
+        $('.otree-btn-next').click();
+      } else {
+        alert(alert_notok);
+
+      for (var i = 0; i < arr.length; ++i) {
+        check_answers(i);
+      }
+    }
+
+    });
+
+    function arraysEqual(a, b) {
+      if (a === b) return true;
+      if (a == null || b == null) return false;
+      if (a.length != b.length) return false;
+
+      for (var i = 0; i < a.length; ++i) {
+        if (a[i] !== b[i]) return false;
+      }
+      return true;
+    };
+
+  </script>
+{% endblock %}
+
+
+

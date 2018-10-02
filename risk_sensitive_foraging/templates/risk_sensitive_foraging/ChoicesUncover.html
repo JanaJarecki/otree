@@ -1,0 +1,187 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+      <p class = "clicks layer1"></p>
+{% endblock %}
+
+{% block content %}
+    <div class = "row1 parent">
+    <span id="trials">
+      <div class="chart-trial center-me-h" id="chart-trial">
+      </div>
+    </span>  
+    <button type="button" id="uncover-trials"  class = "btn rsft-btn-hideinfo center-me-h layer2">
+       vergangene Zeit
+    </button>
+  </div>
+
+  <div  class = "row parent">
+    <span id="earnings">
+      <div class = "chart-earnings center-me-v" id="chart-earnings">
+      </div>
+    </span>
+    <button type="button" id="uncover-budget" class = "btn rsft-btn-hideinfo center-me-v layer2">
+        zu erreichende Punkte
+    </button>
+    <button type="button" id="uncover-earnings" class = "btn rsft-btn-hideinfo center-me-v layer2">
+        erreichte Punkte
+    </button>
+  </div>
+
+
+ <!-- BUTTONS WITH CHOICES -->
+
+  <div class = "row parent flex">
+    <button name="choice" disabled value="0" class="rsft-btn-choices">
+      <span class = "rsft-span-choices">
+        <div class="chart-option center-me-hv" id = "option1">
+        </div>
+      </span>
+    </button>
+    
+    <button name="choice" disabled value="1" class="rsft-btn-choices">
+      <span class = "rsft-span-choices">
+        <div class="chart-option center-me-hv" id = "option2">          
+        </div>
+      </span>
+    </button>
+  </div>
+
+    <button type="button" id="uncover-p" class = "btn rsft-btn-hideinfo layer2 center-me-h">
+      Probabilities
+    </button>
+    <button type="button" id="uncover-x" class = "btn rsft-btn-hideinfo layer2 center-me-h">
+      mögliche Punkte
+    </button>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+$(document).ready(function() {
+  var clicks = 0;
+  var maxClicks = 4;
+
+  function updateClicks() {
+    $('.clicks').html('Noch <span style="font-size:1.3eM; color:orange;"><i><b>' + (maxClicks - clicks) +'</i></b></span> Klicks übrig');
+
+    if (clicks == maxClicks) {
+      $('.clicks').html('<span style="font-size:1eM; color:orange;"><i> Bitte Entscheidung treffen </i></span>');
+
+      $('.rsft-btn-choices').prop('disabled', false);
+
+      $('.rsft-btn-hideinfo').prop('disabled', true)
+
+    } else {
+      clicks++;
+    }
+  }
+
+  drawTrial(target = 'chart-trial', false, {{ chart_trial|json }}, {{ Constants.trial_label|json }});
+  drawEarnings('chart-earnings', {{ state|json }}, {{ budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, false, false, {{ Constants.point_label|json }});
+  drawAction('option1', {{ LV|json }}, {{ LP|json }}, false, false, {{ Constants.point_label|json }});
+  drawAction('option2', {{ HV|json }}, {{ HP|json }}, false, false, {{ Constants.point_label|json }});  
+  updateClicks(clicks);
+
+  $('#uncover-x').click(function () {
+    $( this ).hide(10);
+    var chart1 = $('#option1').highcharts();
+    var chart2 = $('#option2').highcharts();
+
+    chart1.legend.update({
+      enabled: true
+      }, true)
+    chart2.legend.update({
+      enabled: true
+      }, true)
+
+    updateClicks();   
+  });
+
+  $('#uncover-p').click(function () {
+    $( this ).hide(10);
+    var chart1 = $('#option1').highcharts();
+    var chart2 = $('#option2').highcharts();
+
+    $.each(chart1.series, function(i, s) {
+      s.update({
+        visible: true,
+      });
+    })
+
+    $.each(chart2.series, function(i, s) {
+      s.update({
+        visible: true,
+      });
+    })
+
+    updateClicks();
+    
+  });
+
+  $('#uncover-trials').click(function () {
+    $( this ).hide(10);
+
+    var chart = $('#chart-trial').highcharts();
+    var series = chart.series[1];
+    
+    series.update({
+      visible: true,
+      data: [[ {{ player.round_number|json}} - 1, 1]],
+      color: 'rgb(207,216,220)'
+      });
+
+    chart.series[2].update({
+      visible: true,
+    });
+
+    chart.xAxis[0].update({
+      visible: true
+      });
+
+    updateClicks();
+
+  });
+
+  $('#uncover-budget').click(function () {
+    $( this ).hide(10);
+
+    var chart = $('#chart-earnings').highcharts();
+
+    chart.yAxis[0].update({
+      visible: true
+      });
+
+    updateClicks();
+  });
+
+  $('#uncover-earnings').click(function () {
+    $( this ).hide(50);
+
+    var chart = $('#chart-earnings').highcharts();
+    var series = chart.series[1];
+    
+    series.update({
+      visible: true,
+      dataLabels: {
+        enabled: true,
+        }
+    });
+
+    chart.series[0].update({
+      visible: true,
+    })
+
+    updateClicks();
+  });
+});
+
+</script>
+
+{% endblock %}
+

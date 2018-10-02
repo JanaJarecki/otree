@@ -1,0 +1,116 @@
+{% load otree %}
+
+<script>
+  $(function () {
+/*    var myWidth = $('#chart-earnings').width() * {{max_earnings|json}};*/
+
+    Highcharts.chart('chart-earnings', {
+      credits:    { enabled: false },
+      exporting:  { enabled: false },
+      tooltip:    { enabled: false },
+      title:      { text: null },
+      legend:     { enabled: false },
+      chart: {
+        type: 'bar',
+        margin: [25, -5, 25, 80],
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0 
+      },
+      xAxis: {
+        visible: true,
+        categories: [ {{ Constants.point_label|json }}, ''],
+        tickWidth: 0,
+        lineColor: 'transparent',
+        gridLineWidth: 0,
+        lineThickness: 0,
+        gridLineWidth: 0,
+        min: 0,
+        max: 0,
+        labels: {
+          style: { fontSize: '20px' },
+          y: 6
+        }
+      },
+      yAxis: {
+        min: -.2,
+        max: {{ max_earning|json }},
+        startOnTick: false,
+        labels: {
+          enabled: false,
+          style: {
+              fontSize: '4px'
+           }
+        },
+        title: { text: null },
+        gridLineWidth: 0,
+        tickInterval: null,
+        minTickInterval: 0,
+        tickPosition: 'inside',
+        tickColor: 'transparent',
+        tickWidth: 1,
+        lineThickness: 0,
+        plotLines: [{
+          color: 'rgb(97,169,176)',
+          value: {{ budget|json }} - .01,
+          width: 4,
+          zIndex: 4,
+          label: {
+            text: {{ budget|json}},
+            rotation: 0,
+            x: -12,
+            y: 58,
+            style: {
+              color: 'rgb(97,169,176)',
+              fontSize: '16px',
+              fontWeight: 'bold'
+            }
+          }
+        },
+        ]
+      },
+      plotOptions: {
+        series: {
+          stacking: 'normal',
+          borderColor: '#303030',
+          borderWidth: 2,
+          animation: false,
+          states: { hover: { enabled: false } },
+          dataLabels: {
+            enabled: true,
+            align: 'right',
+            verticalAlign: 'bottom',
+            crop: false,
+            overflow: 'none',
+            y: -10,
+            x: 13,
+            style: {
+              textOutline: 0,
+              fontSize: '16px',
+              lineHeight: 1,
+              color: 'rgb(112,112,112)'
+            },
+          }, 
+        },
+        area: {
+          dataLabels: {
+            enabled: true,
+            crop: false,
+            overflow: 'none'
+          }
+        },
+      },
+      series: [{
+          data: [{{ max_less_state|json }}],
+          color: 'rgba(250,250,250,.1)',
+          dataLabels:{ enabled: false },
+        },
+        {
+          data: [{{ state|json }}],
+          color: {{ state|json }} < {{ budget|json }} ? 'rgb(207,216,220)' : 'rgb(141, 230, 230)',
+        }
+      ]
+    });
+  });
+</script>

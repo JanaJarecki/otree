@@ -1,0 +1,90 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>{% blocktrans trimmed %}Information{% endblocktrans %}</h1>
+{% endblock %}
+
+
+{% block content %}
+  <div class = "dialogue" id = "checkdisplay">
+    <p>You need a screen wider than 800px for this study. Cellphones won't work, a tablet may work.</p>
+  </div>
+  <p>{% blocktrans trimmed %}
+  Sehr geehrte Probandin, Sehr geehrter Proband,
+  {% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans trimmed %}
+  vielen Dank für Ihr Interesse an dieser Studie.
+  {% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans trimmed %}
+  Das Ziel dieser Studie ist es, menschliche Entscheidungen zu untersuchen. Die Studie dauert ungefähr 30 Minuten.
+  {% endblocktrans %}
+  </p>
+
+
+  <h3>{% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}Sie treffen während der Studie wiederholt Entscheidungen am Computer und beantworten danach Fragen zu Ihrer Person. Ihre Aufgabe ist es, die Entscheidungen so gut wie möglich zu treffen und die Fragen wahrheitsgemäss zu beantworten. Die Fragen zu Ihrer Person können Fragen persönlicher Natur (z.B. über Ihre finanzielle Situation) beinhalten.
+  {% endblocktrans %}
+  </p>
+
+  <h3>{% blocktrans trimmed %}Bezahlung{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}
+  Jede/r Teilnehmer/in erhält nach Beendigung der Studie ca.{% endblocktrans %}
+
+  {{ participation_fee|c }}
+
+  {% blocktrans trimmed %}als symbolische Aufwandsentschädigung. Zusätzlich erhalten Sie eine Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren Entscheidungen während der Studie abhängt.
+  {% endblocktrans %}
+  </p>
+
+  <h3>{% blocktrans trimmed %}Keine Risiken{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}
+  Die Studienteilnahme ist mit keinerlei gesundheitlichen Risiken verbunden.
+  {% endblocktrans %}
+  </p>
+
+  <!-- Die Aufwandsentschädigung erhalten Sie nur persönlich an der Universität Basel. Die Studie wird durch den Lehrstuhl für ökonomische Psychologie an der Universität Basel finanziert. -->
+
+  <h3>{% blocktrans trimmed %}Datenschutz{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}
+  Alle in dieser Studie gesammelten Daten werden anonymisiert ausgewertet. Die Ergebnisse der Studie werden anonymisiert, in einer Gruppe zusammengefasst und ohne Bezug auf konkrete Personen wissenschaftlich veröffentlicht, beispielsweise auf Konferenzen, in Fachzeitschriften und populärwissenschaftlichen Medien. Ihre Antworten werden in anonymer Form -- das heisst ohne irgendeine Informationen die Sie als Person identifizieren kann -- der Öffentlichkeit zugänglich gemacht um zukünftige Forschung zu erleichtern und voranzubringen. Wir werden alle personenbezogene Daten (Information die Sie identifizieren kann) aus den Daten löschen bevor die Daten geteilt werden, um sicher zu stellen dass es niemandem möglich ist, gemäss aktuellem Wissensstand und Methodik, Ihre Identität aus den anonymisierten Antworten die wir zur Verfügung stellen rückzuschliessen. Die anonymisierten Antworten, die wir mit anderen teilen, beinhalten beispielsweise Ihr Geschlecht und ihr Alter. Zu keiner Zeit fragen wir nach Ihrem Namen oder Ihrer Email-Adresse.
+  {% endblocktrans %}
+  </p>
+
+  <h3>{% blocktrans trimmed %}Abbruch{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}
+  Ihre Teilnahme an dieser Studie ist freiwillig. Sie haben jederzeit die Möglichkeit, die Studie ohne Angabe von Gründen abzubrechen. Entsprechend Ihrer investierten Zeit erhalten Sie eine anteilige Entlohnung. Die Einwilligung zur Verwendung Ihrer Daten können Sie während der Studienteilnahme jederzeit per Email an jana.jarecki@unibas.ch widerrufen. Ein nachträglicher Widerruf nach Beendigung der Studie ist möglich, jedoch können wir Ihre Daten nicht mehr aus identifizieren da die Datenerhebung, wie gesagt, anonymisiert erfolgt.
+  {% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans trimmed %}
+  Sie erhalten eine Kopie dieser Einverständniserklärung für Ihre Unterlagen.  Laden Sie sich diese hier herunter: [PDF dieser Einverständniserklärung].
+  {% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans trimmed %}
+  Ich habe die aufgeführten Bedingungen gelesen und verstanden. Ich hatte genügend Zeit eine Entscheidung zu treffen. Mit anklicken auf „weiter“ bestätige ich dies und nehme an der Studie teil.
+  {% endblocktrans %}
+  </p>
+
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  if($('#checkdisplay').css('display') != 'none') {
+    $('p:not(#checkdisplay > p)').hide();
+    $('h3').hide();
+    $('#checkdisplay').appendTo('h1');
+  }
+</script>
+{% endblock %}

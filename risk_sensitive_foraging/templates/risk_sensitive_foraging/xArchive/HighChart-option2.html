@@ -1,0 +1,113 @@
+{% load otree %}
+
+<script>
+  $(function () {
+    Highcharts.chart('option2', {
+      credits:    { enabled: false },
+      exporting:  { enabled: false },
+      tooltip:    { enabled: false },
+      title:      { text: "Option A" },
+      chart: {
+        backgroundColor: 'rgba(255,255,255,0.002)',
+        type: 'bar',
+        margin: [-20, -30, -60, -30],
+        spacingTop: 50,
+        spacingBottom: 00,
+        spacingLeft: 0,
+        spacingRight: 0 
+      },
+      title: { text: null },
+      xAxis: {
+        visible: false,
+        categories: ['', ''],
+      },
+      yAxis: {
+        visible: false,
+        min: -.01,
+        max: 100.01
+      },
+      plotOptions: {
+        series: {
+          animation: false,
+          dataLabels: {
+            y: 4,
+            x: 0,
+            enabled: true,
+            color: 'black',
+            align: 'center',
+            crop: false,
+            overflow: 'none',
+            style: {
+              textOutline: 'none',
+              fontSize: '16px'
+            }
+          }
+        },
+        bar: {
+          stacking: 'percent',
+          pointWidth: 28
+        }
+      },
+      legend: {
+        enabled: true,
+        align: 'right',
+        verticalAlign: 'top',
+        margin: 10,        
+        layout: 'horizontal',
+        squareSymbol: true,
+        symbolHeight: 30,
+        symbolRadius: 15,
+        symbolBorder: 0,
+        reversed: true,
+        width: 270,
+        itemWidth: 135,
+        useHTML: true,
+        itemStyle: {
+          fontSize: '18px',
+          lineHeight: '20px',
+          fontWeight: '300',
+        },
+        labelFormat: "&thinsp;" + " {name} " + {{ Constants.point_label|json }},
+        itemDistance: 25,
+        floating: true,
+        
+      },
+      series: [
+      {
+        name: [{{ HV|json }}[1]],
+        data: [{{ HP|json }}[1]],
+        stack: 'b',
+        color: 'rgb(230,230,230)',
+        borderWidth: 0,
+        dataLabels: {
+          format: '{point.percentage} %',
+        }
+      },
+      {
+        name: [{{ HV|json }}[0]],
+        data: [{{ HP|json }}[0]],
+        stack: 'b',
+        color: 'rgb(140,140,140)',
+        borderColor: null,
+        borderWidth: 0,
+        dataLabels: {
+          format: '{point.percentage} %',
+        }
+      }
+      ]
+    });
+  })
+
+  (function(H){
+    H.wrap(H.Legend.prototype, 'positionItem', function(proceed, item){
+        proceed.call(this, item);
+        if(item.legendSymbol) {
+            item.legendSymbol.translate(0, 5);
+        }
+        if(item.legendLine){
+            item.legendLine.translate(0, 5);
+        }
+    });
+    
+})(Highcharts);
+</script>

@@ -1,0 +1,763 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: RSFT_Study1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-07 15:00+0200\n"
+"PO-Revision-Date: 2018-09-07 15:01+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#: .\risk_sensitive_foraging\models.py:26
+msgid "Punkte"
+msgstr ""
+
+#: .\risk_sensitive_foraging\models.py:27
+msgid "Entscheidung"
+msgstr ""
+
+#: .\risk_sensitive_foraging\models.py:28
+msgid "Option"
+msgstr "Option"
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Choices.html:9
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:7
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Results.html:8
+#, fuzzy, python-format
+#| msgid "Goal reached<br> %(successes)s  of %(num_blocks)s x."
+msgid "Ziel <br> %(successes)s von %(num_blocks)s x erreicht."
+msgstr "Ziel<br> %(successes)s  von %(num_blocks)s x<br>erreicht."
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:6
+msgid "Information"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:11
+msgid "Sehr geehrte Probandin, Sehr geehrter Proband,"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:16
+msgid "vielen Dank für Ihr Interesse an dieser Studie."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:21
+msgid ""
+"Das Ziel dieser Studie ist es, menschliche Entscheidungen zu untersuchen. "
+"Die Studie dauert ungefähr 30 Minuten."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:27
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:6
+msgid "Ihre Aufgabe"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:28
+msgid ""
+"Sie treffen während der Studie wiederholt Entscheidungen am Computer und "
+"beantworten danach Fragen zu Ihrer Person. Ihre Aufgabe ist es, die "
+"Entscheidungen so gut wie möglich zu treffen und die Fragen wahrheitsgemäss "
+"zu beantworten. Die Fragen zu Ihrer Person können Fragen persönlicher Natur "
+"(z.B. über Ihre finanzielle Situation) beinhalten."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:32
+msgid "Bezahlung"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:33
+msgid "Jede/r Teilnehmer/in erhält nach Beendigung der Studie ca."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:38
+msgid ""
+"als symbolische Aufwandsentschädigung. Zusätzlich erhalten Sie eine "
+"Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren Entscheidungen "
+"während der Studie abhängt."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:42
+msgid "Keine Risiken"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:43
+msgid ""
+"Die Studienteilnahme ist mit keinerlei gesundheitlichen Risiken verbunden."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:50
+msgid "Datenschutz"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:51
+msgid ""
+"Alle in dieser Studie gesammelten Daten werden anonymisiert ausgewertet. Die "
+"Ergebnisse der Studie werden anonymisiert, in einer Gruppe zusammengefasst "
+"und ohne Bezug auf konkrete Personen wissenschaftlich veröffentlicht, "
+"beispielsweise auf Konferenzen, in Fachzeitschriften und "
+"populärwissenschaftlichen Medien. Ihre Antworten werden in anonymer Form -- "
+"das heisst ohne irgendeine Informationen die Sie als Person identifizieren "
+"kann -- der Öffentlichkeit zugänglich gemacht um zukünftige Forschung zu "
+"erleichtern und voranzubringen. Wir werden alle personenbezogene Daten "
+"(Information die Sie identifizieren kann) aus den Daten löschen bevor die "
+"Daten geteilt werden, um sicher zu stellen dass es niemandem möglich ist, "
+"gemäss aktuellem Wissensstand und Methodik, Ihre Identität aus den "
+"anonymisierten Antworten die wir zur Verfügung stellen rückzuschliessen. Die "
+"anonymisierten Antworten, die wir mit anderen teilen, beinhalten "
+"beispielsweise Ihr Geschlecht und ihr Alter. Zu keiner Zeit fragen wir nach "
+"Ihrem Namen oder Ihrer Email-Adresse."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:56
+msgid "Abbruch"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:57
+msgid ""
+"Ihre Teilnahme an dieser Studie ist freiwillig. Sie haben jederzeit die "
+"Möglichkeit, die Studie ohne Angabe von Gründen abzubrechen. Entsprechend "
+"Ihrer investierten Zeit erhalten Sie eine anteilige Entlohnung. Die "
+"Einwilligung zur Verwendung Ihrer Daten können Sie während der "
+"Studienteilnahme jederzeit per Email an jana.jarecki@unibas.ch widerrufen. "
+"Ein nachträglicher Widerruf nach Beendigung der Studie ist möglich, jedoch "
+"können wir Ihre Daten nicht mehr aus identifizieren da die Datenerhebung, "
+"wie gesagt, anonymisiert erfolgt."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:62
+msgid ""
+"Sie erhalten eine Kopie dieser Einverständniserklärung für Ihre Unterlagen.  "
+"Laden Sie sich diese hier herunter: [PDF dieser Einverständniserklärung]."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Consent.html:67
+msgid ""
+"Ich habe die aufgeführten Bedingungen gelesen und verstanden. Ich hatte "
+"genügend Zeit eine Entscheidung zu treffen. Mit anklicken auf „weiter“ "
+"bestätige ich dies und nehme an der Studie teil."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:14
+msgid ""
+"Ihr Ziel in dieser Studie ist es Punkte zu sammeln um ein Punkteziel zu "
+"erreichen. Sie sammeln Punkte indem Sie sich zwischen zwei Optionen "
+"entscheiden. Sie haben 5 Entscheidungen Zeit, das Ziel zu erreichen."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:21
+msgid ""
+"Sie haben aktuell <u>null</u> Punkte, ihr Ziel ist es, <u>neun</u> Punkte zu "
+"erreichen. Sie befinden sich gerade in der <u>ersten von fünf</u> "
+"Entscheidung."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:32
+msgid "Punkte sammeln"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:34
+msgid ""
+"Sie sammeln Punkte indem Sie sich zwischen zwei Optionen entscheiden (Option "
+"A und Option B). Beide Optionen können verschiedene Punktebeträge auszahlen, "
+"aber nur mit einer bestimmten Wahrscheinlichkeit. Wir informieren Sie immer "
+"genau darüber wie viele Punkte Sie mit welchen Wahrscheinlichkeiten von "
+"Option A und Option B erhalten können."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:42
+#, python-format
+msgid ""
+"Option A gibt Ihnen entweder +2&nbsp;Punkte in 30&nbsp;%% der Fälle oder "
+"aber +1 Punkt in 70&nbsp;%% der Fälle."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:50
+#, python-format
+msgid ""
+"Option B gibt Ihnen entweder +4&nbsp;Punkte in 50&nbsp;%% der Fälle, oder "
+"aber 0&nbsp;Punkte in 50&nbsp;%% der Fälle."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:59
+msgid ""
+"Welcher Fall eintreten wird, ist vorab nicht klar, aber nachdem Sie eine "
+"Option gewählt haben, wird einer der Fälle mit der gegebenen Chance "
+"realisiert: das heissts Sie erhalten entweder den ersten oder den zweiten "
+"Punktewert der gewählten Option mit der angegebenen Wahrscheinlichkeit."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:63
+msgid "Auswahl"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:66
+msgid ""
+"Wählen Sie eine Option, indem Sie auf die Option klicken. Nach Ihrer Wahl "
+"sehen Sie wie viele Punkte Sie erhalten. Ihr aktueller Punktestand passt "
+"sich dann an, gegeben Ihrer Wahl und den realisierten Punkten."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:74
+msgid ""
+"Sie wählen Option B (die rechte Option). Die Option wurde realisiert und "
+"ergab +4&nbsp;Punkte. Ihr aktueller Punktestand ist jetzt 4 statt 0 Punkte."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:78
+msgid ""
+"Danach entscheiden Sie sich wieder zwischen Option A und Option B, ihr "
+"aktueller Punktestand ist der neue Punktestand. Die Wahrscheinlichkeiten der "
+"Optionen bleiben unverändert, unabhängig davon was Sie gerade gewählt und "
+"erhalten haben. Sie wählen insgesamt 5 Mal, nach jeder Wahl passt sich ihr "
+"aktueller Punktestand an."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:82
+msgid "Ihr Ziel und bonus"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:84
+msgid ""
+"Was zählt ist, ob Sie am <b>nach 5 Entscheidungen das Puntkeziel erreicht</"
+"b> haben (im Beispiel ist das Punkteziel 9 Punkte). Wenn Sie nach der 5. "
+"Entscheidung über dem Puntkeziel liegen, können Sie eine Bonuszahlung für "
+"diesen Durchgang erhalten. Wenn sie darunter liegen, erhalten Sie keinen "
+"Bonus."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:87
+msgid "Neue Runde"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory.html:89
+msgid ""
+"Nach der fünften Entscheidung endet der Durchgang. Es beginnt eine neue "
+"Runde mit neuem Punkteziel und neuen Optionen. Jeder neue Runde ist wie ein "
+"'neues Leben': Sie starten wieder mit null Punkten, haben fünf "
+"Entscheidungen Zeit, es gibt zwei neue Optionen und eine neues Punkteziel. "
+"Sie haben immer fünf Entscheidungen Zeit um das gegebene Ziel durch "
+"wiederholte Wahl zwischen Option A und Option B zu erreichen."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:7
+msgid "Verständnisfragen"
+msgstr "Verständnisfragen"
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:16
+msgid ""
+"Wir geben Ihnen die  Informationen für Ihre Entscheidungen wie unten "
+"dargestellt. Bitte sehen Sie sich das Bild gut an. Es ist wichtig, dass Sie "
+"die Darstellung verstehen."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:24
+msgid "Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:29
+msgid "Im obigen Bild, wo sehen Sie ..."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:32
+msgid "... die verbleibende Zeit?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:37
+msgid "... das Punkteziel?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:42
+msgid "... den aktuellen Punktestand?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:57
+msgid "Im oben gezeigten Beispiel ..."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:60
+msgid "Die wievielte Entscheidung treffen Sie gerade?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:61
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:65
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:69
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:73
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:77
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:58
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:62
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:66
+msgid "\"Number\""
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:64
+msgid "Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:68
+msgid "Wie hoch ist Ihr Punkteziel?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:72
+msgid "Wie hoch ist Ihr aktueller Punktestand?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:76
+msgid "How many points does Option B maximally provide?"
+msgstr "Wie viele Punkte gibt Option B maximal?"
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:80
+#, python-format
+msgid ""
+"Wie hoch sit die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in "
+"%%)?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:125
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:108
+msgid "\"Richtig! Weiter geht es indem Sie auf OK klicken.\""
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Coverstory_check.html:126
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:109
+msgid ""
+"\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
+"Feldern bitte noch einmal an und korrigieren Sie diese.\""
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:14
+msgid "Nach der Studie erhalten Sie sicher"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:21
+msgid ""
+"Wir werden zufällig fünf der nachfolgenden Runden auswählen. Für jede dieser "
+"Runden, in der Sie das Punkteziel erreicht haben erhalten Sie"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:24
+msgid "dafür dass Sie das Ziel erreicht haben, plus"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:27
+msgid ""
+"for jeden Punkt der über das Ziel hinausgeht. In den Runden, in denen Sie "
+"das Punkteziel nicht erreicht haben, ist der Bonus 0."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:33
+msgid ""
+"Ihr Punkteziel ist 8 Punkte, Sie haben nach der fünften Runde 12 Punkte "
+"gesammelt, dann ist ihr Bonus für die Runde"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:35
+msgid ""
+", wenn diese Runde zu den fünf Runden gehört die am Ende als Bonus gewählt "
+"werden. Das bedeutet"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:39
+msgid "for reaching the goal plus"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:41
+msgid "da Sie 4 Punkte mehr als das Punkteziel gesammelt haben."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:49
+msgid "Bitte beantworten Sie diese Verständnisfragen richtig:"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:54
+msgid "Wie hoch ist Ihr Bonus für einen Blick mit ..."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:57
+msgid "...einem Punkteziel von 5, wenn Sie 4 Punkte gesammelt haben?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:61
+msgid "... einem Punkteziel von 5, wenn Sie 5 Punkte gesammelt haben?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\Incentives.html:65
+msgid "... einem Punkteziel von 5 wenn Sie 7 Punkte gesammelt haben?"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\InstructionOneshot.html:11
+#, fuzzy, python-format
+#| msgid ""
+#| "<p> Nun folgt die gleiche Aufgabe, mit einem leicht veränderten Ablauf. </"
+#| "p> <p> Auf der folgenden Seiten sehen Sie genau eine "
+#| "Entscheidungssituation. Sie sehen einen Punktestand zu einer bestimmten "
+#| "Zeit und mit zwei bestimmten Optionen zur Auswahl. </p> <p> Zum Beispiel "
+#| "<i>\"Zeit: 3 von 5. Punktestand: 5 von 10. Optionen 1 = 2 mit 50%% oder 1 "
+#| "mit 50%%; und Option 2 = 0 mit 50%% oder 4 mit 50%%.\"</i> </p> <p> Bitte "
+#| "sehen Sie sich die Situation gut an und entscheiden sich, wie bisher, für "
+#| "die Option die Sie in dieser Situation wählen würden. </p> <p> Im "
+#| "Gegensatz zu gerade erhalten Sie nach diesen Entscheidungen keine "
+#| "Rückmeldung, sondern sehen eine weitere Situation. Insgesamt zeigen wir "
+#| "Ihnen 10 solcher Situationen. </p>"
+msgid ""
+"<p> Nun folgt die gleiche Aufgabe, mit einem leicht veränderten Ablauf. </p> "
+"<p> Sie sehen jetzt genau <b>eine Entscheidungssituation</b>. Sie sehen "
+"einen Punktestand zu einer bestimmten Zeit und mit zwei bestimmten Optionen "
+"zur Auswahl. </p> <p class = 'example'> Sie treffen die 2. Entscheidugn von "
+"5, ihr aktueller Punktestand ist 7 von 13. Die beiden Optionen sind wie "
+"folgt: Optionen A beinhaltet +2 Punkte mit 50%% oder +1 Punkt mit 50%%; und "
+"Option B beinhaltet +2 Punkte mit 30%% oder +4 mit 70%%. </p> <p> Bitte "
+"sehen Sie sich die Situation gut an und entscheiden sich, wie bisher, für "
+"die Option die Sie in dieser Situation wählen würden. </p> <p> Im Gegensatz "
+"zu gerade treffen Sie in jeder dieser Situationen nur eine Entscheidung. Sie "
+"erhalten nach der Entscheidung <b>keine Rückmeldung</b>. Es folgt direkt "
+"danach eine <b>neue Situation</b> (bitte sehen Sie sich diese Situation gut "
+"an). Insgesamt zeigen wir Ihnen 10 solcher Situationen. </p>"
+msgstr ""
+"<p> Nun folgt die gleiche Aufgabe, mit einem leicht veränderten Ablauf. </p> "
+"<p> Auf der folgenden Seiten sehen Sie genau eine Entscheidungssituation. "
+"Sie sehen einen Punktestand zu einer bestimmten Zeit und mit zwei bestimmten "
+"Optionen zur Auswahl. </p> <p> Zum Beispiel <i>\"Zeit: 3 von 5. Punktestand: "
+"5 von 10. Optionen 1 = 2 mit 50%% oder 1 mit 50%%; und Option 2 = 0 mit 50%% "
+"oder 4 mit 50%%.\"</i> </p> <p> Bitte sehen Sie sich die Situation gut an "
+"und entscheiden sich, wie bisher, für die Option die Sie in dieser Situation "
+"wählen würden. </p> <p> Im Gegensatz zu gerade erhalten Sie nach diesen "
+"Entscheidungen keine Rückmeldung, sondern sehen eine weitere Situation. "
+"Insgesamt zeigen wir Ihnen 10 solcher Situationen. </p>"
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:11
+msgid "Neuer Block"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:24
+msgid "Sie haben das Ziel in der letzten Runde erreicht."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:29
+msgid "Sie haben das Ziel in der letzten Runde nicht erreicht."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:33
+msgid "Weiter zur nächsten Runde (runde"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:40
+msgid "Punkteziel für nächste Runde"
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:45
+#, fuzzy, python-format
+#| msgid ""
+#| "Reach <span class = \"orange\" style = \"font-size: 3rem; font-weight: "
+#| "300;\"><b>%(budget)s</b></span> points in"
+msgid ""
+"Erreiche <span class = \"orange\" style = \"font-size: 3rem; font-weight: "
+"300;\"><b>%(budget)s</b></span> Punkte in"
+msgstr ""
+"Erreiche <span class = \"orange\" style = \"font-size: 3rem; font-weight: "
+"300;\"><b>%(budget)s</b></span> Punkte in"
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:47
+msgid "Entscheidungen."
+msgstr ""
+
+#: .\risk_sensitive_foraging\templates\risk_sensitive_foraging\NewBlock.html:52
+msgid "Optionen für nächste Runde"
+msgstr ""
+
+#~ msgid "Please type in the correct answer to the following questions:"
+#~ msgstr "Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:"
+
+#~ msgid "\"Correct. Let's continue by clicking OK.\""
+#~ msgstr "\"Richtig. Weiter geht's mit Klick auf OK.\""
+
+#~ msgid ""
+#~ "\"Not completely. Please check and answer the questions marked in red "
+#~ "again.\""
+#~ msgstr ""
+#~ "\"Nicht ganz richtig. Bitte überprüfen und korrigieren Sie die rot "
+#~ "markierten Antworten.\""
+
+#~ msgid ""
+#~ "We will provide the information for your choices as shown below. Please "
+#~ "consider the picture carefully. It is important that you understand the "
+#~ "information."
+#~ msgstr ""
+#~ "Wir geben Ihnen die  Informationen für Ihre Entscheidungen wie unten "
+#~ "dargestellt. Bitte sehen Sie sich das Bild gut an. Es ist wichtig, dass "
+#~ "Sie die Darstellung verstehen."
+
+#~ msgid "Where do you see ..."
+#~ msgstr "Wo sehen Sie ..."
+
+#~ msgid "... the time left?"
+#~ msgstr "... die Zeit, die noch übrig ist?"
+
+#~ msgid "... the point goal?"
+#~ msgstr "... das Punkteziel?"
+
+#~ msgid "... your current points?"
+#~ msgstr "... den aktuellen Punktestand?"
+
+#~ msgid "In the example shown above ..."
+#~ msgstr "Im oben gezeigten Beispiel, ..."
+
+#~ msgid "Which decision, out of five, are you currently making?"
+#~ msgstr "Welche Entscheidung treffen Sie gerade?"
+
+#~ msgid "How many decisions did you already make in this round?"
+#~ msgstr "Wie viele Entscheidungen haben Sie schon getroffen in dieser Runde?"
+
+#~ msgid "How high is your point goal?"
+#~ msgstr "Wie hoch ist Ihr Punkteziel?"
+
+#~ msgid "How many points do you have currently?"
+#~ msgstr "Wie hoch ist Ihr aktueller Punktestand?"
+
+#~ msgid "What is the probability that Option A gives +2 points (in %%)?"
+#~ msgstr "Mit welcher Wahrscheinlichkeit gibt Option A +2 Punkte?"
+
+#~ msgid "Points"
+#~ msgstr "Punkte"
+
+#~ msgid "Choice"
+#~ msgstr "Entscheidung"
+
+#~ msgid ""
+#~ "In dieser Studie sammeln Sie Punkte. Es geht darum ein Punkteziel zu "
+#~ "erreichen, zum Beispiel mindestens 9 Punkte."
+#~ msgstr ""
+#~ "In dieser Studie sammeln Sie Punkte. Es geht darum ein Punkteziel zu "
+#~ "erreichen, zum Beispiel mindestens 9 Punkte."
+
+#~ msgid ""
+#~ "Sie sammeln Punkte, indem Sie sich zwischen zwei Optionen entscheiden. "
+#~ "Jeder Option gibt Ihnen unterschiedlich viele Punkte, aber wie viele "
+#~ "Punkte Sie exakt erhalten ist nicht sicher. Die Optionen schwanken in den "
+#~ "Punkten, die sie geben. Zum Beispiel gibt die hier gezeigte Option A in "
+#~ "30%% der Fälle +2 Punkte, aber in 70%% der Fälle 0 Punkte. Die Option B "
+#~ "gibt in 50%% der Fälle +4 und in 50%% der Fälle 0 Punkte. Wir sagen ihnen "
+#~ "immer genau, wie stark die Optionen schwanken."
+#~ msgstr ""
+#~ "Sie sammeln Punkte, indem Sie sich zwischen zwei Optionen entscheiden. "
+#~ "Jeder Option gibt Ihnen unterschiedlich viele Punkte, aber wie viele "
+#~ "Punkte Sie exakt erhalten ist nicht sicher. Die Optionen schwanken in den "
+#~ "Punkten, die sie geben. Zum Beispiel gibt die hier gezeigte Option A in "
+#~ "30%% der Fälle +2 Punkte, aber in 70%% der Fälle 1 Punkt. Die Option B "
+#~ "gibt in 50%% der Fälle +4 und in 50%% der Fälle 0 Punkte. Wir sagen ihnen "
+#~ "immer genau, wie stark die Optionen schwanken."
+
+#~ msgid ""
+#~ "Um das Punkteziel zu erreichen wählen Sie fünf Mal nacheinander zwischen "
+#~ "den Optionen. Sie sehen, in welcher Entscheidung Sie sich befinden, "
+#~ "anhand des hellblauen Kreises, z.B. in der ersten Entscheidung:"
+#~ msgstr ""
+#~ "Um das Punkteziel zu erreichen wählen Sie fünf Mal nacheinander zwischen "
+#~ "den Optionen. Sie sehen, in welcher Entscheidung Sie sich befinden, "
+#~ "anhand des hellblauen Kreises, z.B. in der ersten Entscheidung:"
+
+#~ msgid ""
+#~ "Nach jeder Entscheidung sehen Sie wie viele Punkte Sie von der von Ihnen "
+#~ "gewählten Option erhalten haben. Diese Punkte werden zu Ihrem Punktestand "
+#~ "addiert. Haben Sie zum Beispiel Option B gewählt und daraufhin +4 Punkte "
+#~ "erhalten, ist Ihr Punktestand wie folgt:"
+#~ msgstr ""
+#~ "Nach jeder Entscheidung sehen Sie wie viele Punkte Sie von der von Ihnen "
+#~ "gewählten Option erhalten haben. Diese Punkte werden zu Ihrem Punktestand "
+#~ "addiert. Haben Sie zum Beispiel Option B gewählt und daraufhin +4 Punkte "
+#~ "erhalten, ist Ihr Punktestand wie folgt:"
+
+#~ msgid ""
+#~ "<p> Entscheidend ist ob Sie nach den fünf Entscheidungen das Punkteziel "
+#~ "erreicht haben. Nach der fünften Entscheidung startet ein neuer Durchgang "
+#~ "(Sie erhalten 0 Punkte und sehen ein neues Ziel und neue Optionen), "
+#~ "unabhängig davon ob Sie das Punkteziel erreicht haben oder nicht. Der "
+#~ "neue Durchgang ist wie ein «neues Leben»: sie haben die Chance das "
+#~ "Punkteziel noch einmal zu erreichen. </p> <p> Für jedes Mal, wenn Sie das "
+#~ "Punkteziel erreichen, können Sie nach dem Experiment eine <b>Bonuszahlung "
+#~ "in Form von Geld</b> erhalten. Wenn Sie das Ziel nicht erreichen, "
+#~ "erhalten Sie für diesen Durchgang keine Bonuszahlung. Wir wählen am Ende "
+#~ "fünf aus allen Durchgängen zufällig aus und für jeden dieser Durchgänge "
+#~ "erhalten Sie +1 CHF, wenn Sie in diesem Durchgang das Punkteziel erreicht "
+#~ "haben. </p>"
+#~ msgstr ""
+#~ "<p> Entscheidend ist ob Sie nach den fünf Entscheidungen das Punkteziel "
+#~ "erreicht haben. Nach der fünften Entscheidung startet ein neuer Durchgang "
+#~ "(Sie erhalten 0 Punkte und sehen ein neues Ziel und neue Optionen), "
+#~ "unabhängig davon ob Sie das Punkteziel erreicht haben oder nicht. Der "
+#~ "neue Durchgang ist wie ein «neues Leben»: sie haben die Chance das "
+#~ "Punkteziel noch einmal zu erreichen. </p> <p> Für jedes Mal, wenn Sie das "
+#~ "Punkteziel erreichen, können Sie nach dem Experiment eine <b>Bonuszahlung "
+#~ "in Form von Geld</b> erhalten. Wenn Sie das Ziel nicht erreichen, "
+#~ "erhalten Sie für diesen Durchgang keine Bonuszahlung. Wir wählen am Ende "
+#~ "fünf aus allen Durchgängen zufällig aus und für jeden dieser Durchgänge "
+#~ "erhalten Sie +1 CHF, wenn Sie in diesem Durchgang das Punkteziel erreicht "
+#~ "haben. </p>"
+
+#~ msgid "New Round"
+#~ msgstr "Neue Runde"
+
+#~ msgid "You <i>reached</i> the goal in the last round."
+#~ msgstr "Sie haben das Ziel in der letzten Runde <i>erreicht</i>."
+
+#~ msgid "You did <i>not</i> reach the goal in the last round."
+#~ msgstr "Sie haben das Ziel in der letzten Runde <i>nicht</i> erreicht."
+
+#~ msgid "Continue with a new round (round"
+#~ msgstr "Weiter mit einer neuen Runde (Runde"
+
+#~ msgid "Goal:"
+#~ msgstr "Ziel:"
+
+#~ msgid "decisions"
+#~ msgstr "Entscheidungen"
+
+#~ msgid "Options:"
+#~ msgstr "Optionen:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p> Sehr geehrte Probandin, Sehr geehrter Proband, </p> <p> vielen Dank "
+#~| "für Ihr Interesse an dieser Studie. </p> <p> Das Ziel dieser Studie ist "
+#~| "es, menschliche Entscheidungen zu untersuchen. Die Studie dauert "
+#~| "ungefähr 30 Minuten. </p> <h4>Ihre Aufgabe</h4> <p>Sie treffen während "
+#~| "der Studie wiederholt Entscheidungen am Computer und beantworten danach "
+#~| "Fragen zu Ihrer Person. Ihre Aufgabe ist es, die Entscheidungen so gut "
+#~| "wie möglich zu treffen und die Fragen wahrheitsgemäss zu beantworten. "
+#~| "Die Fragen zu Ihrer Person können Fragen persönlicher Natur (z.B. über "
+#~| "Ihre finanzielle Situation) beinhalten. </p> <h4>Bezahlung</h4> <p> Jede/"
+#~| "r Teilnehmer/in erhält nach Beendigung der Studie ca. 7 CHF als "
+#~| "symbolische Aufwandsentschädigung (2.50 CHF pro angefangene "
+#~| "Vertelstunde). Zusätzlich erhalten Sie bis zu 5 CHF als variable "
+#~| "Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren "
+#~| "Entscheidungen während der Studie abhängt. </p> <h4>Keine Risiken</h4> "
+#~| "<p> Die Studienteilnahme ist mit keinerlei gesundheitlichen Risiken "
+#~| "verbunden. </p> <!-- Die Aufwandsentschädigung erhalten Sie nur "
+#~| "persönlich an der Universität Basel. Die Studie wird durch den Lehrstuhl "
+#~| "für ökonomische Psychologie an der Universität Basel finanziert. --> "
+#~| "<h4>Datenschutz</h4> <p> Alle in dieser Studie gesammelten Daten werden "
+#~| "anonymisiert ausgewertet und ausschliesslich innerhalb der Universität "
+#~| "Basel und von mit der Universität Basel kooperierenden Fachleuten für "
+#~| "wissenschaftliche Zwecke verwendet. Die Ergebnisse der Studie werden "
+#~| "anonymisiert in einer Gruppe zusammengefasst und ohne Bezug auf konkrete "
+#~| "Personen wissenschaftlich veröffentlicht. Die anonymisierten "
+#~| "Entscheidungsdaten werden, im Falle einer Publikation, in einer "
+#~| "wissenschaftlichen Datenbank öffentlich zugänglich gemacht. </p> "
+#~| "<h4>Abbruch</h4> <p> Ihre Teilnahme an dieser Studie ist freiwillig. Sie "
+#~| "haben jederzeit die Möglichkeit, die Studie ohne Angabe von Gründen "
+#~| "abzubrechen. Entsprechend Ihrer investierten Zeit erhalten Sie eine "
+#~| "anteilige Entlohnung. Die Einwilligung zur Verwendung Ihrer Daten können "
+#~| "Sie während der Studienteilnahme jederzeit per Email an jana."
+#~| "jarecki@unibas.ch widerrufen. Ein nachträglicher Widerruf nach "
+#~| "Beendigung der Studie ist aufgrund der anonymisierten Speicherung Ihrer "
+#~| "Daten nicht möglich. </p> <p> Sie erhalten eine Kopie dieser "
+#~| "Einverständniserklärung für Ihre Unterlagen.  Laden Sie sich diese hier "
+#~| "herunter: [PDF dieser Einverständniserklärung]. </p> <p> Ich habe die "
+#~| "aufgeführten Bedingungen gelesen und verstanden. Ich hatte genügend Zeit "
+#~| "eine Entscheidung zu treffen. Mit anklicken auf „weiter“ bestätige ich "
+#~| "dies und nehme an der Studie teil. </p>"
+#~ msgid ""
+#~ "<p> Sehr geehrte Probandin, Sehr geehrter Proband, </p> <p> vielen Dank "
+#~ "für Ihr Interesse an dieser Studie. </p> <p> Das Ziel dieser Studie ist "
+#~ "es, menschliche Entscheidungen zu untersuchen. Die Studie dauert ungefähr "
+#~ "30 Minuten. </p> <h4>Ihre Aufgabe</h4> <p>Sie treffen während der Studie "
+#~ "wiederholt Entscheidungen am Computer und beantworten danach Fragen zu "
+#~ "Ihrer Person. Ihre Aufgabe ist es, die Entscheidungen so gut wie möglich "
+#~ "zu treffen und die Fragen wahrheitsgemäss zu beantworten. Die Fragen zu "
+#~ "Ihrer Person können Fragen persönlicher Natur (z.B. über Ihre finanzielle "
+#~ "Situation) beinhalten. </p> <h4>Bezahlung</h4> <p> Jede/r Teilnehmer/in "
+#~ "erhält nach Beendigung der Studie ca. %(participation_fee|c)s als "
+#~ "symbolische Aufwandsentschädigung. Zusätzlich erhalten Sie eine "
+#~ "Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren Entscheidungen "
+#~ "während der Studie abhängt. </p> <h4>Keine Risiken</h4> <p> Die "
+#~ "Studienteilnahme ist mit keinerlei gesundheitlichen Risiken verbunden. </"
+#~ "p> <!-- Die Aufwandsentschädigung erhalten Sie nur persönlich an der "
+#~ "Universität Basel. Die Studie wird durch den Lehrstuhl für ökonomische "
+#~ "Psychologie an der Universität Basel finanziert. --> <h4>Datenschutz</h4> "
+#~ "<p> Alle in dieser Studie gesammelten Daten werden anonymisiert "
+#~ "ausgewertet und ausschliesslich innerhalb der Universität Basel und von "
+#~ "mit der Universität Basel kooperierenden Fachleuten für wissenschaftliche "
+#~ "Zwecke verwendet. Die Ergebnisse der Studie werden anonymisiert in einer "
+#~ "Gruppe zusammengefasst und ohne Bezug auf konkrete Personen "
+#~ "wissenschaftlich veröffentlicht. Die anonymisierten Entscheidungsdaten "
+#~ "werden, im Falle einer Publikation, in einer wissenschaftlichen Datenbank "
+#~ "öffentlich zugänglich gemacht. </p> <h4>Abbruch</h4> <p> Ihre Teilnahme "
+#~ "an dieser Studie ist freiwillig. Sie haben jederzeit die Möglichkeit, die "
+#~ "Studie ohne Angabe von Gründen abzubrechen. Entsprechend Ihrer "
+#~ "investierten Zeit erhalten Sie eine anteilige Entlohnung. Die "
+#~ "Einwilligung zur Verwendung Ihrer Daten können Sie während der "
+#~ "Studienteilnahme jederzeit per Email an jana.jarecki@unibas.ch "
+#~ "widerrufen. Ein nachträglicher Widerruf nach Beendigung der Studie ist "
+#~ "aufgrund der anonymisierten Speicherung Ihrer Daten nicht möglich. </p> "
+#~ "<p> Sie erhalten eine Kopie dieser Einverständniserklärung für Ihre "
+#~ "Unterlagen.  Laden Sie sich diese hier herunter: [PDF dieser "
+#~ "Einverständniserklärung]. </p> <p> Ich habe die aufgeführten Bedingungen "
+#~ "gelesen und verstanden. Ich hatte genügend Zeit eine Entscheidung zu "
+#~ "treffen. Mit anklicken auf „weiter“ bestätige ich dies und nehme an der "
+#~ "Studie teil. </p>"
+#~ msgstr ""
+#~ "<p> Sehr geehrte Probandin, Sehr geehrter Proband, </p> \n"
+#~ "<p> vielen Dank für Ihr Interesse an dieser Studie. </p>\n"
+#~ "\n"
+#~ "<p> Das Ziel dieser Studie ist es, menschliche Entscheidungen zu "
+#~ "untersuchen. Die Studie dauert ungefähr 30 Minuten. </p>\n"
+#~ "\n"
+#~ "<h4>Ihre Aufgabe</h4>\n"
+#~ "<p>Sie treffen während der Studie wiederholt Entscheidungen am Computer "
+#~ "und beantworten danach Fragen zu Ihrer Person. Ihre Aufgabe ist es, die "
+#~ "Entscheidungen so gut wie möglich zu treffen und die Fragen "
+#~ "wahrheitsgemäss zu beantworten. Die Fragen zu Ihrer Person können Fragen "
+#~ "persönlicher Natur (z.B. über Ihre finanzielle Situation) beinhalten. </"
+#~ "p>\n"
+#~ "\n"
+#~ "<h4>Vergütung</h4>\n"
+#~ "<p> Jede/r Teilnehmer/in erhält nach Beendigung der Studie ca. 7 CHF als "
+#~ "symbolische Aufwandsentschädigung (2.50 CHF pro angefangene "
+#~ "Vertelstunde). Zusätzlich erhalten Sie bis zu 5 CHF als variable "
+#~ "Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren Entscheidungen "
+#~ "während der Studie abhängt. Die Studie wird durch den Lehrstuhl für "
+#~ "ökonomische Psychologie an der Universität Basel finanziert.</p>\n"
+#~ "\n"
+#~ "<h4>Keine Risiken, keine Kosten</h4>\n"
+#~ "<p> Die Studienteilnahme ist mit keinerlei gesundheitlichen Risiken "
+#~ "verbunden. Die Studienteilnahme ist mit keinerlei finanziellen Kosten für "
+#~ "Sie verbunden.</p>\n"
+#~ " <!-- Die Aufwandsentschädigung erhalten Sie nur persönlich an der "
+#~ "Universität Basel.--> \n"
+#~ "\n"
+#~ "<h4>Datenschutz</h4>\n"
+#~ "<p>Dies ist eine anonymisierte Studie. Alle Informationen, die Sie "
+#~ "angeben, werden vertraulich behandelt, es ist nicht möglich Sie als "
+#~ "Einzelperson in der Studie zu identifizieren oder von Ihren Antworten auf "
+#~ "Sie als Person zurückzuschliessen. Alle in dieser Studie gesammelten "
+#~ "Daten werden anonymisiert ausgewertet und ausschliesslich innerhalb der "
+#~ "Universität Basel und von mit der Universität Basel kooperierenden "
+#~ "Fachleuten für wissenschaftliche Zwecke verwendet. Die Ergebnisse der "
+#~ "Studie werden anonymisiert in einer Gruppe zusammengefasst und ohne Bezug "
+#~ "auf konkrete Personen wissenschaftlich veröffentlicht. Die Daten werden, "
+#~ "in anonymisierter Form, in einer wissenschaftlichen Onlinedatenbank "
+#~ "anderen Forschenden für weitere Analyse zugänglich gemacht.</p>\n"
+#~ "\n"
+#~ "<h4>Abbruch</h4>\n"
+#~ "<p>Ihre Teilnahme an dieser Studie ist freiwillig. Sie haben jederzeit "
+#~ "die Möglichkeit, die Studie ohne Angabe von Gründen abzubrechen. "
+#~ "Entsprechend Ihrer investierten Zeit erhalten Sie eine anteilige "
+#~ "Entlohnung. Die Einwilligung zur Verwendung Ihrer Daten können Sie "
+#~ "während der Studienteilnahme jederzeit per Email an jana.jarecki@unibas."
+#~ "ch widerrufen. Ein nachträglicher Widerruf nach Beendigung der Studie ist "
+#~ "aufgrund der anonymisierten Speicherung Ihrer Daten nicht möglich. </p> "
+#~ "<p> Sie erhalten eine Kopie dieser Einverständniserklärung für Ihre "
+#~ "Unterlagen.  Laden Sie sich diese hier herunter: [PDF dieser "
+#~ "Einverständniserklärung].</p>\n"
+#~ "\n"
+#~ "<p> Ich habe die aufgeführten Bedingungen gelesen und verstanden. Ich "
+#~ "hatte genügend Zeit eine Entscheidung zu treffen. Mit anklicken auf "
+#~ "„weiter“ bestätige ich dies und nehme an der Studie teil. </p>"
