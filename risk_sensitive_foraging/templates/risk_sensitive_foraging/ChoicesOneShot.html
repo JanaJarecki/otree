@@ -51,6 +51,8 @@
 {% block scripts %}
   <script>
 
+  $('.option').attr('name', 'choice' + {{ player.state }} );
+
   var draw = function() {
     drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, '');
     drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
