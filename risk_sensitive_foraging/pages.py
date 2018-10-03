@@ -15,7 +15,6 @@ class Consent(Page):
 
 
 class Coverstory(Page):
-
   def is_displayed(self):
     return self.round_number == 1
 
@@ -26,7 +25,6 @@ class Coverstory_check(Page):
 
 
 class Incentives(Page):
-
   def is_displayed(self):
     return self.round_number == 1
 
@@ -48,29 +46,21 @@ class ResultsWaitPage(WaitPage):
 
 
 class NewBlock(Page):
-
   def is_displayed(self):
     return (self.subsession.is_new_block() & self.subsession.is_multitrial())
 
   def vars_for_template(self):
     return {
-    'currentblock': self.player.block,
-    'currentstate': self.player.state,
-    'x1': self.participant.vars['actions'][self.player.block][0][ :2],
-    'p1': self.participant.vars['actions'][self.player.block][0][2:],
-    'x2': self.participant.vars['actions'][self.player.block][1][ :2],
-    'p2': self.participant.vars['actions'][self.player.block][1][2:],
-    'budget': self.player.budget,
-    'num_blocks': self.session.vars['num_blocks'],
-    'successes': self.player.get_last_success()
+      'currentblock': self.player.block,
+      'currentstate': self.player.state,
+      'x1': self.participant.vars['actions'][self.player.block][0][ :2],
+      'p1': self.participant.vars['actions'][self.player.block][0][2:],
+      'x2': self.participant.vars['actions'][self.player.block][1][ :2],
+      'p2': self.participant.vars['actions'][self.player.block][1][2:],
+      'budget': self.player.budget,
+      'num_blocks': self.session.vars['num_blocks'],
+      'successes': self.player.get_last_success()
     }
-
-
-class InstructionOneshot(Page):
-
-  def is_displayed(self):
-    return self.round_number == Constants.num_multitrial
-
 
 class Choices(Page):
   form_model = 'player'
@@ -94,13 +84,19 @@ class Choices(Page):
   #     self.player.get_outcome()
     # self.player.update_successes()
 
+class InstructionOneshot(Page):
+  def is_displayed(self):
+    return self.round_number == Constants.num_multitrial + 1
 
 class ChoicesOneShot(Page):
   form_model = 'player'
-  form_fields = ['choice']
-
   def is_displayed(self):
     return self.round_number > Constants.num_multitrial
+
+  def get_form_fields(self):
+    choicefields = ['choice' +str(int(self.player.trial))]
+    statefields = ['state' +str(int(self.player.trial))]
+    return choicefields + statefields
 
   def vars_for_template(self):
     return self.player.vars_for_template()
@@ -111,9 +107,9 @@ class ChoicesOneShot(Page):
 
 
 class Results(Page):
-
   def is_displayed(self):
     return self.round_number <= Constants.num_multitrial
+
   def vars_for_template(self):
     maxx = max(map(max, *self.participant.vars['actions'][self.player.block]))
     max_earnings = max(maxx * Constants.num_trials, self.player.budget + .01)
@@ -130,36 +126,36 @@ class Results(Page):
       }
 
 
-class ChoicesUncover(Page):
+# class ChoicesUncover(Page):
 
-  def is_displayed(self):
-    return self.round_number == 5
-  form_model = 'player'
-  form_fields = ['choice']
-  def vars_for_template(self):
-    return {
-      'HV': self.participant.vars['outcomes'][1],
-      'HP': self.participant.vars['probabilities'][1],
-      'LV': self.participant.vars['outcomes'][0],
-      'LP': self.participant.vars['probabilities'][0],
-      'state': sum([p.state for p in self.player.in_all_rounds()]),
-      'budget': self.player.budget,
-      'choice': self.player.choice,
-      'chart_trial': [1] * (self.participant.vars['trial'] + 1),
-      'max_less_state': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds - sum([p.outcome for p in self.player.in_all_rounds()]),
-      'max_earning': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds
-      }
+#   def is_displayed(self):
+#     return self.round_number == 5
+#   form_model = 'player'
+#   form_fields = ['choice']
+#   def vars_for_template(self):
+#     return {
+#       'HV': self.participant.vars['outcomes'][1],
+#       'HP': self.participant.vars['probabilities'][1],
+#       'LV': self.participant.vars['outcomes'][0],
+#       'LP': self.participant.vars['probabilities'][0],
+#       'state': sum([p.state for p in self.player.in_all_rounds()]),
+#       'budget': self.player.budget,
+#       'choice': self.player.choice,
+#       'chart_trial': [1] * (self.participant.vars['trial'] + 1),
+#       'max_less_state': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds - sum([p.outcome for p in self.player.in_all_rounds()]),
+#       'max_earning': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds
+#       }
 
 
 page_sequence = [
-  Consent,
+  #Consent,
   #Coverstory,
   #Coverstory_check,
   #Incentives,
   # ResultsWaitPage,
-  NewBlock,
-  Choices,
+  #NewBlock,
+  #Choices,
+  #InstructionOneshot,
   ChoicesOneShot,
   # Results,
-  InstructionOneshot,
 ]

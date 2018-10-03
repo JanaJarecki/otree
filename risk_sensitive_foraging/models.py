@@ -151,7 +151,7 @@ def make_state_field(trial):
 
 # Every round the playder object is re-initialized
 class Player(BasePlayer):
-  block = models.FloatField(doc = "Current block")
+  block = models.IntegerField(doc = "Current block")
   trial = models.FloatField(doc = "Current trial (of 5)")  
   state = models.FloatField(doc = "Accumulated points before the current decision")
   budget = models.FloatField(doc = "Earnings requirement in current block")
