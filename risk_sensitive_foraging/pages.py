@@ -148,14 +148,14 @@ class Results(Page):
 
 
 page_sequence = [
-  #Consent,
-  #Coverstory,
+  Consent,
+  Coverstory,
   #Coverstory_check,
   #Incentives,
-  # ResultsWaitPage,
-  #NewBlock,
-  #Choices,
-  #InstructionOneshot,
+  #ResultsWaitPage,
+  NewBlock,
+  Choices,
+  InstructionOneshot,
   ChoicesOneShot,
-  # Results,
+  #Results,
 ]
