@@ -55,20 +55,20 @@ SESSION_CONFIGS = [
         'app_sequence': ['risk_sensitive_foraging'],
         'real_world_currency_per_success': 0.10,
     },
-    {
-        'name': 'gneezy_potter',
-        'display_name': "Gneezy & Potter",
-        'num_demo_participants': 1,
-        'app_sequence': ['gneezy_potter'],
-        'real_world_currency_per_success': 1.00,
-    },
-    {
-        'name': 'risk_domains',
-        'display_name': "Risk in Domains",
-        'num_demo_participants': 1,
-        'app_sequence': ['risk_domains'],
-        'real_world_currency_per_success': 1.00,
-    },
+    # {
+        # 'name': 'gneezy_potter',
+        # 'display_name': "Gneezy & Potter",
+        # 'num_demo_participants': 1,
+        # 'app_sequence': ['gneezy_potter'],
+        # 'real_world_currency_per_success': 1.00,
+    # },
+    # {
+        # 'name': 'risk_domains',
+        # 'display_name': "Risk in Domains",
+        # 'num_demo_participants': 1,
+        # 'app_sequence': ['risk_domains'],
+        # 'real_world_currency_per_success': 1.00,
+    # },
 ]
 # see the end of this file for the inactive session configs
 
