@@ -1,0 +1,73 @@
+{% extends "risk_domains/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <input type="hidden" name="f1" id="f0"/>
+  <input type="hidden" name="f2" id="f1"/>
+  <input type="hidden" name="f2" id="f2"/>
+
+  <div class = "noselect">
+    <!--<img class = "round" src = "{% static domain_img %}""></img>-->
+      <p>
+        <b>{{ domain_label }}</b> {{ domain_description.0 }} Consider the situation below and decide:
+      </p>
+      <h2>{{ domain_question }}?</h2>
+        {% include 'risk_domains/stimulus.html' %}
+      </div>
+
+    <div class = "flex-attribute-container">
+        <button  name="choice" value="0" class="btn btn-primary btn-large choice-btn"><p>NO</p></button>
+        <button name="choice" value="1" class="btn btn-primary btn-large choice-btn"><p>YES</p></button>
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+    var features = {{ features | json }};
+    var trial = {{ player.round_number | json }};
+    trial = trial - Math.floor(trial / 27) * 27;
+    var attribute_values = features[trial];
+
+/* TODO JJ: fix the storage of shown values
+ $.each(attribute_values, function(index, element) {
+      alert("#f" +index);
+      alert(element);
+      $( "#f" +index ).val(element.toString());
+    });*/
+
+    /*http://mkweb.bcgsc.ca/brewer/*/
+    colors = ["#DEEBF7", "#9ECAE1 ", "#3182BD"]
+
+    function set_attribute_value(attribute, v) {
+      $( ".value", attribute).each( function(index, element) {
+        if (index <= v) {
+          $( element ).css('background-color', colors[v]);
+        } else {
+          $( element ).css('background-color', 'inherit');
+        }
+      });
+      $( ".value-label", attribute).each( function(index, element) {
+        if (index != v) {
+          $( element ).css('color', 'lightgrey');
+        } else {
+          $( element ).css('color', 'black');
+        }
+      });      
+    }
+
+    $( ".grey-border" ).each( function(index, element) {
+      set_attribute_value(this, attribute_values[index]);
+    });
+
+  </script>
+{% endblock %}
+
+
+
+
+

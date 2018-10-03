@@ -1,0 +1,39 @@
+{% extends "risk_domains/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Select a Domain
+{% endblock %}
+
+{% block content %}
+  
+  <input type="hidden" name="selectedDomain" id="id_selectedDomain"/>
+
+  <div class = "domain-btn-container">
+
+    {% for i, j, k in domains %}
+      <span class = "inner-container" id = "{{ j }}">
+        <input type="image" class="domain-btn round" src="{% static i %}" name="{{ k }}" id="domain"/>
+        <label for="{{ k }}" class="centered domain-label">{{ j }}</label>
+      </span>
+    {% endfor %}
+
+  </div> 
+
+  {% next_button %}
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  $('input#domain').click(function () {
+    $( '#' +this.name ).hide(10);
+    $('#id_selectedDomain').val(this.name);
+  });
+</script>
+{% endblock %}
+
+
+
+
+

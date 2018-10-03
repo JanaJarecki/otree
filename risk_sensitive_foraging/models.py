@@ -135,12 +135,11 @@ class Subsession(BaseSubsession):
     xx = (self.round_number - 1) < Constants.num_multitrial
     return xx
 
-  pass
-
-
 
 class Group(BaseGroup):
+
   pass
+
 
 def make_choice_field(trial):
   return models.IntegerField(
@@ -246,5 +245,3 @@ class Player(BasePlayer):
       'num_blocks': self.session.vars[nb],
       'multitrial': (self.round_number - 1) < Constants.num_multitrial
     }
-
-pass

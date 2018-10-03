@@ -1,0 +1,71 @@
+{% extends "risk_domains/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {{ domain_label }}
+{% endblock %}
+
+{% block content %}
+  <div class = "domain-btn-container noselect">
+    <img class = "round" src = "{% static domain_img %}""></img>
+    <p>
+      <b>{{ domain_label }}</b> {{ domain_description.0 }} {{ domain_description.1 }}
+    </p>
+    <p>
+      We ask you to think of {{ domain_label }} considering the three factors displayed below. Please click on each of them 9 times to familiarize yourself with them.
+    </p>
+    {% include 'risk_domains/stimulus.html' %}
+  </div>
+
+  {% next_button %}
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+    var val0 = -1;
+    var attribute_values = [val0, val0, val0];
+
+    function set_attribute_value(attribute, v) {
+      $( ".value", attribute).each( function(index, element) {
+        if (index <= v) {
+          $( element ).css('background-color', 'grey');
+        } else {
+          $( element ).css('background-color', 'inherit');
+        }
+      });
+      $( ".value-label", attribute).each( function(index, element) {
+        if (index != v) {
+          $( element ).css('color', 'lightgrey');
+        } else {
+          $( element ).css('color', 'black');
+        }
+      });      
+    }
+
+    $( ".grey-border" ).each( function(index, element) {
+      set_attribute_value(this, attribute_values[index]);
+    });
+
+    $( ".grey-border ").css('cursor', 'pointer')
+
+    var counter = [0, 0, 0]
+
+    $( ".grey-border" ).click( function() {
+      var index = $( ".grey-border" ).index(this);
+      counter[index] += 1;
+      attribute_values[index] += 1;
+      if (attribute_values[index] > 2) attribute_values[index] = 0;
+      set_attribute_value(this, attribute_values[index]);
+      if (counter[index] > 9 ) {
+        alert("enough");
+      }
+      });
+
+  </script>
+{% endblock %}
+
+
+
+
+

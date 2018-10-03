@@ -4,34 +4,38 @@ from .models import Constants
 
 
 class Consent(Page):
+
   def is_displayed(self):
     return self.round_number == 1
+
   def vars_for_template(self):
     return {
     'participation_fee': self.session.config['participation_fee'],
     }
-  pass
+
 
 class Coverstory(Page):
+
   def is_displayed(self):
     return self.round_number == 1
-  pass
+
 
 class Coverstory_check(Page):
   def is_displayed(self):
     return self.round_number == 1
-  pass
+
 
 class Incentives(Page):
+
   def is_displayed(self):
     return self.round_number == 1
+
   def vars_for_template(self):
     return {
     'participation_fee': self.session.config['participation_fee'],
     'real_world_currency_per_point': self.session.config['real_world_currency_per_point'],
     'real_world_currency_per_success': self.session.config['real_world_currency_per_success']
     }
-  pass
 
 
 class ResultsWaitPage(WaitPage):
@@ -41,11 +45,13 @@ class ResultsWaitPage(WaitPage):
         p.successes = p.get_last_success()
         if (not self.subsession.is_new_block()) & self.subsession.is_multitrial():
             p.state = p.get_last_state()
-            
+
 
 class NewBlock(Page):
+
   def is_displayed(self):
     return (self.subsession.is_new_block() & self.subsession.is_multitrial())
+
   def vars_for_template(self):
     return {
     'currentblock': self.player.block,
@@ -58,21 +64,25 @@ class NewBlock(Page):
     'num_blocks': self.session.vars['num_blocks'],
     'successes': self.player.get_last_success()
     }
-  pass
+
 
 class InstructionOneshot(Page):
+
   def is_displayed(self):
     return self.round_number == Constants.num_multitrial
-  pass
+
 
 class Choices(Page):
+  form_model = 'player'
+
   def is_displayed(self):
     return self.round_number <= Constants.num_multitrial
-  form_model = 'player'
+
   def get_form_fields(self):
     choicefields = ['choice{}'.format(i) for i in range(1, Constants.num_trials + 1)]
     statefields = ['state{}'.format(i) for i in range(1, Constants.num_trials + 2)]
     return choicefields + statefields + ['successes']
+
   def vars_for_template(self):
     context =  self.player.vars_for_template()
     context.update({
@@ -83,22 +93,25 @@ class Choices(Page):
   #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
     # self.player.update_successes()
-  pass
+
 
 class ChoicesOneShot(Page):
+  form_model = 'player'
+  form_fields = ['choice']
+
   def is_displayed(self):
     return self.round_number > Constants.num_multitrial
-  form_model = 'player'
-  form_filds = ['choice']
+
   def vars_for_template(self):
     return self.player.vars_for_template()
   # def before_next_page(self):
   #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
   #     self.player.update_successes()
-  pass
+
 
 class Results(Page):
+
   def is_displayed(self):
     return self.round_number <= Constants.num_multitrial
   def vars_for_template(self):
@@ -115,9 +128,10 @@ class Results(Page):
       'num_blocks': self.session.vars['num_blocks'],
       'successes': p.successes
       }
-  pass
+
 
 class ChoicesUncover(Page):
+
   def is_displayed(self):
     return self.round_number == 5
   form_model = 'player'
@@ -135,9 +149,6 @@ class ChoicesUncover(Page):
       'max_less_state': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds - sum([p.outcome for p in self.player.in_all_rounds()]),
       'max_earning': int(max(self.participant.vars['outcomes'][1])) * Constants.num_rounds
       }
-  pass
-
-
 
 
 page_sequence = [

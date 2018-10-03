@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    The North Remembers
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.name label="Hey - what's your name?" %}
+
+    {% formfield player.age label="Stop, dude. How old are you?" %}
+
+    {% next_button %}
+
+{% endblock %}
