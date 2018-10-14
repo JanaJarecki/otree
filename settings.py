@@ -49,18 +49,27 @@ SESSION_CONFIGS = [
     #     'app_sequence': ['my_simple_survey'],
     # },
     {
-        'name': 'risk_sensitive_foraging',
-        'display_name': "Risk sensitive foraging",
+        'name': 'RSF_Study_1',
+        'display_name': "Choice Study",
         'num_demo_participants': 1,
-        'app_sequence': ['risk_sensitive_foraging'],
-        'real_world_currency_per_success': 0.10,
+        'participation_fee' : 4,
+        'app_sequence': ['risk_sensitive_foraging', 'payment_info'],
+        'real_world_currency_per_point': 0.10,
     },
     # {
-        # 'name': 'gneezy_potter',
-        # 'display_name': "Gneezy & Potter",
-        # 'num_demo_participants': 1,
-        # 'app_sequence': ['gneezy_potter'],
-        # 'real_world_currency_per_success': 1.00,
+    #     'name': 'risk_sensitive_foraging',
+    #     'display_name': "Risk sensitive foraging",
+    #     'num_demo_participants': 1,
+    #     'participation_fee' : 50,
+    #     'app_sequence': ['risk_sensitive_foraging'],
+    #     'real_world_currency_per_point': 0.10,
+    # },
+    # {
+    #     'name': 'gneezy_potter',
+    #     'display_name': "Gneezy & Potter",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['gneezy_potter'],
+    #     'real_world_currency_per_success': 1.00,
     # },
     # {
         # 'name': 'risk_domains',
@@ -78,14 +87,14 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'CHF '
-USE_POINTS = False
+REAL_WORLD_CURRENCY_CODE = 'GBP'
+USE_POINTS = True
+POINTS_DECIMAL_PLACES = 2
 
 ROOMS = [
     {
-        'name': 'econ101',
-        'display_name': 'Econ 101 class',
-        'participant_label_file': '_rooms/econ101.txt',
+        'name': 'prolific',
+        'display_name': 'Prolific Choice Study'
     },
     {
         'name': 'live_demo',
