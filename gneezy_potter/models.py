@@ -31,5 +31,5 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-  riskGneezyPotter = make_field('67% earn zero or 33% earn 2.5X.')
+  riskGneezyPotter = make_field('67% earn zero or 33% earn 2.5 times the amount.')
   pass

@@ -26,7 +26,7 @@
 
   <form id = "check">
     <fieldset class = "rsft-form">
-    <legend>  {% blocktrans trimmed %}Im obigen Bild, wo sehen Sie ...
+    <legend>  {% blocktrans trimmed %}Bitte wählen Sie den Buchstaben, der im obigen Bild die jeweilige Information markiert. Wo sehen Sie im obigen Bild ...
   {% endblocktrans %}</legend>
     <p>
       <label for="q1">  {% blocktrans trimmed %}... die verbleibende Zeit?
@@ -58,7 +58,7 @@
   {% endblocktrans %}</legend>
     <p>
       <label for="q6">{% blocktrans trimmed %}Die wievielte Entscheidung treffen Sie gerade?{% endblocktrans %}</label>
-      <input id="q6" name="q6" minlength="1" maxlength="1" type="number" required placeholder="N" onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
+      <input id="q6" name="q6" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
     </p>
     <p>
       <label for="q7">{% blocktrans trimmed %}Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?{% endblocktrans %}</label>
@@ -98,7 +98,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
 
   <script>
-    var answers = ["a", "c", "b", "d", "e", "3", "2", "9", "4", "4", "20"];
+    var answers = ["a", "c", "b", "d", "e", "3", "2", "9", "8", "4", "20"];
     var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11"];
 
     function check_answers(i) {

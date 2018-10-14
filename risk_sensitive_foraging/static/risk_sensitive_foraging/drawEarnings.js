@@ -5,6 +5,11 @@ function drawEarnings(target, s, b, mls, maxx, showx, showb, xLabel) {
   $(function () {
     Highcharts.chart(target, {
       chart: {
+        events: {
+          load: function() {
+            start = window.performance.now();
+          }
+        },
         type: 'bar',
         margin: [0, 3, 25, 15], /*20, 50, 25, 124*/
       },

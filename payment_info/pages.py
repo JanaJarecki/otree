@@ -9,6 +9,7 @@ class PaymentInfo(Page):
         participant = self.participant
         return {
             'redemption_code': participant.label or participant.code,
+            'payment': self.participant.payoff_plus_participation_fee()
         }
 
 

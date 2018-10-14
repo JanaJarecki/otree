@@ -2,15 +2,20 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+class Prolificid(Page):
+  form_model = 'player'
+  form_fields = ['prolificid']
+  def is_displayed(self):
+    return self.round_number == 1
+
 
 class Consent(Page):
-
   def is_displayed(self):
     return self.round_number == 1
 
   def vars_for_template(self):
     return {
-    'participation_fee': self.session.config['participation_fee'],
+    'participation_fee': self.participant.payoff_plus_participation_fee(),
     }
 
 
@@ -30,9 +35,9 @@ class Incentives(Page):
 
   def vars_for_template(self):
     return {
-    'participation_fee': self.session.config['participation_fee'],
-    'real_world_currency_per_point': self.session.config['real_world_currency_per_point'],
-    'real_world_currency_per_success': self.session.config['real_world_currency_per_success']
+    'participation_fee': self.participant.payoff_plus_participation_fee(),
+    'real_world_currency_per_point': c(1).to_real_world_currency(self.session),
+    'example_pay': c(12).to_real_world_currency(self.session)
     }
 
 
@@ -50,17 +55,14 @@ class NewBlock(Page):
     return (self.subsession.is_new_block() & self.subsession.is_multitrial())
 
   def vars_for_template(self):
-    return {
+    context =  self.player.vars_for_template()
+    context.update({
       'currentblock': self.player.block,
-      'currentstate': self.player.state,
-      'x1': self.participant.vars['actions'][self.player.block][0][ :2],
-      'p1': self.participant.vars['actions'][self.player.block][0][2:],
-      'x2': self.participant.vars['actions'][self.player.block][1][ :2],
-      'p2': self.participant.vars['actions'][self.player.block][1][2:],
       'budget': self.player.budget,
       'num_blocks': self.session.vars['num_blocks'],
-      'successes': self.player.get_last_success()
-    }
+      'successes': self.player.get_last_success(),
+      'successes': self.player.get_last_success()})
+    return context
 
 class Choices(Page):
   form_model = 'player'
@@ -71,7 +73,8 @@ class Choices(Page):
   def get_form_fields(self):
     choicefields = ['choice{}'.format(i) for i in range(1, Constants.num_trials + 1)]
     statefields = ['state{}'.format(i) for i in range(1, Constants.num_trials + 2)]
-    return choicefields + statefields + ['successes']
+    rtfields = ['rt_ms{}'.format(i) for i in range(1, Constants.num_trials + 1)]
+    return choicefields + statefields + rtfields + ['success'] + ['successes']
 
   def vars_for_template(self):
     context =  self.player.vars_for_template()
@@ -79,6 +82,10 @@ class Choices(Page):
       'outcomes': self.participant.vars['outcomes'][self.player.block],
       'successes': self.player.get_last_success()})
     return context
+
+  def before_next_page(self):
+    if self.round_number == Constants.num_multitrial:
+      self.player.draw_bonus()
   # def before_next_page(self):
   #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
@@ -96,12 +103,13 @@ class ChoicesOneShot(Page):
   def get_form_fields(self):
     choicefields = ['choice' +str(int(self.player.trial))]
     statefields = ['state' +str(int(self.player.trial))]
-    return choicefields + statefields
+    rtfields = ['rt_ms' +str(int(self.player.trial))]
+    return choicefields + statefields + rtfields
 
   def vars_for_template(self):
     return self.player.vars_for_template()
+
   # def before_next_page(self):
-  #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
   #     self.player.update_successes()
 
@@ -126,6 +134,17 @@ class Results(Page):
       }
 
 
+class Payment(Page):
+  def is_displayed(self):
+    return self.round_number >= Constants.num_rounds
+
+  def vars_for_template(self):
+    return {
+      'participation_fee': c(self.session.config['participation_fee']).to_real_world_currency(self.session),
+      # 'bonus': c(self.player.bonus).to_real_world_currency(self.session),
+      'bonus': c(self.player.draw_bonus()).to_real_world_currency(self.session)
+      }
+
 # class ChoicesUncover(Page):
 
 #   def is_displayed(self):
@@ -148,14 +167,13 @@ class Results(Page):
 
 
 page_sequence = [
-  Consent,
-  Coverstory,
-  #Coverstory_check,
-  #Incentives,
-  #ResultsWaitPage,
-  NewBlock,
-  Choices,
+  Prolificid,
+  # Consent,
+  # Coverstory,
+  # #Coverstory_check,
+  # #Incentives,
+  # NewBlock,
+  # Choices,
   InstructionOneshot,
-  ChoicesOneShot,
-  #Results,
-]
+  ChoicesOneShot
+  ]

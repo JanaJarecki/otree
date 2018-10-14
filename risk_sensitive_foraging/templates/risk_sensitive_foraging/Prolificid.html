@@ -1,0 +1,33 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>{% blocktrans trimmed %}Information{% endblocktrans %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<div>
+  <h3>Please</h3>
+  <ul>
+      <li>Confirm you have a good internet connection.</li>
+      <li>Please, switch off music now.</li>
+      <li>Switch off your cellphone now or turn it to silent mode.</li>
+      <li>Make sure you have 30 minutes uninterrupted time</li>
+  </ul>
+
+  <h3>Your Prolific ID</h3>
+  <p> Please enter your Prolific ID:</p>
+
+  {% for field in form %}
+    {% formfield field %}
+  {% endfor %}
+
+</div>
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}

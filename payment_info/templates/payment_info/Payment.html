@@ -1,0 +1,28 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ende der Studie{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  {% blocktrans with fee=participation_fee bonus=bonus%}
+  <p>
+  Vielen Dank für die Teilnahme.
+  </p>
+  <h3>Ihre Auszahlung</h3>
+  <p>
+    Für die Teilnahme erhalten Sie <strong>{{ fee }}</strong>. Ihre Bonuszahlung aufgrund ihrer Entscheidungen ist <strong>{{ bonus }}.</strong>
+  </p>
+  {% endblocktrans %}  
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

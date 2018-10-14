@@ -23,12 +23,6 @@
   {% endblocktrans %}
   </p>
 
-  
-
-<!-- 0,2,0.1,0.9,0,4,0.5,0.5,9
-1,3,0.1,0.9,1,5,0.1,0.9,12
-1,2,0.5,0.5,0,3,0.5,0.5,11 -->
-
   <h3>{% blocktrans trimmed %}Punkte sammeln{% endblocktrans %}</h3>
   <p>
   {% blocktrans trimmed %}
@@ -68,12 +62,15 @@
   {% endblocktrans %}
   </p>
 
-  <img class = 'center' src='{% static "risk_sensitive_foraging/point_feedback.jpg" %}' width = '70%'>
-  <img class = "center " src='{% static "risk_sensitive_foraging/example_earnings_added.png" %}' width = "400px">
   <p class = 'example'>
     {% blocktrans trimmed %}
     Sie wählen Option B (die rechte Option). Die Option wurde realisiert und ergab +4&nbsp;Punkte. Ihr aktueller Punktestand ist jetzt 4 statt 0 Punkte. {% endblocktrans %}  
   </p>
+
+  <!--<img class = 'center' src='{% static "risk_sensitive_foraging/point_feedback.jpg" %}' width = '70%'>-->
+
+  <img class = "center " src='{% static "risk_sensitive_foraging/example_earnings_added.png" %}' width = "400px">
+  
 
   <p> {% blocktrans trimmed %}
      Danach entscheiden Sie sich wieder zwischen Option A und Option B, ihr aktueller Punktestand ist der neue Punktestand. Sie treffen insgesamt 5 solcher Entscheidungen, nach jeder Entscheidung passt sich ihr aktueller Punktestand an. Die Wahrscheinlichkeiten der Optionen bleiben jedoch unverändert, unabhängig davon was Sie gerade gewählt und erhalten haben. {% endblocktrans %}    

@@ -34,9 +34,9 @@
 
   <h3>{% blocktrans trimmed %}Bezahlung{% endblocktrans %}</h3>
   <p>{% blocktrans trimmed %}
-  Jede/r Teilnehmer/in erhält nach Beendigung der Studie ca.{% endblocktrans %}
+  Jede/r Teilnehmer/in erhält nach Beendigung der Studie{% endblocktrans %}
 
-  {{ participation_fee|c }}
+  {{ participation_fee }}
 
   {% blocktrans trimmed %}als symbolische Aufwandsentschädigung. Zusätzlich erhalten Sie eine Bonuszahlung, wobei die Höhe dieser Bonuszahlung von Ihren Entscheidungen während der Studie abhängt.
   {% endblocktrans %}
@@ -63,14 +63,14 @@
   </p>
 
   <p>{% blocktrans trimmed %}
-  Sie erhalten eine Kopie dieser Einverständniserklärung für Ihre Unterlagen.  Laden Sie sich diese hier herunter: [PDF dieser Einverständniserklärung].
+  Sie können sich diese Einverständniserklärung für Ihre Unterlagen ausdrucken.
   {% endblocktrans %}
   </p>
 
-  <p>{% blocktrans trimmed %}
-  Ich habe die aufgeführten Bedingungen gelesen und verstanden. Ich hatte genügend Zeit eine Entscheidung zu treffen. Mit anklicken auf „weiter“ bestätige ich dies und nehme an der Studie teil.
+  <p><strong>{% blocktrans trimmed %}
+  Ich habe die aufgeführten Bedingungen gelesen und verstanden. Ich hatte genügend Zeit eine Entscheidung zu treffen. Mit anklicken auf „weiter“ bestätige ich, dass ich die Einverständniserklärung gelesen habe und an dieser Studie teilnehmen möchte und 18 Jahre alt oder älter bin. Falls Sie nicht einverstanden sind, verlassen Sie die Studie bitte jetzt.
   {% endblocktrans %}
-  </p>
+  </strong></p>
 
 
 <div class = "right">

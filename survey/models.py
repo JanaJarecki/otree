@@ -20,9 +20,8 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-
     age = models.IntegerField(
-        verbose_name='What is your age?',
+        verbose_name='How old are you?',
         min=13, max=125)
 
     gender = models.StringField(
@@ -30,25 +29,48 @@ class Player(BasePlayer):
         verbose_name='What is your gender?',
         widget=widgets.RadioSelect)
 
-    crt_bat = models.IntegerField(
+    nativelang = models.StringField(
+        choices = ['Yes', 'No'],
+        verbose_name='Is English your native language?')
+
+    selfrep_dataquality = models.IntegerField(
+        choices = [
+        [0, 'Not useful at all'],
+        [1, 'Not very useful'],
+        [2, 'Mostly useful'],
+        [3, 'Completely useful']
+        ],
+        verbose_name = "Is the data you just generated of sufficient quality to be useful for scientific research? (Have you been concentrated and payed attention to the instructions) Please answer honestly.",
+        widget=widgets.RadioSelect)
+
+    income = models.IntegerField(
+        choices = [
+        [0, 'up to 1000'],
+        [1, '1001 - 2000'],
+        [2, '2001 - 3000'],
+        [3, '3001 - 4000'],
+        [4, '4001 - or more'],
+        [99, 'Do not want to answer']
+        ],
+        verbose_name = 'Which category does your monthly income (after tax) fall into?')
+
+    choice_strategie = models.LongStringField(
         verbose_name='''
-        A bat and a ball cost 22 dollars in total.
-        The bat costs 20 dollars more than the ball.
-        How many dollars does the ball cost?'''
+        Please think back to the choice phase (when you decided between the two options). Can you describe how you made the decision which of the two options to pick?''',
     )
 
-    crt_widget = models.IntegerField(
-        verbose_name='''
-        "If it takes 5 machines 5 minutes to make 5 widgets,
-        how many minutes would it take 100 machines to make 100 widgets?"
-        '''
-    )
+    instructions_clear = models.IntegerField(
+        choices = [
+        [0, 'Very unclear'],
+        [1, 'Somewhat unclear'],
+        [2, 'Not sure'],
+        [3, 'Mostly clear'],
+        [4, 'Absolutely clear']
+        ],
+        verbose_name = 'Was it clear to you what your task was in this study?')
 
-    crt_lake = models.IntegerField(
+    open_text = models.LongStringField(
         verbose_name='''
-        In a lake, there is a patch of lily pads.
-        Every day, the patch doubles in size.
-        If it takes 48 days for the patch to cover the entire lake,
-        how many days would it take for the patch to cover half of the lake?
-        '''
+        Is there anything you would like us to know? (Optional)''',
+        blank=True
     )

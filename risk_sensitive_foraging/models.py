@@ -23,6 +23,7 @@ class Constants(BaseConstants):
   num_multitrial = num_repetitions
   num_oneshot = 6
   num_rounds = num_multitrial + num_oneshot
+  n_bonus_blocks = 2
   point_label = _('Punkte')
   trial_label = _('Entscheidung')
   action_label = _('Option')
@@ -38,7 +39,7 @@ class Subsession(BaseSubsession):
       for p in self.get_players():
         # Randomize what is shown when and where
         rnd_environments = self.randomize_row_order(environments)
-        rnd_environments = environments
+        rnd_environments = environments # todo: TAKE THIS OUT
         rnd_actions = self.randomize_col_order(rnd_environments, 0, Constants.num_actions)
         #rnd_environments = numpy.array(rnd_environments)
 
@@ -57,6 +58,7 @@ class Subsession(BaseSubsession):
         p.state = Constants.initial_state
         p.budget = p.participant.vars['budgets'][p.block]
         p.set_xp(p.participant.vars['actions'][p.block])
+        p.minprisdark = random.randint(0, 1)
 
 
     if (self.round_number > 1) & self.is_multitrial():
@@ -66,6 +68,7 @@ class Subsession(BaseSubsession):
         p.trial = lastp.trial + 1
         p.block = lastp.block
         p.budget = lastp.budget
+        p.minprisdark = lastp.minprisdark
         p.set_xp(p.participant.vars['actions'][p.block])
 
         if self.is_new_block():
@@ -73,6 +76,7 @@ class Subsession(BaseSubsession):
           p.block = lastp.block + 1
           p.trial = 1
           p.state = Constants.initial_state
+          p.minprisdark = 1 - lastp.minprisdark
           p.budget = p.participant.vars['budgets'][p.block]
           p.set_xp(p.participant.vars['actions'][p.block])
 
@@ -96,6 +100,7 @@ class Subsession(BaseSubsession):
         p.state = p.participant.vars['states_cr'][p.block]
         p.budget = p.participant.vars['budgets_cr'][p.block]
         p.set_xp(p.participant.vars['actions_cr'][p.block])
+        p.minprisdark = random.randint(0, 1)
 
     if (self.round_number - 1) > Constants.num_multitrial:
       for p in self.get_players():  
@@ -104,6 +109,7 @@ class Subsession(BaseSubsession):
         p.trial = p.participant.vars['trials_cr'][p.block]
         p.state = p.participant.vars['states_cr'][p.block]
         p.budget = p.participant.vars['budgets_cr'][p.block]
+        p.minprisdark = 1 - lastp.minprisdark
         p.set_xp(p.participant.vars['actions_cr'][p.block])
 
 
@@ -149,12 +155,20 @@ def make_state_field(trial):
   return models.IntegerField(
     doc = "Point state at the beginning of trial" +str(trial))
 
+def make_rt_field(trial):
+  return models.FloatField(
+    doc = "Reaction time  in ms from the end of the page load until the choice, in trial" +str(trial) +" or until submit, in case of instruction pages.")
+
 # Every round the playder object is re-initialized
 class Player(BasePlayer):
+  prolificid = models.StringField(doc = "ID of the survey provider")
   block = models.IntegerField(doc = "Current block")
-  trial = models.FloatField(doc = "Current trial (of 5)")  
+  trial = models.FloatField(doc = "Current trial (of 5)")
   state = models.FloatField(doc = "Accumulated points before the current decision")
   budget = models.FloatField(doc = "Earnings requirement in current block")
+  rt_ms = models.FloatField(doc = "Reaction time from the end of the page load until the choice or until submit, in case of instruction pages.")
+  minprisdark = models.IntegerField(doc = "Layout for this block, 1 if the smaller probability was dark grey, 0 if it was light grey.")
+
   choice1 = make_choice_field(1)
   choice2 = make_choice_field(2)
   choice3 = make_choice_field(3)
@@ -166,8 +180,14 @@ class Player(BasePlayer):
   state4  = make_state_field(4)
   state5  = make_state_field(5)
   state6  = make_state_field(6)
+  rt_ms1 = make_rt_field(1)
+  rt_ms2 = make_rt_field(1)
+  rt_ms3 = make_rt_field(1)
+  rt_ms4 = make_rt_field(1)
+  rt_ms5 = make_rt_field(1)
+  success = models.IntegerField(doc = "Indicator if in the current block the earnings requirement (budget) was reached, 1 if yes, 0 otherwise")
   # outcome = models.IntegerField(doc = "Randomly drawn outcome of the chosen option given the choice in this trial")
-  successes = models.FloatField(doc = "Number of blocks where the earnings requirement (budget) was reached")
+  successes = models.FloatField(doc = "Count of the total number of blocks where the earnings requirement (budget) was reached")
   left_x1 = models.FloatField(doc = "Outcome 1 of the option that was shown on the left (option position was randomized across participants)")
   left_x2 = models.FloatField(doc = "Outcome 2 of the option that was shown on the left (option position was randomized across participants)")
   left_p1 = models.FloatField(doc = "Probability of outcome 1 of the option that was shown on the left (option position was randomized across participants)")
@@ -231,12 +251,14 @@ class Player(BasePlayer):
        act += '_cr'
        nb += '_cr'
     maxx = max(map(max, *self.participant.vars[act][block]))
-    max_earnings = max(maxx * Constants.num_trials, self.budget)    
+    max_earnings = max(maxx * Constants.num_trials, self.budget)
+    x1 = [ str(int(x)) for x in self.participant.vars[act][block][0][ :2]]
+    p1 = [ str(int(100 * x)) for x in self.participant.vars[act][block][0][2: ]]
+    x2 = [ str(int(x)) for x in self.participant.vars[act][block][1][ :2]]
+    p2 = [ str(int(100 * x)) for x in self.participant.vars[act][block][1][2: ]]
     return {
-      'x1': self.participant.vars[act][block][0][ :2],
-      'p1': self.participant.vars[act][block][0][2:],
-      'x2': self.participant.vars[act][block][1][ :2],
-      'p2': self.participant.vars[act][block][1][2:],
+      'img1': 'bg-sprite_' + x1[0] + '_' + p1[0] + '_' +x1[1] + '_' + p1[1] + '_minprisdark' + str(self.minprisdark),
+      'img2': 'bg-sprite_' + x2[0] + '_' + p2[0] + '_' +x2[1] + '_' + p2[1] + '_minprisdark' + str(self.minprisdark),
       'state': self.state,
       'budget': self.budget,
       'trial': self.trial,
@@ -245,3 +267,17 @@ class Player(BasePlayer):
       'num_blocks': self.session.vars[nb],
       'multitrial': (self.round_number - 1) < Constants.num_multitrial
     }
+
+  def draw_bonus(self):
+    n_blocks = self.session.vars['num_blocks']
+    nb = min(Constants.n_bonus_blocks, n_blocks-1)
+    bonus_round_numbers = random.sample(range(1, n_blocks), nb)
+    total_bonus = sum([ self.get_bonus(i) for i in bonus_round_numbers ])
+    self.payoff = total_bonus
+    return total_bonus
+
+  def get_bonus(self, i):
+    p = self.in_round(i)
+    return p.success * p.state6
+
+

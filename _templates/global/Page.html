@@ -535,14 +535,18 @@
       .rsft-form p {
         float: left;
         font-size: .9rem;
-        font-weight: bold;
+        font-weight: normal;
         margin-right: 0px;
         margin-left: 40px;
       }
 
-      .rsft-form input,
+      .rsft-form input:not([type="radio"]):not([type="checkbox"]),
+      .rsft-form label:not([type="radio"]):not([type="checkbox"]) {
+        display:block;
+      }
+
       .rsft-form label {
-          display:block;
+        font-weight: bold;
       }
 
       .rsft-form label {

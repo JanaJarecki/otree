@@ -1,4 +1,4 @@
-{% extends "global/Page.html" %}
+{% extends "risk_sensitive_foraging/Page.html" %}
 {% load otree static %}
 
 {% block title %}
@@ -8,10 +8,23 @@
 {% block content %}
 
     <p>
-        <em>Below are examples of messages that could be displayed for different experimental settings.</em>
+        Thank you for your time and effort, participating in our study.
     </p>
 
-    <div class="panel panel-default" style="margin-bottom:10px">
+    <h3>Your payment</h3>
+    <p>
+        Your payment is {{ payment }}.
+    </p>
+
+    <h3>You will be redirected in 10 seconds</h3>
+    <p>
+        Please don't close the browser, you will be redirected to Prolific Academic now.
+    </p>
+    <p class = 'hidden' id = 'id_redirect'><b>
+        (If the re-rirect does not work, please <a href = 'https://app.prolific.ac/submissions/complete?cc=YZ7SCG7Q'>click here</a>.)</b>
+    </p>
+
+   <!--<div class="panel panel-default" style="margin-bottom:10px">
         <div class="panel-body">
             <p><strong>Laboratory:</strong></p>
             <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
@@ -29,8 +42,20 @@
                 students anonymous links or secret nicknames.</em>
             </p>
         </div>
-    </div>
+    </div> -->
 
 
 {% endblock %}
+
+{% block scripts %}
+  <script>
+      setTimeout(function () {
+        window.location.href="https://app.prolific.ac/submissions/complete?cc=YZ7SCG7Q";
+        $('#id_redirect').fadeIn(6000);
+      }, 10000);
+
+  </script>
+{% endblock %}
+
+
 

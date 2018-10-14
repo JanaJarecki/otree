@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class = "row parent center-children">
+  <div class = "row parent center-children" style = "margin-left: 30%;">
     <div class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
       <div class="chart-earnings" id="chart-earnings"></div>
@@ -32,14 +32,14 @@
   <div class = "row parent flex-row">
     <button type="button" value="0" class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
-        <div id = "option1">
+        <div class = "{{ img1 }}" id = "option1">
         </div>
       </span>
     </button>
       
     <button type="button" value="1" class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
-        <div id = "option2">
+        <div class = "{{ img2 }}" id = "option2">
         </div>
       </span>
     </button>
@@ -63,8 +63,14 @@
     var outcomes = {{ outcomes }};
     var b = {{ budget }};
     $('#id_state' +trial).val(state);
+    var start = 0;
+    var end = 0;
+
 
     $('.rsft-btn-choices').click(function() {
+      end = window.performance.now();
+      $('#id_rt_ms' + (trial)).val(end - start);
+
       var choice = $(this).val();
       $('#id_choice' +trial).val(choice);
       outcome = outcomes[choice][trial];
@@ -81,15 +87,17 @@
         if (trial < {{ Constants.num_trials }}) {
           hideOutcome(x);
           showActions();
-        }        
+        }
         if (trial == {{ Constants.num_trials }}) {
+          $('#id_success').val( +(state >= b) );
           $('#id_successes').val({{ successes }} + (state >= b) );
           clickNext()
         } else {
           trial += 1;
           showTrial(trial);
         }
-      }, 1200);
+        start = window.performance.now();
+      }, 1000);
       
     });
 
@@ -109,12 +117,7 @@
     var showTrial = function(t) {
       chart = $('#chart-trial').highcharts();
       chart.series[1].addPoint([ t-1, 1 ]);
-    };
-
-    var hideStateAxis = function() {
-
-    }
-    
+    };    
 
     var updateState = function(state) {
       chart = $('#chart-earnings').highcharts();
@@ -161,9 +164,9 @@
     drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, {{ Constants.trial_label|json }});
 
     drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
-    drawAction('option1', {{ x1|json }}, {{ p1|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} +" A");
-    drawAction('option2', {{ x2|json }}, {{ p2|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} + " B");
 
+    /*drawAction('option1', {{ x1|json }}, {{ p1|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} +" A");
+    drawAction('option2', {{ x2|json }}, {{ p2|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} + " B");*/
 
   </script>
 {% endblock %}
