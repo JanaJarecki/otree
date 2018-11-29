@@ -25,22 +25,22 @@ class Player(BasePlayer):
         min=13, max=125)
 
     gender = models.StringField(
-        choices=['Male', 'Female', 'Other'],
+        choices=['Male', 'Female', 'Prefer not to state'],
         verbose_name='What is your gender?',
         widget=widgets.RadioSelect)
 
     nativelang = models.StringField(
         choices = ['Yes', 'No'],
-        verbose_name='Is English your native language?')
+        verbose_name='Is English your native language (the language you speak most of the time)?')
 
     selfrep_dataquality = models.IntegerField(
         choices = [
         [0, 'Not useful at all'],
-        [1, 'Not very useful'],
+        [1, 'Partly useful'],
         [2, 'Mostly useful'],
         [3, 'Completely useful']
         ],
-        verbose_name = "Is the data you just generated of sufficient quality to be useful for scientific research? (Have you been concentrated and payed attention to the instructions) Please answer honestly.",
+        verbose_name = "Is the data you just generated of sufficient quality to be useful for scientific research?",
         widget=widgets.RadioSelect)
 
     income = models.IntegerField(
@@ -52,7 +52,7 @@ class Player(BasePlayer):
         [4, '4001 - or more'],
         [99, 'Do not want to answer']
         ],
-        verbose_name = 'Which category does your monthly income (after tax) fall into?')
+        verbose_name = 'Which category does your monthly income after tax fall into? (the amount that is available to you either from work or other sources of income)')
 
     choice_strategie = models.LongStringField(
         verbose_name='''
@@ -61,13 +61,13 @@ class Player(BasePlayer):
 
     instructions_clear = models.IntegerField(
         choices = [
-        [0, 'Very unclear'],
-        [1, 'Somewhat unclear'],
-        [2, 'Not sure'],
-        [3, 'Mostly clear'],
-        [4, 'Absolutely clear']
+        [0, 'Not clear'],
+        [1, 'Mostly not clear'],
+        [2, 'Mostly clear'],
+        [3, 'Completely clear']
         ],
-        verbose_name = 'Was it clear to you what your task was in this study?')
+        verbose_name = 'Was it clear to you what your task was during this study? ',
+        widget=widgets.RadioSelect)
 
     open_text = models.LongStringField(
         verbose_name='''

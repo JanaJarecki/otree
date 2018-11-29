@@ -4,7 +4,7 @@ from .models import Constants
 
 class Prolificid(Page):
   form_model = 'player'
-  form_fields = ['prolificid']
+  form_fields = ['prolificid', 'browser']
   def is_displayed(self):
     return self.round_number == 1
 
@@ -40,36 +40,41 @@ class Incentives(Page):
     'example_pay': c(12).to_real_world_currency(self.session)
     }
 
+class InstructionTrainingBlock(Page):
+  def is_displayed(self):
+    return self.round_number == 1
 
-class ResultsWaitPage(WaitPage):
-  def after_all_players_arrive(self):
-    for p in self.subsession.get_players():
-      if self.round_number > 1:
-        p.successes = p.get_last_success()
-        if (not self.subsession.is_new_block()) & self.subsession.is_multitrial():
-            p.state = p.get_last_state()
+
+# class ResultsWaitPage(WaitPage):
+#   def after_all_players_arrive(self):
+#     for p in self.subsession.get_players():
+#       if self.round_number > 1:
+#         p.successes = p.get_last_success()
+#         if (not self.subsession.is_new_block()) & self.subsession.is_multitrial():
+#             p.state = p.get_last_state()
 
 
 class NewBlock(Page):
   def is_displayed(self):
-    return (self.subsession.is_new_block() & self.subsession.is_multitrial())
-
-  def vars_for_template(self):
-    context =  self.player.vars_for_template()
-    context.update({
-      'currentblock': self.player.block,
-      'budget': self.player.budget,
-      'num_blocks': self.session.vars['num_blocks'],
-      'successes': self.player.get_last_success(),
-      'successes': self.player.get_last_success()})
-    return context
-
-class Choices(Page):
+    return (self.player.phase == 'training')
   form_model = 'player'
 
-  def is_displayed(self):
-    return self.round_number <= Constants.num_multitrial
+  def vars_for_template(self):
+    context =  self.player.vars_for_template()   
+    p = self.player
+    context.update({
+      'currentblock': p.block,
+      'budget': p.budget,
+      'success': p.get_last_success(),
+      'successes': p.update_successes()
+      })
+    return context
 
+
+class Choices(Page):
+  def is_displayed(self):
+    return (self.player.phase in ['familiarize', 'training'])
+  form_model = 'player'
   def get_form_fields(self):
     choicefields = ['choice{}'.format(i) for i in range(1, Constants.num_trials + 1)]
     statefields = ['state{}'.format(i) for i in range(1, Constants.num_trials + 2)]
@@ -79,7 +84,7 @@ class Choices(Page):
   def vars_for_template(self):
     context =  self.player.vars_for_template()
     context.update({
-      'outcomes': self.participant.vars['outcomes'][self.player.block],
+      'outcomes': self.participant.vars['outcomes'][self.round_number],
       'successes': self.player.get_last_success()})
     return context
 
@@ -91,21 +96,26 @@ class Choices(Page):
   #     self.player.get_outcome()
     # self.player.update_successes()
 
+class InstructionChoiceBlocks(Page):
+  def is_displayed(self):
+    return ((self.player.phase == 'training') & (self.round_number in self.session.vars['instruction_rounds']))
+
+
 class InstructionOneshot(Page):
   def is_displayed(self):
-    return self.round_number == Constants.num_multitrial + 1
+    return ((self.player.phase == 'critical') & (self.round_number in self.session.vars['instruction_rounds']))
+
 
 class ChoicesOneShot(Page):
-  form_model = 'player'
   def is_displayed(self):
-    return self.round_number > Constants.num_multitrial
-
+    return (self.player.phase == 'critical')
+  form_model = 'player'
   def get_form_fields(self):
-    choicefields = ['choice' +str(int(self.player.trial))]
-    statefields = ['state' +str(int(self.player.trial))]
-    rtfields = ['rt_ms' +str(int(self.player.trial))]
+    p = self.player
+    choicefields = ['choice' +str(int(p.trial))]
+    statefields = ['state' +str(int(p.trial))]
+    rtfields = ['rt_ms' +str(int(p.trial))]
     return choicefields + statefields + rtfields
-
   def vars_for_template(self):
     return self.player.vars_for_template()
 
@@ -114,24 +124,24 @@ class ChoicesOneShot(Page):
   #     self.player.update_successes()
 
 
-class Results(Page):
-  def is_displayed(self):
-    return self.round_number <= Constants.num_multitrial
+# class Results(Page):
+#   def is_displayed(self):
+#     return self.round_number <= Constants.num_multitrial
 
-  def vars_for_template(self):
-    maxx = max(map(max, *self.participant.vars['actions'][self.player.block]))
-    max_earnings = max(maxx * Constants.num_trials, self.player.budget + .01)
-    p = self.player
-    return {
-      'state': p.state + p.outcome,
-      'required': p.budget - p.state,
-      'budget': p.budget,
-      'trial': p.trial,
-      'max_less_state': max_earnings - p.state,
-      'max_earning': max_earnings,
-      'num_blocks': self.session.vars['num_blocks'],
-      'successes': p.successes
-      }
+#   def vars_for_template(self):
+#     p = self.player
+#     maxx = max(map(max, *self.participant.vars['actions'][sp.block]))
+#     max_earnings = max(maxx * Constants.num_trials - p.state + 1, self.player.budget + .01)   
+#     return {
+#       'state': p.state + p.outcome,
+#       'required': p.budget - p.state,
+#       'budget': p.budget,
+#       'trial': p.trial,
+#       'max_less_state': max_earnings - p.state,
+#       'max_earning': max_earnings,
+#       'num_blocks': self.session.vars['num_blocks'],
+#       'successes': p.successes
+#       }
 
 
 class Payment(Page):
@@ -167,13 +177,15 @@ class Payment(Page):
 
 
 page_sequence = [
-  Prolificid,
+  # Prolificid,
   # Consent,
   # Coverstory,
-  # #Coverstory_check,
-  # #Incentives,
-  # NewBlock,
-  # Choices,
+  # Coverstory_check,
+  # Incentives,
+  InstructionTrainingBlock,
+  InstructionChoiceBlocks,
+  NewBlock,
+  Choices,
   InstructionOneshot,
   ChoicesOneShot
   ]

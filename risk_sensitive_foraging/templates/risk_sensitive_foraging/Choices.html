@@ -22,22 +22,22 @@
     </div>
   </div>
 
-  <div class = "row parent center-children" style = "margin-left: 30%;">
-    <div class = 'center-children flex-row-flex-start center-me-h'>
+  <div class = "row parent center-children">
+    <div id = 'earnings' class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
       <div class="chart-earnings" id="chart-earnings"></div>
     </div>
   </div>
 
   <div class = "row parent flex-row">
-    <button type="button" value="0" class="option rsft-btn-choices">
+    <button type="button" value={{ stimulus_position.0 }} class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
         <div class = "{{ img1 }}" id = "option1">
         </div>
       </span>
     </button>
       
-    <button type="button" value="1" class="option rsft-btn-choices">
+    <button type="button" value={{ stimulus_position.1 }} class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
         <div class = "{{ img2 }}" id = "option2">
         </div>
@@ -58,7 +58,8 @@
 
 {% block scripts %}
   <script>
-    var trial = {{ trial }};
+    var stimulus_position = {{ stimulus_position }}
+    var trial = 1;
     var state = {{ state }};
     var outcomes = {{ outcomes }};
     var b = {{ budget }};
@@ -69,11 +70,12 @@
 
     $('.rsft-btn-choices').click(function() {
       end = window.performance.now();
-      $('#id_rt_ms' + (trial)).val(end - start);
+      $('#id_rt_ms' + (trial)).val( Math.round(end - start) );
 
       var choice = $(this).val();
+      var choice_position = stimulus_position[choice];
       $('#id_choice' +trial).val(choice);
-      outcome = outcomes[choice][trial];
+      outcome = outcomes[choice_position][trial - 1];
       state += outcome
       $('#id_state' + (trial + 1)).val(state);
       hideTrial(trial);
@@ -161,12 +163,14 @@
       x.removeClass('rsft-btn-chosen');
     };
 
-    drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, {{ Constants.trial_label|json }});
+    var budget = {{ budget }};
+    var iconwidth = 50;
+    var pxperunit = 10;
+    var leftmargin = 750 / 2 - iconwidth - budget * pxperunit - 10;
+    $('#earnings').css({'margin-left': leftmargin +'px'});
+
+    drawTrial('chart-trial', true, trial, {{ Constants.num_trials }}, {{ Constants.trial_label|json }});
 
     drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
-
-    /*drawAction('option1', {{ x1|json }}, {{ p1|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} +" A");
-    drawAction('option2', {{ x2|json }}, {{ p2|json }}, true, true, {{ Constants.point_label|json }}, {{ Constants.action_label|json }} + " B");*/
-
   </script>
 {% endblock %}

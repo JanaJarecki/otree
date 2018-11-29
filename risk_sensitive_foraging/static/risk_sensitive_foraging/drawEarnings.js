@@ -11,7 +11,8 @@ function drawEarnings(target, s, b, mls, maxx, showx, showb, xLabel) {
           }
         },
         type: 'bar',
-        margin: [0, 3, 25, 15], /*20, 50, 25, 124*/
+        margin: [0, 5, 25, 5], /*20, 50, 25, 124*/
+        width: maxx * 10 + 20
       },
       xAxis: { /*This is actually the y-axis of the barchart */
         visible: false
@@ -19,8 +20,12 @@ function drawEarnings(target, s, b, mls, maxx, showx, showb, xLabel) {
       yAxis: { /* That is the x axis*/
         visible: showb,
         title: { text: null },
-        labels: { enabled: true },
-        width: maxx * 20,
+        labels: { enabled: true,
+           style: {
+              'fontSize': '15px'
+            },
+        },
+        width: maxx * 10,
         min: -.001,
         max: maxx - .10,
         lineColor: 'grey',        
@@ -35,7 +40,7 @@ function drawEarnings(target, s, b, mls, maxx, showx, showb, xLabel) {
         tickColor: 'grey',
         minorTickInterval: 1,
         minorTickLength: 5,
-        minorTickColor: 'grey',    
+        minorTickColor: 'grey',   
         /* line and label for the goal*/
         plotLines: [{
           color: 'rgb(97,169,176)',

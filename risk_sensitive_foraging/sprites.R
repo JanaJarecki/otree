@@ -11,21 +11,35 @@ fwrite(fntbl, system.file("fontmap", "fonttable.csv", package="extrafontdb"))
 library(ggplot2)
 library(scales)
 
+make_sprites()
 
-d <- fread('environment.csv', drop='budget')
-dc <- fread('critical_trials.csv', drop = c('budget', 'state', 'trial'))
-setnames(dc, names(d))
-d <- rbind(d, dc)
+make_sprites <- function() {
+  d <- fread('environment.csv', drop='budget')
+  dc <- fread('critical_trials.csv', drop = c('budget', 'state', 'trial'))
+  setnames(dc, names(d))
+  d <- rbind(d, dc)
 
-d1 <- d[,1:(1/2*ncol(d)),]
-d2 <- d[, (1/2*ncol(d)+1):ncol(d),]
-setnames(d2, names(d1))
-d <- rbind(d1,d2, fill = T)
-d <- unique(d)
-extrafont::fonttable()
+  d1 <- d[,1:(1/2*ncol(d)),]
+  d2 <- d[, (1/2*ncol(d)+1):ncol(d),]
+  setnames(d2, names(d1))
+  d <- rbind(d1,d2, fill = T)
+  d <- unique(d)
+
+  for (i in 1:nrow(d)) {
+    dd <- d[i]
+    dd[, id := 1:.N]
+    dd <- melt(dd, id = 'id', measure = list(1:2, 3:4), value = c('x','p'))
+    dd[, variablef := factor(x, levels = x, labels = paste0('+', x))]
+    dd[, variablef2 := reorder(variablef, 2:1)]
+    plot_and_save(dd, 'variablef2', 1:2)
+    plot_and_save(dd, 'variablef2', 2:1)
+  }
+}
 
 
-plot_and_save <- function(v, colorder) {
+
+
+plot_and_save <- function(dd, v, colorder) {
   cols <- c('grey85', 'grey50')
   cols <- cols[colorder]
   leg.l.margin <- ifelse(dd[, max(x)] >= 10, .22, .25)
@@ -64,23 +78,3 @@ plot_and_save <- function(v, colorder) {
   fn <- paste0('sprite_', fn, '_minprisdark', colorder[1]-1, '.png')
   ggsave(plot = p, file = file.path('static', 'risk_sensitive_foraging', 'sprites', fn), w = .5, h = .5/1.6, units='in', dpi = 600)
 }
-
-
-for (i in 1:nrow(d)) {
-  dd <- d[i]
-  dd[, id := 1:.N]
-  dd <- melt(dd, id = 'id', measure = list(1:2, 3:4), value = c('x','p'))
-  dd[, variablef := factor(x, levels = x, labels = paste0('+', x))]
-  dd[, variablef2 := reorder(variablef, 2:1)]
-  plot_and_save('variablef2', 1:2)
-  plot_and_save('variablef2', 2:1)
-}
-
-# library(magick)
-
-# filelist <- list.files(file.path('static', 'risk_sensitive_foraging', 'sprites'), full = TRUE)
-# lapply(filelist, function(path) {
-#   i <- image_read(path)
-#   i <- image_scale(i, "300")
-#   image_write(i, path = path, format = "png")
-# })

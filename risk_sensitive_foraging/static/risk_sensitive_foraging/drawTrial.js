@@ -15,10 +15,18 @@
           tickLength: 0,
           tickInterval: 1,
           labels: {
-            y: -20,
-            formatter() { return this.value + 1 },
+            y: -18,
+            formatter() {
+              var v = this.value + 1;
+              if (v < trial) {
+                  return '<span style="fill: grey;">' + v + '</span>';
+              } else {
+                  return v
+              }
+               },
             style: {
               color: 'black',
+              'fontSize': '15px'
             }            
           }
         },
@@ -26,7 +34,7 @@
         plotOptions: {
           scatter: {
             marker: {
-              radius: 11,
+              radius: 13,
               lineWidth: 0,
               lineColor: 'black',
               symbol: 'circle',
@@ -44,7 +52,7 @@
             zoneAxis: 'x',
               zones: [{
                 value: trial-1,
-                color: 'rgba(56,56,56,.5)'
+                color: 'rgba(56,56,56,.4)'
               }]
           }],
         });

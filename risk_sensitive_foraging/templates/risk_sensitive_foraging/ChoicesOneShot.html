@@ -21,21 +21,21 @@
   </div>
 
   <div class = "row parent center-children">
-    <div class = 'center-children flex-row-flex-start center-me-h'>
+    <div id = 'earnings' class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
       <div class="chart-earnings" id="chart-earnings"></div>
     </div>
   </div>
 
   <div class = "row parent flex-row">
-    <button name="choice1" value="0" class="option rsft-btn-choices">
+    <button name="choice1" value={{ stimulus_position.0 }} class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
         <div class = "{{ img1 }}" id = "option1">
         </div>
       </span>
     </button>
       
-    <button name="choice1" value="1" class="option rsft-btn-choices">
+    <button name="choice1" value={{ stimulus_position.1 }} class="option rsft-btn-choices">
       <span class = "rsft-span-choices">
         <div class = "{{ img2 }}" id = "option2">
         </div>
@@ -55,31 +55,65 @@
 
 {% block scripts %}
   <script>
-  
-  var trial = {{ trial }};
-  $('.option').attr('name', 'choice' + trial );
-  var state = {{ state }};
-  var start = 0;
-  var end = 0;
-
-  $('.rsft-btn-choices').click(function() {
-    end = window.performance.now();
-    $('#id_rt_ms' + (trial)).val(end - start);
-    var choice = $(this).val();
-    $('#id_choice' +trial).val(choice);
-    $('#id_state'  +trial).val(state);
-    $('.otree-btn-next').click();
-    });
-
-
   var draw = function() {
+    var budget = {{ player.budget }};
+    var iconwidth = 50;
+    var pxperunit = 10;
+    var leftmargin = 750 / 2 - iconwidth - budget * pxperunit - 10;
+    $('#earnings').css({'margin-left': leftmargin +'px'});
+
     drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, '');
     drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
-  }
+    }
 
-  $( document ).ready( function() {
-    setTimeout(draw, 1000);
-    $('.dialogue').fadeIn(1000).fadeOut(500);
+  $(document).ready( function() {
+    // Inspired by this blog post (15. Oct. 2018)
+    // https://itnext.io/javascript-raf-requestanimationframe-456f8a0d04b0
+    var popup = $('.dialogue');
+    var trial = {{ trial }};
+    var state = {{ state }};
+    var option = $('option');
+
+    option.attr('name', 'choice' + trial );
+
+    var start = 0;
+    var end = 0;
+
+    var startTime;
+    var duration = 1000;
+    var rAFid; // ID for request animation frame (rAF)
+
+    popup.fadeIn(150);
+    draw();
+
+    var rAFCallback = function( timestamp ) {
+      startTime = startTime || timestamp; // set startTime is null
+
+      var timeElapsedSinceStart = timestamp - startTime;
+
+      // we need to progress to reach 100%
+      if ( timeElapsedSinceStart < duration ){
+        window.requestAnimationFrame( rAFCallback );
+      } else {
+        popup.fadeOut(300)
+      }
+
+    }
+
+    // request animation frame on render
+    window.requestAnimationFrame( rAFCallback );
+
+
+
+    var buttons = $('.rsft-btn-choices');
+    buttons.click(function() {
+      end = window.performance.now();
+      $('#id_rt_ms' + (trial)).val( Math.round(end - start) );
+      var choice = $(this).val();
+      $('#id_choice' +trial).val(choice);
+      $('#id_state'  +trial).val(state);
+      $('.otree-btn-next').click();
+      });
   });
   </script>
 {% endblock %}

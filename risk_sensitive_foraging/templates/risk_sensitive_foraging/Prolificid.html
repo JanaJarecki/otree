@@ -20,9 +20,12 @@
   <h3>Your Prolific ID</h3>
   <p> Please enter your Prolific ID:</p>
 
-  {% for field in form %}
-    {% formfield field %}
-  {% endfor %}
+  {% formfield player.prolificid %}
+
+  
+  <div class = 'hidden'>
+    {% formfield player.browser %}
+  </div>
 
 </div>
 
@@ -31,3 +34,52 @@
   </div>
 
 {% endblock %}
+
+{% block scripts %}
+  <script>
+    var browser = function() {
+      var nVer = navigator.appVersion;
+      var nAgt = navigator.userAgent;
+      var browserName  = navigator.appName;
+      var fullVersion  = ''+parseFloat(navigator.appVersion); 
+      var majorVersion = parseInt(navigator.appVersion,10);
+      var nameOffset,verOffset,ix;
+
+      // In Opera, the true version is after "Opera" or after "Version"
+      if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+       browserName = "Opera";
+       fullVersion = nAgt.substring(verOffset+6);
+       if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+         fullVersion = nAgt.substring(verOffset+8);
+      }
+      // In MSIE, the true version is after "MSIE" in userAgent
+      else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+       browserName = "Microsoft Internet Explorer";
+       fullVersion = nAgt.substring(verOffset+5);
+      }
+      // In Chrome, the true version is after "Chrome" 
+      else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+       browserName = "Chrome";
+       fullVersion = nAgt.substring(verOffset+7);
+      }
+      // In Safari, the true version is after "Safari" or after "Version" 
+      else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+       browserName = "Safari";
+       fullVersion = nAgt.substring(verOffset+7);
+       if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+         fullVersion = nAgt.substring(verOffset+8);
+      }
+      // In Firefox, the true version is after "Firefox" 
+      else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+       browserName = "Firefox";
+       fullVersion = nAgt.substring(verOffset+8);
+      }
+      return(browserName +" " +fullVersion);
+    };
+
+    $('#id_browser').val(browser());
+    </script>
+
+
+
+  {% endblock %}

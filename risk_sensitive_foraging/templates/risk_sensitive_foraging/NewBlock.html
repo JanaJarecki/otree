@@ -3,10 +3,14 @@
 {% load i18n %}
 
 {% block title %}
-    <span class = "round goal-reached-info parent lightgrey shadow">
-    <p class = "center">{% blocktrans trimmed %}Ziel in<br>{{ successes }} von {{ num_blocks }} Runden erreicht.
-      {% endblocktrans %}</p>
-  </span>
+    {% if player.block > 1 %}
+      <span class = "round goal-reached-info parent lightgrey shadow">
+        <p class = "center">
+          {% blocktrans with successes=successes num_blocks=num_blocks %}
+            Ziel in <br>{{ successes }} von {{ num_blocks }} Runden erreicht.
+          {% endblocktrans %}</p>
+      </span>
+    {% endif %}
   <h1>
     {% blocktrans trimmed %}Neue Runde{% endblocktrans %}
   </h1>
@@ -17,7 +21,7 @@
   <div>
   <p>
   {% if player.block > 1 %}
-    {% if currentstate >= player.budget %} 
+    {% if success == 1 %} 
     {% blocktrans trimmed %}
         Sie haben das Ziel in der letzten Runde erreicht.
     {% endblocktrans %}
