@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 18:26+0100\n"
-"PO-Revision-Date: 2018-11-30 18:52+0100\n"
+"POT-Creation-Date: 2018-12-01 23:05+0100\n"
+"PO-Revision-Date: 2018-12-01 23:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -335,11 +335,99 @@ msgstr ""
 "rounds."
 
 #: .\templates\risk_sensitive_foraging\Coverstory_check.html:7
-#: .\templates\risk_sensitive_foraging\Coverstory_example.html:7
 msgid "Verständnisfragen"
 msgstr "Comprehension check"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:16
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:19
+msgid "Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:"
+msgstr "Please answer these comprehension questions correctiy:"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:24
+msgid ""
+"Bitte wählen Sie den Buchstaben, der im obigen Bild die jeweilige "
+"Information markiert. Wo sehen Sie im obigen Bild ..."
+msgstr ""
+"Please type the letter that marks to the following information in the above "
+"image. Where in the image do you see ..."
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:27
+msgid "... die verbleibende Zeit?"
+msgstr "... how much time is left?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:32
+msgid "... das Punkteziel?"
+msgstr "... the point goal?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:37
+msgid "... den aktuellen Punktestand?"
+msgstr "... the current point total?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:52
+msgid "Im oben gezeigten Beispiel ..."
+msgstr "In the example shown above ..."
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:55
+msgid "Die wievielte Entscheidung treffen Sie gerade?"
+msgstr "You currently making which decision out of five?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:56
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:60
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:64
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:68
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:72
+msgid "\"Number\""
+msgstr "\"Number\""
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:59
+msgid "Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?"
+msgstr "How many decisions have you already made in this round?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:63
+msgid "Wie hoch ist Ihr Punkteziel?"
+msgstr "How high is your point goal?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:67
+msgid "Wie hoch ist Ihr aktueller Punktestand?"
+msgstr "How high ist your current point total?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:71
+msgid "Wie viele Punkte können Sie von Option B maximal erhalten?"
+msgstr ""
+"What ist the maximum number of points that you can collect from the right "
+"Option B?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:75
+#, python-format
+msgid ""
+"Wie hoch ist die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in "
+"%%)?"
+msgstr ""
+"What is the probability to collect +2 points from the left Option A (in %%, "
+"enter a number from 1-100 )?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:85
+#: .\templates\risk_sensitive_foraging\Incentives.html:62
+msgid " Überprüfen"
+msgstr " Check"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:119
+#: .\templates\risk_sensitive_foraging\Incentives.html:104
+msgid "\"Richtig! Weiter geht es mit Klick auf OK.\""
+msgstr "\"Correct! Continue by clicking OK.\""
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:120
+#: .\templates\risk_sensitive_foraging\Incentives.html:105
+msgid ""
+"\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
+"Feldern bitte noch einmal an und korrigieren Sie diese.\""
+msgstr ""
+"\"Not totally correct. Please have a look at your answers marked in red, and "
+"correct those.\""
+
+#: .\templates\risk_sensitive_foraging\Coverstory_example.html:7
+msgid "Darstellung der Aufgabe"
+msgstr "The Choice Screen"
+
 #: .\templates\risk_sensitive_foraging\Coverstory_example.html:16
 msgid ""
 "Wir geben Ihnen die  Informationen für Ihre Entscheidungen wie unten "
@@ -349,92 +437,6 @@ msgstr ""
 "We will show you the information for each round as in the image displayed "
 "below. Please consider it carefully. It is important that you understand "
 "what it means."
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:24
-msgid "Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:"
-msgstr "Please answer these comprehension questions correctiy:"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:29
-msgid ""
-"Bitte wählen Sie den Buchstaben, der im obigen Bild die jeweilige "
-"Information markiert. Wo sehen Sie im obigen Bild ..."
-msgstr ""
-"Please type the letter that marks to the following information in the above "
-"image. Where in the image do you see ..."
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:32
-msgid "... die verbleibende Zeit?"
-msgstr "... how much time is left?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:37
-msgid "... das Punkteziel?"
-msgstr "... the point goal?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:42
-msgid "... den aktuellen Punktestand?"
-msgstr "... the current point total?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:57
-msgid "Im oben gezeigten Beispiel ..."
-msgstr "In the example shown above ..."
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:60
-msgid "Die wievielte Entscheidung treffen Sie gerade?"
-msgstr "You currently making which decision out of five?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:61
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:65
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:69
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:73
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:77
-msgid "\"Number\""
-msgstr "\"Number\""
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:64
-msgid "Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?"
-msgstr "How many decisions have you already made in this round?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:68
-msgid "Wie hoch ist Ihr Punkteziel?"
-msgstr "How high is your point goal?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:72
-msgid "Wie hoch ist Ihr aktueller Punktestand?"
-msgstr "How high ist your current point total?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:76
-msgid "Wie viele Punkte können Sie von Option B maximal erhalten?"
-msgstr ""
-"What ist the maximum number of points that you can collect from the right "
-"Option B?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:80
-#, python-format
-msgid ""
-"Wie hoch ist die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in "
-"%%)?"
-msgstr ""
-"What is the probability to collect +2 points from the left Option A (in %%, "
-"enter a number from 1-100 )?"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:90
-#: .\templates\risk_sensitive_foraging\Incentives.html:62
-msgid " Überprüfen"
-msgstr " Check"
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:124
-#: .\templates\risk_sensitive_foraging\Incentives.html:105
-msgid "\"Richtig! Weiter geht es mit Klick auf OK.\""
-msgstr "\"Correct! Continue by clicking OK.\""
-
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:125
-#: .\templates\risk_sensitive_foraging\Incentives.html:106
-msgid ""
-"\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
-"Feldern bitte noch einmal an und korrigieren Sie diese.\""
-msgstr ""
-"\"Not totally correct. Please have a look at your answers marked in red, and "
-"correct those.\""
 
 #: .\templates\risk_sensitive_foraging\Coverstory_example.html:22
 msgid "Auf der nächsten Seite stellen wir Ihnen einige Verständnisfragen."
