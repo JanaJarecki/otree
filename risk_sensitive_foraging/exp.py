@@ -112,9 +112,6 @@ class Phasemanager:
   def get_decision_number_in_phase(self, round_number):
     return(self.lookup[round_number-1, 4] + counts_from_one)
 
-
-pm = Phasemanager(phases, stimuli, blocks, trials)
-
 def load_choice_environment(filepath):
   with open(filepath) as csvfile:
     next(csvfile)
@@ -166,8 +163,6 @@ class Appearancemanager:
     return(self.action_positions[round_number-1])
   def get_feature_appearance(self, round_number):
     return(self.feature_appearances[round_number-1])
-  
-am = Appearancemanager(pm, filepaths, numfeatures, numactions, randomize_feature, randomize_action, randomize_stimulus_order)
 
     # # Randomize what is shown when and where
     # rnd_environments = self.randomize_row_order(environments)
