@@ -87,7 +87,7 @@
     var end = 0;
 
     var startTime;
-    var duration = 600;
+    var duration = 600; // duration of animation frame
     var rAFid; // ID for request animation frame (rAF)
 
     popup.fadeIn(100);
@@ -102,7 +102,8 @@
       if ( timeElapsedSinceStart < duration ){
         window.requestAnimationFrame( rAFCallback );
       } else {
-        popup.fadeOut(200)
+        popup.hide()
+        start = window.performance.now();
       }
 
     }

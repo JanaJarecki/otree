@@ -49,6 +49,7 @@ class Subsession(BaseSubsession):
       round_number = self.round_number
       phase_number = self.session.vars['PM'].get_phaseN(round_number)
       phase = self.session.vars['PM'].get_phaseL(round_number)
+      
       stimuli = self.session.vars['AM'].get_stimuli(round_number, phase_number)
       stimulus_position = self.session.vars['AM'].get_action_position(round_number)
       feature_color = self.session.vars['AM'].get_feature_appearance(round_number)[0]
