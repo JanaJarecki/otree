@@ -42,8 +42,8 @@ class Subsession(BaseSubsession):
 
   def creating_session(self):
     if (self.round_number == 1):
-      PM = Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
-      AM = Appearancemanager(PM, exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
+      PM = exp.Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
+      AM = exp.Appearancemanager(PM, exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
   # Executed at the very start, loops through each num_trial
     for p in self.get_players():
       round_number = self.round_number
@@ -75,6 +75,7 @@ class Subsession(BaseSubsession):
       n = int(Constants.num_rounds + 1)
       if (self.round_number == 1):
         self.session.vars['instruction_rounds'] = PM.get_instruction_rounds()
+        self.session.vars['bonus_rounds'] = PM.get_bonus_rounds()
         p.participant.vars['stimulus_position'] = [None] * n
         p.participant.vars['img1'] = [None] * n
         p.participant.vars['img2'] = [None] * n
@@ -319,7 +320,7 @@ class Player(BasePlayer):
     }
 
   def draw_bonus(self):
-    bonus_rounds = PM.get_bonus_rounds()
+    bonus_rounds = self.session.vars['bonus_rounds']
     self.payoff = sum([ self.terminal_reward(i) for i in bonus_rounds])
     return self.payoff
 
