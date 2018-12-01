@@ -68,6 +68,8 @@ randomize_stimulus_order = 'block'
    'block'
 """
 
+num_rounds = sum([a * b * c for a, b, c in zip(stimuli, blocks, trials)])
+
 class Phasemanager:
   def __init__(self, phases, stimuli, blocks, trials):
     self.doc = "Manage phases object holding the phases"

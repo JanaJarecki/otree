@@ -26,7 +26,7 @@ class Constants(BaseConstants):
   num_trials = 5
   num_multitrial = num_repetitions + num_familiarization_rounds
   num_oneshot = 21 * 2
-  num_rounds = PM.num_rounds
+  num_rounds = exp.num_rounds
   point_label = _('Punkte')
   trial_label = _('Entscheidung')
   action_label = _('Option')
