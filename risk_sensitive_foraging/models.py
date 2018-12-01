@@ -15,8 +15,8 @@ doc = """
 Risk sensitive foraging
 """
 
-PM = exp.pm
-AM = exp.am
+# PM = exp.pm
+# AM = exp.am
 
 class Constants(BaseConstants):
   name_in_url = 'rsf'
@@ -41,6 +41,9 @@ class Subsession(BaseSubsession):
     return(y)
 
   def creating_session(self):
+    if (self.round_number == 1):
+      PM = Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
+      AM = Appearancemanager(PM, exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
   # Executed at the very start, loops through each num_trial
     for p in self.get_players():
       round_number = self.round_number
