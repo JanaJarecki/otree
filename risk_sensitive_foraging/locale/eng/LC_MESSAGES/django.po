@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-01 23:05+0100\n"
-"PO-Revision-Date: 2018-12-01 23:05+0100\n"
+"POT-Creation-Date: 2018-12-01 23:16+0100\n"
+"PO-Revision-Date: 2018-12-01 23:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -416,7 +416,6 @@ msgid "\"Richtig! Weiter geht es mit Klick auf OK.\""
 msgstr "\"Correct! Continue by clicking OK.\""
 
 #: .\templates\risk_sensitive_foraging\Coverstory_check.html:120
-#: .\templates\risk_sensitive_foraging\Incentives.html:105
 msgid ""
 "\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
 "Feldern bitte noch einmal an und korrigieren Sie diese.\""
@@ -537,6 +536,15 @@ msgstr "The last five rounds are relevant."
 #: .\templates\risk_sensitive_foraging\Incentives.html:54
 msgid "Jede Runde ist relevant: es werden fünf Runden zufällig gezogen."
 msgstr "Each round is relevant: bonus rounds will be randomly drawn."
+
+#: .\templates\risk_sensitive_foraging\Incentives.html:105
+msgid ""
+"\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
+"Feldern bitte noch einmal an und korrigieren Sie diese. Bitte geben Sie "
+"führende Nullen ein (0.10 statt .10)."
+msgstr ""
+"\"Not totally correct. Please have a look at your answers marked in red, and "
+"correct those. Please type leading zeroes (0.10 rather than .10).\""
 
 #: .\templates\risk_sensitive_foraging\InstructionCriticalPhase.html:11
 #, python-format
