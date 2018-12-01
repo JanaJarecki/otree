@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>Einleitung</h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+    Ihre Expedition ist in unbekanntes Terrain hervorgedrungen. 
+  </p>
+
+  <p>
+  In diesem Terrain wissen Sie nicht, wie viele Resourcen Sie brauchen, wie oft Sie zum Markt gehen können, oder wie die Märkte aussehen.
+  </p>
+
+  <p>
+  Sie können jedoch vier (4) von diesen Informationen vor Ihrer Entscheidung anfragen. Die Informationen die Sie erhalten sind korrekt, aber es ist maximal möglich vier Mal Information anzufragen.
+  </p>
+
+  <p>
+  Kllicken Sie auf die Information die Sie anfragen möchten und treffen Sie dann Ihre Entscheidung
+  </p>
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

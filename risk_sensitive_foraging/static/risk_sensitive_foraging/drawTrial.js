@@ -1,5 +1,11 @@
   function drawTrial(target, show, trial, ntrials, tLabel) {
     ntrials = Array(ntrials).fill(1);
+    bg_col_future = 'transparent';
+    bg_col_current = bg_col_future; //'rgb(207,216,220)';
+    bg_col_past = 'rgba(56,56,56,.05)';
+    txt_col_past = 'rgba(56,56,56,.3)';
+    txt_col_current = 'black';
+    txt_col_future = 'rgba(56,56,56,.8)';
 
     $(function () {
       Highcharts.chart(target, {
@@ -16,17 +22,20 @@
           tickInterval: 1,
           labels: {
             y: -18,
-            formatter() {
+            formatter(self) {
+              trial = this.chart.series[1].options.data.length;
               var v = this.value + 1;
               if (v < trial) {
-                  return '<span style="fill: grey;">' + v + '</span>';
+                  return '<span style="fill: ' +txt_col_past +' ;">' + v + '</span>';
+              } else if (v == trial) {
+                  return '<span style="fill: ' +txt_col_current +'; font-weight: bold; text-decoration: underline; ">' + v + '</span>';
               } else {
-                  return v
-              }
-               },
+                return '<span style="fill: ' +txt_col_future +' ;">' + v + '</span>';
+               }
+              },
             style: {
-              color: 'black',
-              'fontSize': '15px'
+              'color': txt_col_future,
+              'fontSize': '16px'
             }            
           }
         },
@@ -35,24 +44,24 @@
           scatter: {
             marker: {
               radius: 13,
-              lineWidth: 0,
-              lineColor: 'black',
+              lineWidth: 1.5,
+              lineColor: bg_col_past,
               symbol: 'circle',
             }
           },
           series: { visible: show }
         },
         series: [{
-            color: 'transparent',
+            color: bg_col_future,
             data: ntrials,
           },
           {
             data: Array(trial).fill(1),
-            color: 'rgb(207,216,220)',
+            color: bg_col_current,
             zoneAxis: 'x',
               zones: [{
                 value: trial-1,
-                color: 'rgba(56,56,56,.4)'
+                color: bg_col_past
               }]
           }],
         });

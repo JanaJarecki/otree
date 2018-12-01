@@ -25,7 +25,10 @@
   <div class = "row parent center-children">
     <div id = 'earnings' class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
-      <div class="chart-earnings" id="chart-earnings"></div>
+      <div class="chart-earnings" id="chart-earnings" style = "overflow: hidden;">
+      </div>
+      <div id = "hide-half" style = "width:100%; height:100%; position: absolute; background: white;">
+      </div>
     </div>
   </div>
 
@@ -111,7 +114,8 @@
       chart = $('#chart-trial').highcharts();
       chart.series[1].data[t-1].update({
         marker: {
-          fillColor: 'rgba(56,56,56,.5)'
+          fillColor: 'rgba(56,56,56,.05)',
+
         }
       });
     }
@@ -127,11 +131,15 @@
           tickPositions: [{{ budget }}, {{ max_earning }}]
         });
       series = chart.series[0];
+      if ( state >= b ) {
+          $('#hide-half').fadeOut(600);
+      };
       series.setData([ state ]);
       setTimeout(function () {
         chart.yAxis[0].update({
           tickPositions: [state, {{ budget }}, {{ max_earning }}]
         });
+
         if ( state >= b ) {
           series.update({
             color: 'rgb(141, 230, 230)',
@@ -160,6 +168,7 @@
 
     var hideOutcome = function(x) {
       x.find('.o').remove();
+      
       x.removeClass('rsft-btn-chosen');
     };
 
@@ -168,6 +177,7 @@
     var pxperunit = 10;
     var leftmargin = 750 / 2 - iconwidth - budget * pxperunit - 10;
     $('#earnings').css({'margin-left': leftmargin +'px'});
+    $('#hide-half').css({ 'margin-left': 750 / 2 - leftmargin +3 +'px' });
 
     drawTrial('chart-trial', true, trial, {{ Constants.num_trials }}, {{ Constants.trial_label|json }});
 

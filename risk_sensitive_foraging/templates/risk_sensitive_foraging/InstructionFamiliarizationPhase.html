@@ -1,0 +1,22 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>Information</h1>
+{% endblock %}
+
+
+{% block content %}
+  {% blocktrans trimmed %}
+  <p>
+  Die erste Runde dient dem Kennenlernen. Sie ist nicht relevant für den Bonus. Klicken Sie auf "weiter". Wählen Sie dann eine Option durch Anklicken aus.
+  </p>
+  {% endblocktrans %}
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

@@ -24,6 +24,10 @@ class Coverstory(Page):
     return self.round_number == 1
 
 
+class Coverstory_example(Page):
+  def is_displayed(self):
+    return self.round_number == 1
+
 class Coverstory_check(Page):
   def is_displayed(self):
     return self.round_number == 1
@@ -40,9 +44,22 @@ class Incentives(Page):
     'example_pay': c(12).to_real_world_currency(self.session)
     }
 
-class InstructionTrainingBlock(Page):
+class InstructionFamiliarizationPhase(Page):
   def is_displayed(self):
     return self.round_number == 1
+
+class InstructionTrainingPhase(Page):
+  def is_displayed(self):
+    return ((self.player.phase == 'training') & (self.round_number in self.session.vars['instruction_rounds']))
+
+class InstructionCriticalPhase(Page):
+  def is_displayed(self):
+    return ((self.player.phase == 'critical') & (self.round_number in self.session.vars['instruction_rounds']))
+
+  def vars_for_template(self):
+    return{
+    'num_blocks': self.participant.vars['num_blocks'][self.round_number]
+    }
 
 
 # class ResultsWaitPage(WaitPage):
@@ -95,15 +112,6 @@ class Choices(Page):
   #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
     # self.player.update_successes()
-
-class InstructionChoiceBlocks(Page):
-  def is_displayed(self):
-    return ((self.player.phase == 'training') & (self.round_number in self.session.vars['instruction_rounds']))
-
-
-class InstructionOneshot(Page):
-  def is_displayed(self):
-    return ((self.player.phase == 'critical') & (self.round_number in self.session.vars['instruction_rounds']))
 
 
 class ChoicesOneShot(Page):
@@ -177,15 +185,16 @@ class Payment(Page):
 
 
 page_sequence = [
-  # Prolificid,
-  # Consent,
-  # Coverstory,
-  # Coverstory_check,
-  # Incentives,
-  InstructionTrainingBlock,
-  InstructionChoiceBlocks,
+  Prolificid,
+  Consent,
+  Coverstory,
+  Coverstory_example,
+  Coverstory_check,
+  Incentives,
+  InstructionFamiliarizationPhase,
+  InstructionTrainingPhase,
+  InstructionCriticalPhase,
   NewBlock,
   Choices,
-  InstructionOneshot,
   ChoicesOneShot
   ]

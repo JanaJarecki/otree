@@ -22,7 +22,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     age = models.IntegerField(
         verbose_name='How old are you?',
-        min=13, max=125)
+        min=18, max=100)
 
     gender = models.StringField(
         choices=['Male', 'Female', 'Prefer not to state'],
@@ -66,7 +66,7 @@ class Player(BasePlayer):
         [2, 'Mostly clear'],
         [3, 'Completely clear']
         ],
-        verbose_name = 'Was it clear to you what your task was during this study? ',
+        verbose_name = 'Was it clear to you what your task was during this study?',
         widget=widgets.RadioSelect)
 
     open_text = models.LongStringField(

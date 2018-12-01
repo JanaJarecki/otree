@@ -4,6 +4,8 @@
 
 {% block global_styles  %}
     <link rel="stylesheet" type="text/css" href="{% static 'global/theme.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 
     <style>
       body, p, span, li, ul, a, b, i, mark, strong, .example, fieldset, legend {
@@ -49,6 +51,7 @@
       }
 
       .dialogue {
+        font-size: inherit;
         z-index: 9999;
         width: 98%;
         height: 98%;
@@ -65,7 +68,7 @@
       }
 
       .fs2, .fs2 p {
-        font-size: 200%;
+        font-size: 150%;
       }
 
       .fs3, .fs3 p {

@@ -1,0 +1,31 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+  {% blocktrans trimmed %}
+  Verständnisfragen
+  {% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+  {% blocktrans trimmed %} Wir geben Ihnen die  Informationen für Ihre Entscheidungen wie unten dargestellt. Bitte sehen Sie sich das Bild gut an. Es ist wichtig, dass Sie die Darstellung verstehen. {% endblocktrans %}
+  </p>
+
+  <img class = "center img" src='{% static "risk_sensitive_foraging/example_choice_screen.png" %}'/>
+
+  <p>
+  {% blocktrans trimmed %} Auf der nächsten Seite stellen wir Ihnen einige Verständnisfragen. {% endblocktrans %}
+  </p>
+
+  <div class = "right">
+    {% next_button %}
+  </div>
+
+
+{% endblock %}
+

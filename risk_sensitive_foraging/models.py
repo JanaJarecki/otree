@@ -32,7 +32,7 @@ class Constants(BaseConstants):
   action_label = _('Option')
   initial_state = 0
   num_actions = 2
-  lang = 'eng'
+  lang = 'de'
 
 
 class Subsession(BaseSubsession):
@@ -72,12 +72,12 @@ class Subsession(BaseSubsession):
       n = int(Constants.num_rounds + 1)
       if (self.round_number == 1):
         self.session.vars['instruction_rounds'] = PM.get_instruction_rounds()
-        print(self.session.vars['instruction_rounds'])
         p.participant.vars['stimulus_position'] = [None] * n
         p.participant.vars['img1'] = [None] * n
         p.participant.vars['img2'] = [None] * n
         p.participant.vars['max_earnings'] = [None] * n
         p.participant.vars['num_blocks'] = [None] * n
+        p.participant.vars['decision_number'] = [None] * n
         p.participant.vars['outcomes'] = [None] * n
       p.participant.vars['stimulus_position'][round_number] = stimulus_position
       css_img_orig_position = [
@@ -92,6 +92,7 @@ class Subsession(BaseSubsession):
       maxx = max([max(stimuli[i]) for i in [0,1]])
       p.participant.vars['max_earnings'][round_number] = max(maxx * (Constants.num_trials), p.budget)
       p.participant.vars['num_blocks'][round_number] = PM.get_num_trials_in_phase(round_number)
+      p.participant.vars['decision_number'][round_number] = PM.get_decision_number_in_phase(round_number)
 
       if (self.round_number == 1):
         p.state = Constants.initial_state
@@ -309,7 +310,8 @@ class Player(BasePlayer):
       'trial': self.trial,
       'max_earning': self.participant.vars['max_earnings'][n],
       'max_less_state': self.participant.vars['max_earnings'][n] - 0,
-      'num_blocks': self.participant.vars['num_blocks'][n], #todo add this by phase
+      'num_blocks': self.participant.vars['num_blocks'][n],
+      'decision_number': self.participant.vars['decision_number'][n],
       'multitrial': self.phase in ['familiarize', 'training']
     }
 

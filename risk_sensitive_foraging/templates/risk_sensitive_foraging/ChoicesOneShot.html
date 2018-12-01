@@ -9,10 +9,13 @@
   <div class='dialogue round-edge center-me-h'>
     <div class = 'center-me-hv fs2'>
       <p>{% blocktrans trimmed %}
-      Neue Situation
+      Situation <br/> 
+      {{ decision_number }} / {{ num_blocks }}
       {% endblocktrans %}</p>
     </div>
   </div>
+
+
   <div class = "row1 parent center-children">
     <div class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="far fa-2x fa-clock center-me-v"></i></div>
@@ -23,7 +26,10 @@
   <div class = "row parent center-children">
     <div id = 'earnings' class = 'center-children flex-row-flex-start center-me-h'>
       <div class = "chart-icon"><i class="fas fa-signal fa-2x center-me-v"></i></div>
-      <div class="chart-earnings" id="chart-earnings"></div>
+      <div class="chart-earnings" id="chart-earnings" style = "overflow: hidden;">
+      </div>
+      <div id = "hide-half" style = "width: 100%; height:100%; position: absolute; background: white;">
+      </div>
     </div>
   </div>
 
@@ -61,6 +67,7 @@
     var pxperunit = 10;
     var leftmargin = 750 / 2 - iconwidth - budget * pxperunit - 10;
     $('#earnings').css({'margin-left': leftmargin +'px'});
+    $('#hide-half').css({ 'margin-left': 750 / 2 - leftmargin +3 +'px' });
 
     drawTrial('chart-trial', true, {{ trial }}, {{ Constants.num_trials }}, '');
     drawEarnings('chart-earnings', {{ player.state|json }}, {{ player.budget|json }}, {{ max_less_state|json }}, {{ max_earning|json }}, true, true, {{ Constants.point_label|json }});
@@ -80,10 +87,10 @@
     var end = 0;
 
     var startTime;
-    var duration = 1000;
+    var duration = 600;
     var rAFid; // ID for request animation frame (rAF)
 
-    popup.fadeIn(150);
+    popup.fadeIn(100);
     draw();
 
     var rAFCallback = function( timestamp ) {
@@ -95,7 +102,7 @@
       if ( timeElapsedSinceStart < duration ){
         window.requestAnimationFrame( rAFCallback );
       } else {
-        popup.fadeOut(300)
+        popup.fadeOut(200)
       }
 
     }

@@ -1,0 +1,22 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+    <h1>Information</h1>
+{% endblock %}
+
+
+{% block content %}
+  {% blocktrans trimmed %}
+  <p>
+  Die nächsten Runden sind relevant für Ihren Bonus. Bitte bleiben Sie konzentriert während der Aufgabe. Sie können kurze Pausen zwischen den Durchgängen einlegen, aber bitte bearbeiten Sie die Aufgabe ohne längere Unterbrechung.
+  </p>
+  {% endblocktrans %}
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

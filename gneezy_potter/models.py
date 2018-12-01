@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     name_in_url = 'gneezy_potter'
     players_per_group = None
     num_rounds = 1
-    lang = 'eng'
+    lang = 'de'
 
 def make_field(label):
   return models.IntegerField(
