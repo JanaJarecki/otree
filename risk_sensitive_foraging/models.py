@@ -15,8 +15,8 @@ doc = """
 Risk sensitive foraging
 """
 
-# PM = exp.pm
-# AM = exp.am
+# self.PM = exp.pm
+# self.AM = exp.am
 
 class Constants(BaseConstants):
   name_in_url = 'rsf'
@@ -42,20 +42,20 @@ class Subsession(BaseSubsession):
 
   def creating_session(self):
     if (self.round_number == 1):
-      PM = exp.Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
-      AM = exp.Appearancemanager(PM, exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
+      self.self.PM = exp.Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
+      self.self.AM = exp.Appearancemanager(self.PM, exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
   # Executed at the very start, loops through each num_trial
     for p in self.get_players():
       round_number = self.round_number
-      phase_number = PM.get_phaseN(round_number)
-      phase = PM.get_phaseL(round_number)
-      stimuli = AM.get_stimuli(round_number, phase_number)
-      stimulus_position = AM.get_action_position(round_number)
-      feature_color = AM.get_feature_appearance(round_number)[0]
+      phase_number = self.PM.get_phaseN(round_number)
+      phase = self.PM.get_phaseL(round_number)
+      stimuli = self.AM.get_stimuli(round_number, phase_number)
+      stimulus_position = self.AM.get_action_position(round_number)
+      feature_color = self.AM.get_feature_appearance(round_number)[0]
 
       # Store variables
-      p.phase = PM.get_phaseL(round_number)
-      p.block = PM.get_block(round_number)      
+      p.phase = self.PM.get_phaseL(round_number)
+      p.block = self.PM.get_block(round_number)      
       p.budget = stimuli[2][0]
       p.stimulus0 = self.concat_stimulus(0, stimuli)
       p.stimulus1 = self.concat_stimulus(1, stimuli)
@@ -74,8 +74,8 @@ class Subsession(BaseSubsession):
       # Initialize containers
       n = int(Constants.num_rounds + 1)
       if (self.round_number == 1):
-        self.session.vars['instruction_rounds'] = PM.get_instruction_rounds()
-        self.session.vars['bonus_rounds'] = PM.get_bonus_rounds()
+        self.session.vars['instruction_rounds'] = self.PM.get_instruction_rounds()
+        self.session.vars['bonus_rounds'] = self.PM.get_bonus_rounds()
         p.participant.vars['stimulus_position'] = [None] * n
         p.participant.vars['img1'] = [None] * n
         p.participant.vars['img2'] = [None] * n
@@ -91,12 +91,12 @@ class Subsession(BaseSubsession):
       p.participant.vars['img1'][round_number] = css_img_orig_position[stimulus_position[0]]
       p.participant.vars['img2'][round_number] = css_img_orig_position[stimulus_position[1]]
       if (phase in ['familiarize', 'training']):
-        outcomes_orig_position = [p.draw_outcomes(x, Constants.num_trials) for x in AM.get_stimuli(round_number, phase_number)[ :2]]
+        outcomes_orig_position = [p.draw_outcomes(x, Constants.num_trials) for x in self.AM.get_stimuli(round_number, phase_number)[ :2]]
         p.participant.vars['outcomes'][round_number] = [outcomes_orig_position[i] for i in stimulus_position]
       maxx = max([max(stimuli[i]) for i in [0,1]])
       p.participant.vars['max_earnings'][round_number] = max(maxx * (Constants.num_trials), p.budget)
-      p.participant.vars['num_blocks'][round_number] = PM.get_num_trials_in_phase(round_number)
-      p.participant.vars['decision_number'][round_number] = PM.get_decision_number_in_phase(round_number)
+      p.participant.vars['num_blocks'][round_number] = self.PM.get_num_trials_in_phase(round_number)
+      p.participant.vars['decision_number'][round_number] = self.PM.get_decision_number_in_phase(round_number)
 
       if (self.round_number == 1):
         p.state = Constants.initial_state
@@ -111,10 +111,10 @@ class Subsession(BaseSubsession):
           # p.participant.vars['actions'] = rnd_actions       
           # p.participant.vars['budgets'] = numpy.array([x[2][0] for x in rnd_environments])
           # self.session.vars['num_actions'] = Constants.num_actions
-          # self.session.vars['num_blocks'] = PM.blocks[PM.i]
+          # self.session.vars['num_blocks'] = self.PM.blocks[self.PM.i]
 
           # # Predefine random outcomes of all options in all trials
-          # p.participant.vars['outcomes'] = [ [ p.draw_outcomes(gamble, PM.trials[PM.i] + 1) for gamble in a] for a in rnd_actions]
+          # p.participant.vars['outcomes'] = [ [ p.draw_outcomes(gamble, self.PM.trials[self.PM.i] + 1) for gamble in a] for a in rnd_actions]
           
           
 
@@ -174,7 +174,7 @@ class Subsession(BaseSubsession):
   #   if (round_number == 1):
   #     return(False)
   #   else:
-  #     return((PM.get_block(round_number - 1) != PM.get_block(round_number)))
+  #     return((self.PM.get_block(round_number - 1) != self.PM.get_block(round_number)))
 
 
   # def is_multitrial(self):
