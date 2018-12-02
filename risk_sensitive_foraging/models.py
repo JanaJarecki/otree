@@ -322,7 +322,7 @@ class Player(BasePlayer):
 
   def draw_bonus(self):
     print(self.session.vars['bonus_rounds'])
-    if self.round_number in self.session.vars['bonus_rounds']:
+    if self.round_number in self.player.vars['bonus_rounds']:
       self.payoff = self.success * self.state6
   #   bonus_rounds = self.session.vars['bonus_rounds']
   #   self.payoff = self.terminal_reward(i) for i in bonus_rounds])
