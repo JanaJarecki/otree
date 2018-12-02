@@ -106,8 +106,9 @@ class Choices(Page):
     return context
 
   def before_next_page(self):
-    if self.round_number == Constants.num_multitrial:
-      self.player.draw_bonus()
+    self.player.draw_bonus()
+    # if self.round_number == Constants.num_multitrial:
+    #   self.player.draw_bonus()
   # def before_next_page(self):
   #   if self.round_number <= Constants.num_multitrial:
   #     self.player.get_outcome()
@@ -185,16 +186,16 @@ class Payment(Page):
 
 
 page_sequence = [
-  Prolificid,
-  Consent,
-  Coverstory,
-  Coverstory_example,
-  Coverstory_check,
-  Incentives,
-  InstructionFamiliarizationPhase,
-  InstructionTrainingPhase,
-  InstructionCriticalPhase,
-  NewBlock,
+  # Prolificid,
+  # Consent,
+  # Coverstory,
+  # Coverstory_example,
+  # Coverstory_check,
+  # Incentives,
+  # InstructionFamiliarizationPhase,
+  # InstructionTrainingPhase,
+  # InstructionCriticalPhase,
+  # NewBlock,
   Choices,
-  ChoicesOneShot
+  # ChoicesOneShot
   ]

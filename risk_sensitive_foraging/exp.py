@@ -18,7 +18,7 @@ bonus_trials = [None]
 """Trials that are randomly drawn for the bonus"""
 bonus_blocks = [None]
 """How many blocks are drawn for the bonus in each phase?"""
-bonus_trials = [0, 2, 0]
+bonus_trials = [1, 2, 0]
 """How many blocks are drawn for the bonus in each phase?"""
 
 counts_from_one = 1
@@ -97,6 +97,7 @@ class Phasemanager:
     self.is_bonus_trial = [i for sublist in is_bonus_trial for i in sublist]
     lookup = np.column_stack((round_number, phase_number, block_number, stimulus_number, decision_number))
     self.lookup = lookup
+    print(lookup)
   def get_phaseN(self, round_number):
     return(self.lookup[round_number-1, 1])
   def get_phaseL(self, round_number):
@@ -108,7 +109,7 @@ class Phasemanager:
   def get_num_trials_in_phase(self, round_number):
     return(self.trials_per_phase[self.get_phaseN(round_number)])
   def get_bonus_rounds(self):
-    return(self.lookup[self.is_bonus_trial, 0])
+    return(self.lookup[self.is_bonus_trial, 0] + 1)
   def get_instruction_rounds(self):
     return([i + 1 for i in np.cumsum(self.trials_per_phase)])
   def get_decision_number_in_phase(self, round_number):

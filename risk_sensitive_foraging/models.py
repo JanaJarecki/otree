@@ -41,22 +41,22 @@ class Subsession(BaseSubsession):
     return(y)
 
   def creating_session(self):
-    if (self.round_number == 1):
-      self.session.vars['PM'] = exp.Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
-      self.session.vars['AM'] = exp.Appearancemanager(self.session.vars['PM'], exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
   # Executed at the very start, loops through each num_trial
     for p in self.get_players():
+      if (self.round_number == 1):
+        p.participant.vars['PM'] = exp.Phasemanager(exp.phases, exp.stimuli, exp.blocks, exp.trials)
+        p.participant.vars['AM'] = exp.Appearancemanager(p.participant.vars['PM'], exp.filepaths, exp.numfeatures, exp.numactions, exp.randomize_feature, exp.randomize_action, exp.randomize_stimulus_order)
       round_number = self.round_number
-      phase_number = self.session.vars['PM'].get_phaseN(round_number)
-      phase = self.session.vars['PM'].get_phaseL(round_number)
-      
-      stimuli = self.session.vars['AM'].get_stimuli(round_number, phase_number)
-      stimulus_position = self.session.vars['AM'].get_action_position(round_number)
-      feature_color = self.session.vars['AM'].get_feature_appearance(round_number)[0]
+      phase_number = p.participant.vars['PM'].get_phaseN(round_number)
+      phase = p.participant.vars['PM'].get_phaseL(round_number)
+
+      stimuli = p.participant.vars['AM'].get_stimuli(round_number, phase_number)
+      stimulus_position = p.participant.vars['AM'].get_action_position(round_number)
+      feature_color = p.participant.vars['AM'].get_feature_appearance(round_number)[0]
 
       # Store variables
-      p.phase = self.session.vars['PM'].get_phaseL(round_number)
-      p.block = self.session.vars['PM'].get_block(round_number)      
+      p.phase = p.participant.vars['PM'].get_phaseL(round_number)
+      p.block = p.participant.vars['PM'].get_block(round_number)      
       p.budget = stimuli[2][0]
       p.stimulus0 = self.concat_stimulus(0, stimuli)
       p.stimulus1 = self.concat_stimulus(1, stimuli)
@@ -75,8 +75,8 @@ class Subsession(BaseSubsession):
       # Initialize containers
       n = int(Constants.num_rounds + 1)
       if (self.round_number == 1):
-        self.session.vars['instruction_rounds'] = self.session.vars['PM'].get_instruction_rounds()
-        self.session.vars['bonus_rounds'] = self.session.vars['PM'].get_bonus_rounds()
+        self.session.vars['instruction_rounds'] = p.participant.vars['PM'].get_instruction_rounds()
+        p.participant.vars['bonus_rounds'] = p.participant.vars['PM'].get_bonus_rounds()
         p.participant.vars['stimulus_position'] = [None] * n
         p.participant.vars['img1'] = [None] * n
         p.participant.vars['img2'] = [None] * n
@@ -92,12 +92,12 @@ class Subsession(BaseSubsession):
       p.participant.vars['img1'][round_number] = css_img_orig_position[stimulus_position[0]]
       p.participant.vars['img2'][round_number] = css_img_orig_position[stimulus_position[1]]
       if (phase in ['familiarize', 'training']):
-        outcomes_orig_position = [p.draw_outcomes(x, Constants.num_trials) for x in self.session.vars['AM'].get_stimuli(round_number, phase_number)[ :2]]
+        outcomes_orig_position = [p.draw_outcomes(x, Constants.num_trials) for x in p.participant.vars['AM'].get_stimuli(round_number, phase_number)[ :2]]
         p.participant.vars['outcomes'][round_number] = [outcomes_orig_position[i] for i in stimulus_position]
       maxx = max([max(stimuli[i]) for i in [0,1]])
       p.participant.vars['max_earnings'][round_number] = max(maxx * (Constants.num_trials), p.budget)
-      p.participant.vars['num_blocks'][round_number] = self.session.vars['PM'].get_num_trials_in_phase(round_number)
-      p.participant.vars['decision_number'][round_number] = self.session.vars['PM'].get_decision_number_in_phase(round_number)
+      p.participant.vars['num_blocks'][round_number] = p.participant.vars['PM'].get_num_trials_in_phase(round_number)
+      p.participant.vars['decision_number'][round_number] = p.participant.vars['PM'].get_decision_number_in_phase(round_number)
 
       if (self.round_number == 1):
         p.state = Constants.initial_state
@@ -321,12 +321,15 @@ class Player(BasePlayer):
     }
 
   def draw_bonus(self):
-    bonus_rounds = self.session.vars['bonus_rounds']
-    self.payoff = sum([ self.terminal_reward(i) for i in bonus_rounds])
-    return self.payoff
+    print(self.session.vars['bonus_rounds'])
+    if self.round_number in self.session.vars['bonus_rounds']:
+      self.payoff = self.success * self.state6
+  #   bonus_rounds = self.session.vars['bonus_rounds']
+  #   self.payoff = self.terminal_reward(i) for i in bonus_rounds])
+  #   return self.payoff
 
-  def terminal_reward(self, i):
-    p = self.in_round(i)
-    return p.success * p.state6
+  # def terminal_reward(self, i):
+  #   p = self.in_round(i)
+  #   return p.success * p.state6
 
 
