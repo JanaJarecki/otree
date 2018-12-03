@@ -22,10 +22,10 @@ class Constants(BaseConstants):
   name_in_url = 'rsf'
   players_per_group = None
   num_familiarization_rounds = 1
-  num_repetitions = 9 * 2
+  num_repetitions = 9 * 10
   num_trials = 5
   num_multitrial = num_repetitions + num_familiarization_rounds
-  num_oneshot = 21 * 2
+  num_oneshot = 46
   num_rounds = exp.num_rounds
   point_label = _('Punkte')
   trial_label = _('Entscheidung')

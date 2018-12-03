@@ -70,7 +70,9 @@ num_rounds = sum([a * b * c for a, b, c in zip(stimuli, blocks, trials)])
 class Phasemanager:
   def __init__(self, phases, stimuli, blocks, trials):
     self.doc = "Manage phases object holding the phases"
-    self.num_rounds = sum([a * b * c for a, b, c in zip(stimuli, blocks, trials)])
+    self.num_rounds_per_phase = [a * b * c for a, b, c in zip(stimuli, blocks, trials)]
+    self.num_rounds = sum(self.num_rounds_per_phase)
+    self.phases = phases
     self.stimuli = stimuli
     self.blocks = blocks
     self.trials = trials
@@ -94,7 +96,6 @@ class Phasemanager:
     self.is_bonus_trial = [i for sublist in is_bonus_trial for i in sublist]
     lookup = np.column_stack((round_number, phase_number, block_number, stimulus_number, decision_number))
     self.lookup = lookup
-    print(lookup)
   def get_phaseN(self, round_number):
     return(self.lookup[round_number-1, 1])
   def get_phaseL(self, round_number):
@@ -135,7 +136,7 @@ def load_choice_environment(filepath):
 #   return x
 
 class Appearancemanager:
-  def __init__(self, PM, filepaths, numfeatures, numactions,  randomize_feature, randomize_action, randomize_stimulus_order):
+  def __init__(self, PM, filepaths, numfeatures, numactions, randomize_feature, randomize_action, randomize_stimulus_order):
     # Load the environment
     self.environments = [load_choice_environment(x) for x in filepaths]
     # Randomizations
@@ -145,17 +146,24 @@ class Appearancemanager:
       self.stimulus_order = [random.sample(x, k=len(x)) for x in self.stimulus_order]   
     self.stimulus_order = [item for sublist in self.stimulus_order for item in sublist]
     # Action: Position of the action buttons (stimuli) or keys
-    tmp = [a * b * c for a, b, c in zip(PM.stimuli, numactions, PM.trials)]
-    self.action_positions = [list(range(x)) for x in np.repeat(numactions, tmp)]
+    # tmp = [a * b * c  for a, b, c in zip(PM.stimuli, PM.trials, PM.blocks)]
+    num_rounds_per_phase = PM.num_rounds_per_phase
+    print(num_rounds_per_phase)
+    num_rounds = PM.num_rounds
+    num_phases = len(PM.phases)
+    print(num_rounds)
+    self.action_positions = [list(range(x)) for x in np.repeat(numactions, num_rounds_per_phase)]
     if ('position/trial' in randomize_action):
       self.action_positions = [random.sample(x, k=len(x)) for x in self.action_positions]
-    # Feature: Color or position of the features
-    numactions_long = np.repeat(numactions, tmp)
-    numfeatures_long = [item for sublist in [[numfeatures[i]] * tmp[i] for i in range(len(tmp))] for item in sublist]
-    num_rounds = PM.num_rounds
-    self.feature_appearances = [[list(range(numfeatures_long[i][0]))] * numactions_long[i] for i in range(num_rounds)]
+    # Determine position and appearance of features ---------------------------
+    numactions_long = np.repeat(numactions, num_rounds_per_phase)
+    numfeatures_long = [[numfeatures[i]] * num_rounds_per_phase[i] for i in range(num_phases)]
+    numfeatures_long = [item for sublist in numfeatures_long for item in sublist] # this is just to flatten it to one vector
+    self.feature_appearances = [[list(range(numfeatures_long[i][0]))] * numactions_long[i] for i in range(num_rounds)] # todo: this only works if feature.0 and feature.1 have the same number of values
     if ('appearance/trial' in randomize_feature):
       self.feature_appearances = [[random.sample(range(numfeatures_long[i][0]), k = numfeatures_long[i][0])] * numactions_long[i] for i in range(num_rounds)]
+    print(self.feature_appearances)
+    print(self.action_positions)
   def get_stimuli(self, round_number, phase_number):
     i = self.stimulus_order[round_number-1]
     return(self.environments[phase_number][i])
