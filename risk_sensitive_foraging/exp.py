@@ -4,7 +4,7 @@ import random
 
 phases  = ['familiarize', 'training', 'critical']
 """Names of the different phases"""
-stimuli = [1, 1, 1]
+stimuli = [1, 2, 2]
 """How many unique stimuli are there in each phase?"""
 blocks  = [1, 1, 1]
 """How many blocks are there in each phase?"""
