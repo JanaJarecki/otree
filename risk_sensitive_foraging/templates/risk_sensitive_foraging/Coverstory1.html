@@ -1,0 +1,30 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+  {% blocktrans trimmed %}
+  Ihr Ziel in dieser Studie ist es ein Punkteziel zu erreichen. Zum Beispiel:
+  {% endblocktrans %}
+
+  <img src='{% static "risk_sensitive_foraging/example_earningsEN.png" %}'/ width = '300px'> 
+
+  <p class = 'example'> {% blocktrans trimmed %}
+  Ihr Ziel sind <u>neun</u> Punkte. Sie haben gerade null Punkte.
+  {% endblocktrans %}
+  </p>
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

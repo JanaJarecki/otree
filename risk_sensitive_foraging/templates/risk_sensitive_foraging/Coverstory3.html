@@ -1,0 +1,67 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <p>
+  {% blocktrans trimmed %}
+  Sie werden sich je <b>5 Mal</b> zwischen den gleichen Optionen entscheiden.
+  {% endblocktrans %}
+  </p>
+
+
+
+  <!--<p class = 'example'> {% blocktrans trimmed %}
+  Sie befinden sich in der ersten von fünf Entscheidung.
+  {% endblocktrans %}
+  </p>-->
+
+  <p>
+    {% blocktrans trimmed %}
+      Direkt nach der Entscheidung <b>sehen Sie wie viele Punkte Sie erhalten</b>
+    {% endblocktrans %}
+  </p>
+
+  <p class = 'example'>
+    {% blocktrans trimmed %}
+    Sie haben die Option die +0 oder +4 auszahlt gewählt. Die Option wurde realisiert und ergab +4&nbsp;Punkte. Ihr aktueller Punktestand erhöht sich von 0 auf 4 Punkte. {% endblocktrans %}  
+  </p>
+
+  <!--<img class = 'center' src='{% static "risk_sensitive_foraging/point_feedback.jpg" %}' width = '70%'>-->
+
+  <div class = "flex-row">
+    <div>
+      <img src='{% static "risk_sensitive_foraging/example_timeEN.png" %}'/ width = "170px"> <br><br><br>
+      <img src='{% static "risk_sensitive_foraging/example_earningsEN.png" %}'/ width = '260px'> 
+    </div>
+    <div>
+      <img class = "center " src='{% static "risk_sensitive_foraging/example_earnings_added.png" %}' width = "330px"> 
+    </div>
+   </div>
+
+   <p>{% blocktrans trimmed %}
+  Wichtig: die Wahrscheinlichkeiten dafür 4 Punkte zu erhalten ändert sich nicht, wenn 4 Punkte realisiert worden sind. {% endblocktrans %}</p>
+
+    
+
+  
+
+  <h3>{% blocktrans trimmed %}Ihr Ziel und bonus{% endblocktrans %}</h3>
+
+  <p>{% blocktrans trimmed %}
+  Was zählt ist, ob Sie am <b>nach 5 Entscheidungen das Puntkeziel erreicht</b> haben (im Beispiel ist das Punkteziel 9 Punkte). Wenn Sie nach der 5. Entscheidung über dem Puntkeziel liegen, können Sie eine Bonuszahlung für diesen Durchgang erhalten. Wenn sie darunter liegen, erhalten Sie keinen Bonus.{% endblocktrans %}</p>
+
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

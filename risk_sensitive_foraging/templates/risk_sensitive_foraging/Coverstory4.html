@@ -1,0 +1,35 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <h3>{% blocktrans trimmed %}Zusammenfassung{% endblocktrans %}</h3>
+
+  {% blocktrans trimmed %}<ul>
+  <li>Ihr Ziel ist es Punkte zu sammeln, um ein vorgegebenes Ziel zu erreichen.
+  <li>Sie samneln Punkte indem Sie zwischen zwei Optionen entscheiden.
+  <li>Beide Optionen ergeben mit bestimmten Wahrscheinlickeiten Punkte
+  <li>Die Wahrscheinlichkeiten der Optionen sind immer wie angegeben, egal was sie wählen und was sie erhalten.
+  <li>Was zählt ist, ob Sie nach 5 Entscheidungen das Ziel erreicht haben
+  </ul>{% endblocktrans %}
+
+  <h3>{% blocktrans trimmed %}Runden{% endblocktrans %}</h3>
+
+  <p>{% blocktrans trimmed %} 
+    Nach der fünften Entscheidung endet der Durchgang. Es beginnt eine neue Runde mit neuem Punkteziel und neuen Optionen. Ihre Entscheidungen in der letzten Runde beeinflussen die Entscheidungen in der nächsten Runde nicht.
+  {% endblocktrans %}</p>
+
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+

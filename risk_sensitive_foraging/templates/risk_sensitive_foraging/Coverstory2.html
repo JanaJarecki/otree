@@ -1,0 +1,56 @@
+{% extends "risk_sensitive_foraging/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block title %}
+  <h1>
+    {% blocktrans trimmed %}Ihre Aufgabe{% endblocktrans %}
+  </h1>
+{% endblock %}
+
+
+{% block content %}
+  <h3>{% blocktrans trimmed %}Punkte sammeln{% endblocktrans %}</h3>
+  <p>{% blocktrans trimmed %}
+  Sie sammeln Punkte indem Sie sich zwischen <b>zwei Optionen</b> entscheiden. Jede Option ergibt mit einer bestimmten Wahrscheinlichkeit Punkte. Zum Beispiel:
+  {% endblocktrans %}</p>
+
+   <div class = "flex-row">
+    <div>
+      <img class = 'center' src='{% static "risk_sensitive_foraging/example_action.png" %}'/ width = '70%'>
+      <p class = 'example'>
+      {% blocktrans trimmed %}
+      Mit dieser Option erhalten Sie +2&nbsp;Punkte in 30&nbsp;% der Fälle oder +1 Punkt in 70&nbsp;% der Fälle.
+      {% endblocktrans %}  
+      </p>
+    </div>
+    <div>
+      <img class = 'center' src='{% static "risk_sensitive_foraging/example_action2.png" %}'/ width = '70%'>
+       <p class = 'example'>
+        {% blocktrans trimmed %}
+        Mit dieser Option erhalten Sie +4&nbsp;Punkte in 50&nbsp;% der Fälle, oder 0&nbsp;Punkte in 50&nbsp;% der Fälle.
+      {% endblocktrans %}  
+      </p>
+    </div>
+   </div>
+
+  <p>{% blocktrans trimmed %}
+    Welcher Fall eintreten wird, ist vorab nicht klar, aber nachdem Sie eine Option gewählt haben, wird einer der Fälle mit der gegebenen Chance realisiert: das heissts Sie erhalten entweder den ersten oder den zweiten Punktewert der gewählten Option mit der angegebenen Wahrscheinlichkeit.{% endblocktrans %}
+  </p>
+
+  <p>
+  {% blocktrans trimmed %}
+  Wir informieren Sie immer genau darüber wie viele Punkte Sie mit welchen Wahrscheinlichkeiten vond en beiden Optionen erhalten können. {% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans trimmed %}
+   Sie sammeln Punkte indem Sie sich zwischen <b>zwei Optionen entscheiden</b>. Sie entscheiden sich indem Sie die Option anklicken.
+  {% endblocktrans %}
+  </p>
+
+<div class = "right">
+    {% next_button %}
+  </div>
+
+{% endblock %}
+
