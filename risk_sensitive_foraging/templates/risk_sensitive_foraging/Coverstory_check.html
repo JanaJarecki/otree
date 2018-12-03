@@ -12,6 +12,13 @@
 
 
 {% block content %}
+  <p>
+  {% blocktrans trimmed %}
+  Für diese Studie ist es wichtig, dass Sie die Darstellungsweise der Aufgabe verstehen. Unten sehen Sie eine Entscheidungssituation und einige Fragen zu der Situation.
+  {% endblocktrans %}
+  </p>
+
+  
   <img class = "center img" src='{% static "risk_sensitive_foraging/attention_check.png" %}'/>
 
 
@@ -21,7 +28,7 @@
 
   <form id = "check">
     <fieldset class = "rsft-form">
-    <legend>  {% blocktrans trimmed %}Bitte wählen Sie den Buchstaben, der im obigen Bild die jeweilige Information markiert. Wo sehen Sie im obigen Bild ...
+    <legend>  {% blocktrans trimmed %}Im obigen Bild sehen Sie Buchstaben an verschiedenen Positionen. Bitte tippen Sie den Buchstaben hier ein, der anzeigt wo Sie folgende Information finden. Wo sehen Sie im obigen Bild ...
   {% endblocktrans %}</legend>
     <p>
       <label for="q1">  {% blocktrans trimmed %}... die verbleibende Zeit?
@@ -39,20 +46,22 @@
       <input id="q3" name="q3" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
     </p>
     <p>
-      <label for="q4">... Option A?</label>
+      <label for="q4">{% blocktrans trimmed %}... linke Option?
+  {% endblocktrans %}</label>
       <input id="q4" name="q4" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
     </p>
     <p>
-      <label for="q5">... Option B?</label>
+      <label for="q5">{% blocktrans trimmed %}... rechte Option?
+  {% endblocktrans %}</label>
       <input id="q5" name="q5" minlength="1" maxlength="1" type="text" required placeholder="A, B, C, D, E" onfocus="if (this.placeholder=='A, B, C, D, E') this.placeholder='';">
     </p>
   </fieldset>
 
     <fieldset class = "rsft-form">
-    <legend>{% blocktrans trimmed %}Im oben gezeigten Beispiel ...
+    <legend>{% blocktrans trimmed %}Bitte beantworten Sie ausserden zu der oben gezeigten Entscheidugnssituation folgende Fragen. Im oben gezeigten Beispiel ...
   {% endblocktrans %}</legend>
     <p>
-      <label for="q6">{% blocktrans trimmed %}Die wievielte Entscheidung treffen Sie gerade?{% endblocktrans %}</label>
+      <label for="q6">{% blocktrans trimmed %}Zeit: Die wievielte Entscheidung (x von 5) treffen Sie gerade?{% endblocktrans %}</label>
       <input id="q6" name="q6" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
     </p>
     <p>
@@ -68,11 +77,11 @@
       <input id="q9" name="q9" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
     </p>
     <p>
-      <label for="q10">{% blocktrans trimmed %}Wie viele Punkte können Sie von Option B maximal erhalten?{% endblocktrans %}</label>
+      <label for="q10">{% blocktrans trimmed %}Wie viele Punkte können Sie von der <u>rechten</u> Option maximal erhalten?{% endblocktrans %}</label>
       <input id="q10" name="q10" minlength="1" maxlength="1" type="number" required placeholder={% blocktrans trimmed %}"Number"{% endblocktrans %} onfocus="if (this.placeholder=={% blocktrans trimmed %}"Number"{% endblocktrans %}) this.placeholder='';">
     </p>
     <p>
-      <label for="q11">{% blocktrans trimmed %}Wie hoch ist die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in %)?{% endblocktrans %}</label>      
+      <label for="q11">{% blocktrans trimmed %}Wie hoch ist die Wahrscheinlichkeit von der <u>linken</u>u> +2 Punkte zu erhalten (0 - 100 in %, kein %-Zeichen eingeben)?{% endblocktrans %}</label>      
       <input id="q11" name="q11" minlength="1" maxlength="2" type="number" required placeholder="%" onfocus="if (this.placeholder=='%') this.placeholder='';">
     </p>
   </fieldset>
@@ -93,7 +102,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
 
   <script>
-    var answers = ["a", "c", "b", "d", "e", "3", "2", "9", "8", "4", "30"];
+    var answers = ["a", "c", "b", "d", "e", "3", "2", "9", "4", "4", "30"];
     var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11"];
 
     function check_answers(i) {

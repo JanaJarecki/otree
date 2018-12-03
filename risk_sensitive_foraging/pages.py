@@ -19,10 +19,21 @@ class Consent(Page):
     }
 
 
-class Coverstory(Page):
+class Coverstory1(Page):
   def is_displayed(self):
     return self.round_number == 1
 
+class Coverstory2(Page):
+  def is_displayed(self):
+    return self.round_number == 1
+
+class Coverstory3(Page):
+  def is_displayed(self):
+    return self.round_number == 1
+
+class Coverstory4(Page):
+  def is_displayed(self):
+    return self.round_number == 1
 
 class Coverstory_example(Page):
   def is_displayed(self):
@@ -186,16 +197,19 @@ class Payment(Page):
 
 
 page_sequence = [
-  # Prolificid,
-  # Consent,
-  # Coverstory,
-  # Coverstory_example,
-  # Coverstory_check,
-  # Incentives,
-  # InstructionFamiliarizationPhase,
-  # InstructionTrainingPhase,
-  # InstructionCriticalPhase,
-  # NewBlock,
+  Prolificid,
+  Consent,
+  Coverstory1,
+  Coverstory2,
+  Coverstory3,
+  Coverstory4,
+  Coverstory_example,
+  Coverstory_check,
+  Incentives,
+  InstructionFamiliarizationPhase,
+  InstructionTrainingPhase,
+  InstructionCriticalPhase,
+  NewBlock,
   Choices,
-  # ChoicesOneShot
+  ChoicesOneShot
   ]

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-01 23:16+0100\n"
-"PO-Revision-Date: 2018-12-01 23:16+0100\n"
+"POT-Creation-Date: 2018-12-03 00:48+0100\n"
+"PO-Revision-Date: 2018-12-03 00:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -62,7 +62,10 @@ msgstr ""
 "this study will require approximately 30 minutes."
 
 #: .\templates\risk_sensitive_foraging\Consent.html:30
-#: .\templates\risk_sensitive_foraging\Coverstory.html:7
+#: .\templates\risk_sensitive_foraging\Coverstory1.html:7
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:7
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:7
+#: .\templates\risk_sensitive_foraging\Coverstory4.html:7
 msgid "Ihre Aufgabe"
 msgstr "Your task"
 
@@ -190,62 +193,47 @@ msgstr ""
 "survey, and that your age is 18 years or older. If you do not agree please "
 "exit the survey now."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:14
+#: .\templates\risk_sensitive_foraging\Coverstory1.html:14
 msgid ""
-"Ihr Ziel in dieser Studie ist es Punkte zu sammeln um ein Punkteziel zu "
-"erreichen. Sie sammeln Punkte indem Sie sich zwischen zwei Optionen "
-"entscheiden. Sie haben 5 Entscheidungen Zeit, das Ziel zu erreichen."
-msgstr ""
-"Your goal during this study is to collect points in order to <b>reach a "
-"point goal</b>. You collect points by making decisions. You have five "
-"decisions time to reach a point goal. Then a new round starts. Below you see "
-"how the time and goal will be displayed:"
+"Ihr Ziel in dieser Studie ist es ein Punkteziel zu erreichen. Zum Beispiel:"
+msgstr "Your task in this study is to reach a point goal. For example:"
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:21
-msgid ""
-"Sie haben aktuell <u>null</u> Punkte, ihr Ziel ist es, <u>neun</u> Punkte zu "
-"erreichen. Sie befinden sich gerade in der <u>ersten von fünf</u> "
-"Entscheidung."
-msgstr ""
-"You currently have <u>zero</u> points, your point goal is reaching <u>nine</"
-"u> points. You currently are in decision number <u>one of five</u>."
+#: .\templates\risk_sensitive_foraging\Coverstory1.html:20
+msgid "Ihr Ziel sind <u>neun</u> Punkte. Sie haben gerade null Punkte."
+msgstr "Your goal are <u>nine</u> points. You currently have zero points."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:26
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:13
 msgid "Punkte sammeln"
 msgstr "Collect Points"
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:28
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:14
 msgid ""
-"Sie sammeln Punkte indem Sie sich zwischen zwei Optionen entscheiden (Option "
-"A und Option B). Beide Optionen können verschiedene Punktebeträge auszahlen, "
-"aber nur mit einer bestimmten Wahrscheinlichkeit. Wir informieren Sie immer "
-"genau darüber wie viele Punkte Sie mit welchen Wahrscheinlichkeiten von "
-"Option A und Option B erhalten können."
+"Sie sammeln Punkte indem Sie sich zwischen <b>zwei Optionen</b> entscheiden. "
+"Jede Option ergibt mit einer bestimmten Wahrscheinlichkeit Punkte. Zum "
+"Beispiel:"
 msgstr ""
-"Collect points by deciding between two options (Option A and Option B). The "
-"options yield points with some probability, as you see in the picture below. "
-"We will inform you about the amount of points and the probabilities of "
-"Option A and Option B before your choice."
+"You collect points by chosing between <b>two options</b>. Each option offers "
+"points with a probability. For example:"
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:36
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:22
 #, python-format
 msgid ""
-"Option A gibt Ihnen entweder +2&nbsp;Punkte in 30&nbsp;%% der Fälle oder "
-"aber +1 Punkt in 70&nbsp;%% der Fälle."
+"Mit dieser Option erhalten Sie +2&nbsp;Punkte in 30&nbsp;%% der Fälle oder "
+"+1 Punkt in 70&nbsp;%% der Fälle."
 msgstr ""
-"Option A yields either +2&nbsp;points in 30%% of the cases, or it yields +1 "
+"Chosing this option gives either +2&nbsp;points in 30%% of the cases, or +1 "
 "points in 70%% of the cases."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:44
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:30
 #, python-format
 msgid ""
-"Option B gibt Ihnen entweder +4&nbsp;Punkte in 50&nbsp;%% der Fälle, oder "
-"aber 0&nbsp;Punkte in 50&nbsp;%% der Fälle."
+"Mit dieser Option erhalten Sie +4&nbsp;Punkte in 50&nbsp;%% der Fälle, oder "
+"0&nbsp;Punkte in 50&nbsp;%% der Fälle."
 msgstr ""
-"Option B yields either +4&nbsp;points in 50%% of the cases, or it yields "
+"Chosing this option gives either +4&nbsp;points in 50%% of the cases, or "
 "0&nbsp;points in 50%% of the cases."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:53
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:37
 msgid ""
 "Welcher Fall eintreten wird, ist vorab nicht klar, aber nachdem Sie eine "
 "Option gewählt haben, wird einer der Fälle mit der gegebenen Chance "
@@ -256,50 +244,59 @@ msgstr ""
 "The points will be drawn according to the probabilities associated with the "
 "option."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:57
-msgid "Auswahl"
-msgstr "Choice"
-
-#: .\templates\risk_sensitive_foraging\Coverstory.html:60
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:42
 msgid ""
-"Wählen Sie eine Option, indem Sie auf die Option klicken. Nach Ihrer Wahl "
-"sehen Sie wie viele Punkte Sie erhalten. Ihr aktueller Punktestand passt "
-"sich dann an, gegeben Ihrer Wahl und den realisierten Punkten."
+"Wir informieren Sie immer genau darüber wie viele Punkte Sie mit welchen "
+"Wahrscheinlichkeiten vond en beiden Optionen erhalten können."
 msgstr ""
-"Chose an option by clicking on it. After making your choice you are informed "
-"about how many points you collect. These points will be added to your point "
-"total."
+"We will inform you about how many points each option offers and about the "
+"respective probabilities."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:66
+#: .\templates\risk_sensitive_foraging\Coverstory2.html:46
 msgid ""
-"Sie wählen Option B (die rechte Option). Die Option wurde realisiert und "
-"ergab +4&nbsp;Punkte. Ihr aktueller Punktestand ist jetzt 4 statt 0 Punkte."
-msgstr ""
-"You select option B (the option on the right). The option was played out and "
-"yielded +4&nbsp;points. Your current point total is now 4 points instead of "
-"0 points."
+"Sie sammeln Punkte indem Sie sich zwischen <b>zwei Optionen entscheiden</b>. "
+"Sie entscheiden sich indem Sie die Option anklicken."
+msgstr "To make a choice, you simply click on an option (with the mouse)."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:75
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:14
 msgid ""
-"Danach entscheiden Sie sich wieder zwischen Option A und Option B, ihr "
-"aktueller Punktestand ist der neue Punktestand. Sie treffen insgesamt 5 "
-"solcher Entscheidungen, nach jeder Entscheidung passt sich ihr aktueller "
-"Punktestand an. Die Wahrscheinlichkeiten der Optionen bleiben jedoch "
-"unverändert, unabhängig davon was Sie gerade gewählt und erhalten haben."
-msgstr ""
-"You now have 4 points. Then you decide again between Option A and Option B, "
-"for in total five choices. After each choice, points are drawn from the "
-"chosen option, and added to your point total.<br><br>\n"
-"\n"
-"Note, that the result of the last draw does not affect the probabilities for "
-"the next draw (drawing with replacement). The probabilities are always equal "
-"to what is stated in the description of the option."
+"Sie werden sich je <b>5 Mal</b> zwischen den gleichen Optionen entscheiden."
+msgstr "You will make <b>five</b> decisions between the same two options."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:79
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:21
+msgid "Sie befinden sich in der ersten von fünf Entscheidung."
+msgstr "You are in decision number one of five."
+
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:27
+msgid ""
+"Direkt nach der Entscheidung <b>sehen Sie wie viele Punkte Sie erhalten</b>"
+msgstr ""
+"Right after the decision you will be <b>informed about how many points you "
+"receive</b>."
+
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:33
+msgid ""
+"Sie haben die Option die +0 oder +4 auszahlt gewählt. Die Option wurde "
+"realisiert und ergab +4&nbsp;Punkte. Ihr aktueller Punktestand erhöht sich "
+"von 0 auf 4 Punkte."
+msgstr ""
+"You selected the option, that offered 0 or 4 points. The option was played "
+"out. The result are +4&nbsp;points."
+
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:49
+msgid ""
+"Wichtig: die Wahrscheinlichkeiten dafür 4 Punkte zu erhalten ändert sich "
+"nicht, wenn 4 Punkte realisiert worden sind."
+msgstr ""
+"Important: The probabilities that the option gives 4 points is <u>not</u> "
+"becoming smaller after you received 4 points. The option's probabilities are "
+"unchanged by the outcomes."
+
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:56
 msgid "Ihr Ziel und bonus"
 msgstr "Your goal and bonus"
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:81
+#: .\templates\risk_sensitive_foraging\Coverstory3.html:58
 msgid ""
 "Was zählt ist, ob Sie am <b>nach 5 Entscheidungen das Puntkeziel erreicht</"
 "b> haben (im Beispiel ist das Punkteziel 9 Punkte). Wenn Sie nach der 5. "
@@ -307,115 +304,153 @@ msgid ""
 "diesen Durchgang erhalten. Wenn sie darunter liegen, erhalten Sie keinen "
 "Bonus."
 msgstr ""
-"Remember your task is to reach a point goal. What matters is if you <b>reach "
-"the point goal within 5 decisions</b>. If your point total exceeded the "
-"point goal after the fifth decision, you can get a bonus payment for this "
-"round, otherwise you cannot get a bonus for this round."
+"What matters is if you <b>reach the point goal within 5 decisions</b>. If "
+"the points that you collected will exceed the goal, you can get a bonus "
+"payment for this round, otherwise you cannot get a bonus for this round."
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:84
-#: .\templates\risk_sensitive_foraging\NewBlock.html:15
-msgid "Neue Runde"
-msgstr "New Round"
+#: .\templates\risk_sensitive_foraging\Coverstory4.html:13
+msgid "Zusammenfassung"
+msgstr "Summary"
 
-#: .\templates\risk_sensitive_foraging\Coverstory.html:86
+#: .\templates\risk_sensitive_foraging\Coverstory4.html:15
+msgid ""
+"<ul> <li>Ihr Ziel ist es Punkte zu sammeln, um ein vorgegebenes Ziel zu "
+"erreichen. <li>Sie samneln Punkte indem Sie zwischen zwei Optionen "
+"entscheiden. <li>Beide Optionen ergeben mit bestimmten Wahrscheinlickeiten "
+"Punkte <li>Die Wahrscheinlichkeiten der Optionen sind immer wie angegeben, "
+"egal was sie wählen und was sie erhalten. <li>Was zählt ist, ob Sie nach 5 "
+"Entscheidungen das Ziel erreicht haben </ul>"
+msgstr ""
+"<ul> <li>Your task is to collect points in order to reach a predefined point "
+"goal.<li>You collect points by deciding between two options. The options "
+"offer points with a probability. <li>The probabilities associated with the "
+"options do <u>not</u> change depending on the points you receive from the "
+"option.<li>What matters is if you exceed the point goal after five "
+"decisions. Then you can get a bonus (see next pages).</ul>"
+
+#: .\templates\risk_sensitive_foraging\Coverstory4.html:23
+msgid "Runden"
+msgstr "Rounds"
+
+#: .\templates\risk_sensitive_foraging\Coverstory4.html:25
 msgid ""
 "Nach der fünften Entscheidung endet der Durchgang. Es beginnt eine neue "
-"Runde mit neuem Punkteziel und neuen Optionen. Jeder neue Runde ist wie ein "
-"'neues Leben': Sie starten wieder mit null Punkten, haben fünf "
-"Entscheidungen Zeit, es gibt zwei neue Optionen und eine neues Punkteziel. "
-"Sie haben immer fünf Entscheidungen Zeit um das gegebene Ziel durch "
-"wiederholte Wahl zwischen Option A und Option B zu erreichen."
+"Runde mit neuem Punkteziel und neuen Optionen. Ihre Entscheidungen in der "
+"letzten Runde beeinflussen die Entscheidungen in der nächsten Runde nicht."
 msgstr ""
-"After the fifth decision the current round ends, and a new round starts. New "
-"rounds involve a new point goal, and new options. Each new round is like a "
-"'new life': You begin with zero points, and a new point goal, there are new "
-"options, and you have five decisions time. We will tell you the goal and the "
-"options before each round. You will always have five decisions time to reach "
-"a goal by selecting between Option A and Option B. In total there are 91 "
-"rounds."
+"There are multiple <b>rounds</b>. One round consists of five decisions. New "
+"rounds involve a new point goal, and new options. Note that points that you "
+"collected in the last round do not affect the next round. The rounds are "
+"independetn of each other. In total there are <b>91 rounds with 5 choices</"
+"b> followed by another <b>46 choices</b>. This should take around 30-40 "
+"minutes."
 
 #: .\templates\risk_sensitive_foraging\Coverstory_check.html:7
 msgid "Verständnisfragen"
 msgstr "Comprehension check"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:19
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:16
+msgid ""
+"Für diese Studie ist es wichtig, dass Sie die Darstellungsweise der Aufgabe "
+"verstehen. Unten sehen Sie eine Entscheidungssituation und einige Fragen zu "
+"der Situation."
+msgstr ""
+"For this study, it is important that you understand the task. The picture "
+"below shows one example choice you will make during this study. Please "
+"answer the questions below it."
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:24
 msgid "Bitte füllen Sie die unten gezeigten Verständnisfragen korrekt aus:"
 msgstr "Please answer these comprehension questions correctiy:"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:24
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:29
 msgid ""
-"Bitte wählen Sie den Buchstaben, der im obigen Bild die jeweilige "
-"Information markiert. Wo sehen Sie im obigen Bild ..."
+"Im obigen Bild sehen Sie Buchstaben an verschiedenen Positionen. Bitte "
+"tippen Sie den Buchstaben hier ein, der anzeigt wo Sie folgende Information "
+"finden. Wo sehen Sie im obigen Bild ..."
 msgstr ""
-"Please type the letter that marks to the following information in the above "
-"image. Where in the image do you see ..."
+"The image contains letters that mark different locations in the image. "
+"Please indicate the letter that marks the locations of the following "
+"information in the image. Where in the image do you find ..."
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:27
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:32
 msgid "... die verbleibende Zeit?"
 msgstr "... how much time is left?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:32
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:37
 msgid "... das Punkteziel?"
 msgstr "... the point goal?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:37
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:42
 msgid "... den aktuellen Punktestand?"
 msgstr "... the current point total?"
 
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:47
+msgid "... linke Option?"
+msgstr "... left option?"
+
 #: .\templates\risk_sensitive_foraging\Coverstory_check.html:52
-msgid "Im oben gezeigten Beispiel ..."
-msgstr "In the example shown above ..."
+msgid "... rechte Option?"
+msgstr "... right option?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:55
-msgid "Die wievielte Entscheidung treffen Sie gerade?"
-msgstr "You currently making which decision out of five?"
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:59
+msgid ""
+"Bitte beantworten Sie ausserden zu der oben gezeigten Entscheidugnssituation "
+"folgende Fragen. Im oben gezeigten Beispiel ..."
+msgstr ""
+"Moreover, please answer the following questions about the choice situation "
+"that you see above. In the example above, ..."
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:56
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:60
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:64
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:68
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:72
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:62
+msgid "Zeit: Die wievielte Entscheidung (x von 5) treffen Sie gerade?"
+msgstr "You are <u>now</u> in decision number (x of five) ... ?"
+
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:63
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:67
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:71
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:75
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:79
 msgid "\"Number\""
 msgstr "\"Number\""
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:59
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:66
 msgid "Wie viele Entscheidungen haben Sie in dieser Runde schon getroffen?"
-msgstr "How many decisions have you already made in this round?"
+msgstr "How many decisions have you already made?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:63
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:70
 msgid "Wie hoch ist Ihr Punkteziel?"
-msgstr "How high is your point goal?"
+msgstr "How high is the point <u>goal</u>?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:67
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:74
 msgid "Wie hoch ist Ihr aktueller Punktestand?"
-msgstr "How high ist your current point total?"
+msgstr "How high ist your <u>current</u> point total?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:71
-msgid "Wie viele Punkte können Sie von Option B maximal erhalten?"
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:78
+msgid ""
+"Wie viele Punkte können Sie von der <u>rechten</u> Option maximal erhalten?"
 msgstr ""
-"What ist the maximum number of points that you can collect from the right "
-"Option B?"
+"What ist the maximum number of points that the <u>right</u> option offers?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:75
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:82
 #, python-format
 msgid ""
-"Wie hoch ist die Wahrscheinlichkeit von Option A +2 Punkte zu erhalten (in "
-"%%)?"
+"Wie hoch ist die Wahrscheinlichkeit von der <u>linken</u>u> +2 Punkte zu "
+"erhalten (0 - 100 in %%, kein %%-Zeichen eingeben)?"
 msgstr ""
-"What is the probability to collect +2 points from the left Option A (in %%, "
-"enter a number from 1-100 )?"
+"What is the probability to collect +2 points from the <u>left</u> option? "
+"(in %%, enter a number from 1-100, no %% sign)?"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:85
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:92
 #: .\templates\risk_sensitive_foraging\Incentives.html:62
 msgid " Überprüfen"
 msgstr " Check"
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:119
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:126
 #: .\templates\risk_sensitive_foraging\Incentives.html:104
 msgid "\"Richtig! Weiter geht es mit Klick auf OK.\""
 msgstr "\"Correct! Continue by clicking OK.\""
 
-#: .\templates\risk_sensitive_foraging\Coverstory_check.html:120
+#: .\templates\risk_sensitive_foraging\Coverstory_check.html:127
 msgid ""
 "\"Nicht ganz richtig. Schauen Sie sich die Antworten in den rot markierten "
 "Feldern bitte noch einmal an und korrigieren Sie diese.\""
@@ -454,8 +489,8 @@ msgid ""
 "  "
 msgstr ""
 "\n"
-"Upon finishing the study you will receive %(fee)s, plus a <b>bonus payment</"
-"b>, which depends on your choices"
+"At the end of this study you will receive %(fee)s. In addition, you can "
+"receive a <b>bonus payment</b>."
 
 #: .\templates\risk_sensitive_foraging\Incentives.html:17
 #, python-format
@@ -470,12 +505,14 @@ msgid ""
 "  "
 msgstr ""
 "\n"
-"Your bonus will be determined from two choice rounds. Each of the subsequent "
-"rounds is equally likely to be one of the two bonus rounds. Imagine round "
-"number 50 will drawn as bonus round. <u>If</u> you have reached the point "
-"goal in round 50, each point you collected in the round adds <b>+&nbsp;"
-"%(rwc_pp)s</b> to your payment. However, if you did <u>not</u> reach the "
-"point goal in round 50, nothing is added to your payment."
+"<p>The bonus is calculated as follows. If you reached the goal after five "
+"decisions, each point that you collect is worth<b> +&nbsp;%(rwc_pp)s</b> "
+"bonus. If you did <u>not</u> reach the point goal in a round, your bonus "
+"equals zero.</p>\n"
+"<p>\n"
+"Your bonus will be determined from <b>two rounds</b> that will be randomly "
+"selected from all rounds. Each of the subsequent rounds is equally likely to "
+"be one of the two bonus rounds.</p>"
 
 #: .\templates\risk_sensitive_foraging\Incentives.html:22
 #, python-format
@@ -488,10 +525,10 @@ msgid ""
 "   "
 msgstr ""
 "\n"
-" You collected 12&nbsp;points at the end of a round, the goal consisted of "
-"8&nbsp;points. Your bonus for this round is <u>%(example_pay)s</u> (should "
-"the round be randomly drawn as bonus round). The bonus results from 12&nbsp;"
-"x&nbsp%(rwc_pp)s, since you collected 12 points in this round."
+" Your goal was 8&nbsp. You collected 12&nbsp;points after five decisions. "
+"Your bonus equals <u>%(example_pay)s</u> (if the round is randomly drawn as "
+"bonus round). The bonus results from 12&nbsp;x&nbsp%(rwc_pp)s because you "
+"collected 12 points."
 
 #: .\templates\risk_sensitive_foraging\Incentives.html:30
 msgid "Bitte beantworten Sie diese Verständnisfragen richtig:"
@@ -605,9 +642,10 @@ msgid ""
 "Unterbrechung. </p>"
 msgstr ""
 "<p> The next rounds are relevant for your bonus. Please complete the task "
-"thoughtfully and stay concentrated. You can take short breaks between the "
-"rounds. However, please complete the whole study in one go without longer "
-"breaks. <p>."
+"thoughtfully and stay concentrated. You can take short breaks (half a "
+"minute) between rounds, if you like. However, please complete the whole "
+"study in one go without longer breaks (don't interrupt the experiment or "
+"make a longer pause, please). <p>."
 
 #: .\templates\risk_sensitive_foraging\NewBlock.html:9
 #, python-format
@@ -618,6 +656,10 @@ msgid ""
 msgstr ""
 "\n"
 "Goal reached </br>in %(successes)s of %(num_blocks)s</br>rounds."
+
+#: .\templates\risk_sensitive_foraging\NewBlock.html:15
+msgid "Neue Runde"
+msgstr "New Round"
 
 #: .\templates\risk_sensitive_foraging\NewBlock.html:25
 msgid "Sie haben das Ziel in der letzten Runde erreicht."
@@ -650,6 +692,73 @@ msgstr ""
 #: .\templates\risk_sensitive_foraging\NewBlock.html:54
 msgid "Optionen für nächste Runde"
 msgstr "Options for the next round"
+
+#~ msgid "Im oben gezeigten Beispiel ..."
+#~ msgstr "In the example shown above ..."
+
+#~ msgid ""
+#~ "Nach der fünften Entscheidung endet der Durchgang. Es beginnt eine neue "
+#~ "Runde mit neuem Punkteziel und neuen Optionen. Jeder neue Runde ist wie "
+#~ "ein 'neues Leben': Sie starten wieder mit null Punkten, haben fünf "
+#~ "Entscheidungen Zeit, es gibt zwei neue Optionen und eine neues "
+#~ "Punkteziel. Sie haben immer fünf Entscheidungen Zeit um das gegebene Ziel "
+#~ "durch wiederholte Wahl zwischen Option A und Option B zu erreichen."
+#~ msgstr ""
+#~ "After the fifth decision the current round ends, and a new round starts. "
+#~ "New rounds involve a new point goal, and new options. Each new round is "
+#~ "like a 'new life': You begin with zero points, and a new point goal, "
+#~ "there are new options, and you have five decisions time. We will tell you "
+#~ "the goal and the options before each round. You will always have five "
+#~ "decisions time to reach a goal by selecting between Option A and Option "
+#~ "B. In total there are 91 rounds."
+
+#~ msgid ""
+#~ "Sie haben aktuell <u>null</u> Punkte, ihr Ziel ist es, <u>neun</u> Punkte "
+#~ "zu erreichen. Sie befinden sich gerade in der <u>ersten von fünf</u> "
+#~ "Entscheidung."
+#~ msgstr ""
+#~ "You currently have <u>zero</u> points, your point goal is reaching "
+#~ "<u>nine</u> points. You currently are in decision number <u>one of five</"
+#~ "u>."
+
+#~ msgid ""
+#~ "Sie sammeln Punkte indem Sie sich zwischen zwei Optionen entscheiden "
+#~ "(Option A und Option B). Beide Optionen können verschiedene Punktebeträge "
+#~ "auszahlen, aber nur mit einer bestimmten Wahrscheinlichkeit. Wir "
+#~ "informieren Sie immer genau darüber wie viele Punkte Sie mit welchen "
+#~ "Wahrscheinlichkeiten von Option A und Option B erhalten können."
+#~ msgstr ""
+#~ "Collect points by deciding between two options (Option A and Option B). "
+#~ "The options yield points with some probability, as you see in the picture "
+#~ "below. We will inform you about the amount of points and the "
+#~ "probabilities of Option A and Option B before your choice."
+
+#~ msgid "Auswahl"
+#~ msgstr "Choice"
+
+#~ msgid ""
+#~ "Wählen Sie eine Option, indem Sie auf die Option klicken. Nach Ihrer Wahl "
+#~ "sehen Sie wie viele Punkte Sie erhalten. Ihr aktueller Punktestand passt "
+#~ "sich dann an, gegeben Ihrer Wahl und den realisierten Punkten."
+#~ msgstr ""
+#~ "Chose an option by clicking on it. After making your choice you are "
+#~ "informed about how many points you collect. These points will be added to "
+#~ "your point total."
+
+#~ msgid ""
+#~ "Danach entscheiden Sie sich wieder zwischen Option A und Option B, ihr "
+#~ "aktueller Punktestand ist der neue Punktestand. Sie treffen insgesamt 5 "
+#~ "solcher Entscheidungen, nach jeder Entscheidung passt sich ihr aktueller "
+#~ "Punktestand an. Die Wahrscheinlichkeiten der Optionen bleiben jedoch "
+#~ "unverändert, unabhängig davon was Sie gerade gewählt und erhalten haben."
+#~ msgstr ""
+#~ "You now have 4 points. Then you decide again between Option A and Option "
+#~ "B, for in total five choices. After each choice, points are drawn from "
+#~ "the chosen option, and added to your point total.<br><br>\n"
+#~ "\n"
+#~ "Note, that the result of the last draw does not affect the probabilities "
+#~ "for the next draw (drawing with replacement). The probabilities are "
+#~ "always equal to what is stated in the description of the option."
 
 #~ msgid "Neue Situation"
 #~ msgstr "New situation"
@@ -914,13 +1023,6 @@ msgstr "Options for the next round"
 #~ "published in an aggregated form only. Data, without identifying "
 #~ "information, will be made publically available in an online database for "
 #~ "re-analysis by other researchers."
-
-#~ msgid ""
-#~ "In dieser Studie sammeln Sie Punkte. Es geht darum ein Punkteziel zu "
-#~ "erreichen, zum Beispiel mindestens 9 Punkte."
-#~ msgstr ""
-#~ "Your task in this study is to reach a <b>point goal</b>, for example at "
-#~ "least 9 points in five choices."
 
 #~ msgid ""
 #~ "Sie sammeln Punkte, indem Sie sich zwischen zwei Optionen entscheiden. "

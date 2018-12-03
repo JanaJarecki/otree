@@ -2,6 +2,8 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c, currency_range
 )
+import random
+import numpy
 
 
 author = 'Jana B. Jarecki'
@@ -33,4 +35,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
   riskGneezyPotter = make_field('67% earn zero or 33% earn 2.5 times the amount.')
+
+  def get_bonus(self):
+    self.payoff = (100 - self.riskGneezyPotter + numpy.random.binomial(n = 1, p = 0.33) * 2.5 * self.riskGneezyPotter) / 10
   pass
