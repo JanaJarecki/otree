@@ -6,7 +6,7 @@ phases  = ['familiarize', 'training', 'critical']
 """Names of the different phases"""
 stimuli = [1, 9, 46]
 """How many unique stimuli are there in each phase?"""
-blocks  = [1, 2, 1]
+blocks  = [1, 10, 1]
 """How many blocks are there in each phase?"""
 trials  = [1, 1, 1]
 """How many trials are there PER BLOCK in each phase?"""

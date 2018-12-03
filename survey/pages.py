@@ -9,23 +9,22 @@ class Demographics(Page):
     form_fields = ['age',
                    'gender',
                    'income',
-                   'nativelang']
+                   'language_english']
 
 class OpenQuestions(Page):
     form_model = 'player'
-    form_fields = ['instructions_clear',
-                   'choice_strategie',
-                   'selfrep_dataquality',
-                   'open_text',
-
+    form_fields = ['task_clear',
+                   'strategy',
+                   'dataquality',
+                   'open_text'
                    ]
 
 
-class CognitiveReflectionTest(Page):
-    form_model = 'player'
-    form_fields = ['crt_bat',
-                   'crt_widget',
-                   'crt_lake']
+# class CognitiveReflectionTest(Page):
+#     form_model = 'player'
+#     form_fields = ['crt_bat',
+#                    'crt_widget',
+#                    'crt_lake']
 
 
 page_sequence = [

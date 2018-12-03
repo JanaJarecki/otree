@@ -54,7 +54,7 @@ class Player(BasePlayer):
         ],
         verbose_name = 'Which category does your monthly income after tax fall into? (the amount that is available to you either from work or other sources of income)')
 
-    strategie = models.LongStringField(
+    strategy = models.LongStringField(
         verbose_name='''
         Please think back to the choice phase (when you decided between the two options). Can you describe how you made the decision which of the two options to pick?''',
     )
