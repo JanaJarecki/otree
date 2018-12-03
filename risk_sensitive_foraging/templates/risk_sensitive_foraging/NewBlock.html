@@ -20,7 +20,7 @@
 {% block content %}
   <div>
   <p>
-  {% if player.block > 1 %}
+  {% if decision_number > 1 %}
     {% if success == 1 %} 
     {% blocktrans trimmed %}
         Sie haben das Ziel in der letzten Runde erreicht.
@@ -34,7 +34,7 @@
     {% blocktrans trimmed %}
        Weiter zur nächsten Runde (runde 
     {% endblocktrans %}
-    {{ currentblock }}).
+    {{ decision_number }}).
   {% endif %}
   </p>
   

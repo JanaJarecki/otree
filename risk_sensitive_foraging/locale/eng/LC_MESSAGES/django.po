@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-03 00:48+0100\n"
-"PO-Revision-Date: 2018-12-03 00:53+0100\n"
+"PO-Revision-Date: 2018-12-03 03:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -59,7 +59,7 @@ msgid ""
 "Die Studie dauert ungefähr 30 Minuten."
 msgstr ""
 "The study aims at investigating human decision making. Your participation in "
-"this study will require approximately 30 minutes."
+"this study will require approximately 40 minutes."
 
 #: .\templates\risk_sensitive_foraging\Consent.html:30
 #: .\templates\risk_sensitive_foraging\Coverstory1.html:7
@@ -511,8 +511,9 @@ msgstr ""
 "equals zero.</p>\n"
 "<p>\n"
 "Your bonus will be determined from <b>two rounds</b> that will be randomly "
-"selected from all rounds. Each of the subsequent rounds is equally likely to "
-"be one of the two bonus rounds.</p>"
+"selected from all rounds. Each of the subsequent rounds are equally likely "
+"to be one of the two bonus rounds. Therefore, please pay attention to all "
+"rounds.</p>"
 
 #: .\templates\risk_sensitive_foraging\Incentives.html:22
 #, python-format
@@ -642,10 +643,10 @@ msgid ""
 "Unterbrechung. </p>"
 msgstr ""
 "<p> The next rounds are relevant for your bonus. Please complete the task "
-"thoughtfully and stay concentrated. You can take short breaks (half a "
-"minute) between rounds, if you like. However, please complete the whole "
-"study in one go without longer breaks (don't interrupt the experiment or "
-"make a longer pause, please). <p>."
+"thoughtfully and stay concentrated. You can take short breaks (a couple of "
+"seconds) between rounds, if you like. However, please complete the whole "
+"study in one go without longer breaks (don't interrupt the study, don't make "
+"a longer pause, please). <p>."
 
 #: .\templates\risk_sensitive_foraging\NewBlock.html:9
 #, python-format
@@ -654,7 +655,7 @@ msgid ""
 "            Ziel in <br>%(successes)s von %(num_blocks)s Runden erreicht.\n"
 "          "
 msgstr ""
-"\n"
+"time\n"
 "Goal reached </br>in %(successes)s of %(num_blocks)s</br>rounds."
 
 #: .\templates\risk_sensitive_foraging\NewBlock.html:15

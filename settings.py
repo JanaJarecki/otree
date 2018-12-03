@@ -56,7 +56,7 @@ SESSION_CONFIGS = [
         'app_sequence': [
             'risk_sensitive_foraging',
             'gneezy_potter',
-            # 'survey',
+            'survey',
             'payment_info'],
         'real_world_currency_per_point': 0.10,
     },
