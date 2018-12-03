@@ -15,7 +15,7 @@ bonus_trials = [None]
 """Trials that are randomly drawn for the bonus"""
 bonus_blocks = [None]
 """How many blocks are drawn for the bonus in each phase?"""
-bonus_trials = [1, 2, 0]
+bonus_trials = [0, 1, 0]
 """How many blocks are drawn for the bonus in each phase?"""
 
 counts_from_one = 1

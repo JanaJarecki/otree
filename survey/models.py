@@ -29,11 +29,11 @@ class Player(BasePlayer):
         verbose_name='What is your gender?',
         widget=widgets.RadioSelect)
 
-    nativelang = models.StringField(
+    language_english = models.StringField(
         choices = ['Yes', 'No'],
         verbose_name='Is English your native language (the language you speak most of the time)?')
 
-    selfrep_dataquality = models.IntegerField(
+    dataquality = models.IntegerField(
         choices = [
         [0, 'Not useful at all'],
         [1, 'Partly useful'],
@@ -54,12 +54,12 @@ class Player(BasePlayer):
         ],
         verbose_name = 'Which category does your monthly income after tax fall into? (the amount that is available to you either from work or other sources of income)')
 
-    choice_strategie = models.LongStringField(
+    strategie = models.LongStringField(
         verbose_name='''
         Please think back to the choice phase (when you decided between the two options). Can you describe how you made the decision which of the two options to pick?''',
     )
 
-    instructions_clear = models.IntegerField(
+    task_clear = models.IntegerField(
         choices = [
         [0, 'Not clear'],
         [1, 'Mostly not clear'],
