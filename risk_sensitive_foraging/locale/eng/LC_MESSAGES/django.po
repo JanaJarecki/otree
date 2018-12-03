@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-03 00:48+0100\n"
-"PO-Revision-Date: 2018-12-03 14:41+0100\n"
+"PO-Revision-Date: 2018-12-03 15:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -261,7 +261,7 @@ msgstr "To make a choice, you simply click on an option (with the mouse)."
 #: .\templates\risk_sensitive_foraging\Coverstory3.html:14
 msgid ""
 "Sie werden sich je <b>5 Mal</b> zwischen den gleichen Optionen entscheiden."
-msgstr "You will make <b>five</b> decisions between the same two options."
+msgstr "You will make <b>five</b> decisions between two options."
 
 #: .\templates\risk_sensitive_foraging\Coverstory3.html:21
 msgid "Sie befinden sich in der ersten von fünf Entscheidung."
