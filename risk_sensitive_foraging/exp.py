@@ -4,15 +4,12 @@ import random
 
 phases  = ['familiarize', 'training', 'critical']
 """Names of the different phases"""
-stimuli = [1, 1, 46]
+stimuli = [1, 9, 46]
 """How many unique stimuli are there in each phase?"""
-blocks  = [1, 3, 1]
+blocks  = [1, 2, 1]
 """How many blocks are there in each phase?"""
 trials  = [1, 1, 1]
 """How many trials are there PER BLOCK in each phase?"""
-
-bonus_phases = [1]
-"""Index of phases that are relevant for the bonus"""
 
 bonus_trials = [None]
 """Trials that are randomly drawn for the bonus"""
