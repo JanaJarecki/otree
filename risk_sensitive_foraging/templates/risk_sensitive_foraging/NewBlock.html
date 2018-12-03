@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    {% if player.block > 1 %}
+    {% if player.choice_number > 1 %}
       <span class = "round goal-reached-info parent lightgrey shadow">
         <p class = "center">
           {% blocktrans with successes=successes num_blocks=num_blocks %}

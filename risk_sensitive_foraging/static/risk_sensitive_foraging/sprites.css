@@ -1,20 +1,18 @@
-/* glue: 0.13 hash: a8e4c7e8d4 */
-        .sprite_9_80_5_featurecolor10,
-.sprite_9_80_5_featurecolor01,
-.sprite_9_80_4_featurecolor10,
+/* glue: 0.13 hash: 329d38c0ee */
+        .sprite_9_80_4_featurecolor10,
 .sprite_9_80_4_featurecolor01,
 .sprite_9_80_3_featurecolor10,
 .sprite_9_80_3_featurecolor01,
-.sprite_9_80_0_featurecolor10,
-.sprite_9_80_0_featurecolor01,
-.sprite_9_70_3_featurecolor10,
-.sprite_9_70_3_featurecolor01,
+.sprite_9_70_2_featurecolor10,
+.sprite_9_70_2_featurecolor01,
 .sprite_9_70_1_featurecolor10,
 .sprite_9_70_1_featurecolor01,
+.sprite_9_60_1_featurecolor10,
+.sprite_9_60_1_featurecolor01,
 .sprite_9_50_1_featurecolor10,
 .sprite_9_50_1_featurecolor01,
-.sprite_9_40_3_featurecolor10,
-.sprite_9_40_3_featurecolor01,
+.sprite_9_40_2_featurecolor10,
+.sprite_9_40_2_featurecolor01,
 .sprite_9_30_2_featurecolor10,
 .sprite_9_30_2_featurecolor01,
 .sprite_9_30_0_featurecolor10,
@@ -31,10 +29,8 @@
 .sprite_8_80_7_featurecolor01,
 .sprite_8_80_6_featurecolor10,
 .sprite_8_80_6_featurecolor01,
-.sprite_8_80_4_featurecolor10,
-.sprite_8_80_4_featurecolor01,
-.sprite_8_20_5_featurecolor10,
-.sprite_8_20_5_featurecolor01,
+.sprite_8_80_2_featurecolor10,
+.sprite_8_80_2_featurecolor01,
 .sprite_8_20_0_featurecolor10,
 .sprite_8_20_0_featurecolor01,
 .sprite_8_10_1_featurecolor10,
@@ -53,30 +49,40 @@
 .sprite_7_80_6_featurecolor01,
 .sprite_7_80_5_featurecolor10,
 .sprite_7_80_5_featurecolor01,
+.sprite_7_80_4_featurecolor10,
+.sprite_7_80_4_featurecolor01,
 .sprite_7_80_0_featurecolor10,
 .sprite_7_80_0_featurecolor01,
+.sprite_7_70_5_featurecolor10,
+.sprite_7_70_5_featurecolor01,
+.sprite_7_70_3_featurecolor10,
+.sprite_7_70_3_featurecolor01,
 .sprite_7_60_5_featurecolor10,
 .sprite_7_60_5_featurecolor01,
+.sprite_7_20_1_featurecolor10,
+.sprite_7_20_1_featurecolor01,
 .sprite_6_90_5_featurecolor10,
 .sprite_6_90_5_featurecolor01,
 .sprite_6_90_0_featurecolor10,
 .sprite_6_90_0_featurecolor01,
 .sprite_6_80_5_featurecolor10,
 .sprite_6_80_5_featurecolor01,
-.sprite_6_80_4_featurecolor10,
-.sprite_6_80_4_featurecolor01,
 .sprite_6_80_2_featurecolor10,
 .sprite_6_80_2_featurecolor01,
 .sprite_6_70_1_featurecolor10,
 .sprite_6_70_1_featurecolor01,
 .sprite_6_60_0_featurecolor10,
 .sprite_6_60_0_featurecolor01,
+.sprite_5_90_4_featurecolor10,
+.sprite_5_90_4_featurecolor01,
 .sprite_5_90_2_featurecolor10,
 .sprite_5_90_2_featurecolor01,
 .sprite_5_90_1_featurecolor10,
 .sprite_5_90_1_featurecolor01,
 .sprite_5_90_0_featurecolor10,
 .sprite_5_90_0_featurecolor01,
+.sprite_5_80_4_featurecolor10,
+.sprite_5_80_4_featurecolor01,
 .sprite_5_80_3_featurecolor10,
 .sprite_5_80_3_featurecolor01,
 .sprite_5_70_4_featurecolor10,
@@ -85,24 +91,18 @@
 .sprite_5_70_0_featurecolor01,
 .sprite_5_60_4_featurecolor10,
 .sprite_5_60_4_featurecolor01,
-.sprite_5_60_0_featurecolor10,
-.sprite_5_60_0_featurecolor01,
 .sprite_5_50_0_featurecolor10,
 .sprite_5_50_0_featurecolor01,
-.sprite_5_40_2_featurecolor10,
-.sprite_5_40_2_featurecolor01,
 .sprite_5_20_1_featurecolor10,
 .sprite_5_20_1_featurecolor01,
-.sprite_5_10_2_featurecolor10,
-.sprite_5_10_2_featurecolor01,
 .sprite_5_10_1_featurecolor10,
 .sprite_5_10_1_featurecolor01,
 .sprite_4_80_3_featurecolor10,
 .sprite_4_80_3_featurecolor01,
 .sprite_4_80_2_featurecolor10,
 .sprite_4_80_2_featurecolor01,
-.sprite_4_70_1_featurecolor10,
-.sprite_4_70_1_featurecolor01,
+.sprite_4_50_0_featurecolor10,
+.sprite_4_50_0_featurecolor01,
 .sprite_3_90_2_featurecolor10,
 .sprite_3_90_2_featurecolor01,
 .sprite_3_90_0_featurecolor10,
@@ -129,18 +129,18 @@
 .sprite_1_90_0_featurecolor01,
 .sprite_1_20_0_featurecolor10,
 .sprite_1_20_0_featurecolor01,
-.sprite_10_90_1_featurecolor10,
-.sprite_10_90_1_featurecolor01,
 .sprite_10_80_8_featurecolor10,
 .sprite_10_80_8_featurecolor01,
+.sprite_10_80_0_featurecolor10,
+.sprite_10_80_0_featurecolor01,
 .sprite_10_70_9_featurecolor10,
 .sprite_10_70_9_featurecolor01,
 .sprite_10_70_2_featurecolor10,
 .sprite_10_70_2_featurecolor01,
 .sprite_10_70_0_featurecolor10,
 .sprite_10_70_0_featurecolor01,
-.sprite_10_60_3_featurecolor10,
-.sprite_10_60_3_featurecolor01,
+.sprite_10_60_1_featurecolor10,
+.sprite_10_60_1_featurecolor01,
 .sprite_10_60_0_featurecolor10,
 .sprite_10_60_0_featurecolor01,
 .sprite_10_50_0_featurecolor10,
@@ -162,586 +162,582 @@
 .sprite_10_10_1_featurecolor10,
 .sprite_10_10_1_featurecolor01,
 .sprite_10_10_0_featurecolor10,
-.sprite_10_10_0_featurecolor01,
-.sprite_0_70_2_featurecolor10,
-.sprite_0_70_2_featurecolor01,
-.sprite_0_50_4_featurecolor10,
-.sprite_0_50_4_featurecolor01 {
+.sprite_10_10_0_featurecolor01 {
             background-image: url('sprites.png');
             background-repeat: no-repeat;
         }
         
-        .sprite_9_80_5_featurecolor10 {
+        .sprite_9_80_4_featurecolor10 {
             background-position: 0 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_5_featurecolor01 {
+        .sprite_9_80_4_featurecolor01 {
             background-position: -300px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_4_featurecolor10 {
+        .sprite_9_80_3_featurecolor10 {
             background-position: 0 -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_4_featurecolor01 {
+        .sprite_9_80_3_featurecolor01 {
             background-position: -300px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_3_featurecolor10 {
+        .sprite_9_70_2_featurecolor10 {
             background-position: 0 -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_3_featurecolor01 {
+        .sprite_9_70_2_featurecolor01 {
             background-position: -300px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_0_featurecolor10 {
+        .sprite_9_70_1_featurecolor10 {
             background-position: -600px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_80_0_featurecolor01 {
+        .sprite_9_70_1_featurecolor01 {
             background-position: -600px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_70_3_featurecolor10 {
+        .sprite_9_60_1_featurecolor10 {
             background-position: -600px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_70_3_featurecolor01 {
+        .sprite_9_60_1_featurecolor01 {
             background-position: 0 -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_70_1_featurecolor10 {
+        .sprite_9_50_1_featurecolor10 {
             background-position: -300px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_70_1_featurecolor01 {
+        .sprite_9_50_1_featurecolor01 {
             background-position: -600px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_50_1_featurecolor10 {
+        .sprite_9_40_2_featurecolor10 {
             background-position: -900px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_50_1_featurecolor01 {
+        .sprite_9_40_2_featurecolor01 {
             background-position: -900px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_40_3_featurecolor10 {
+        .sprite_9_30_2_featurecolor10 {
             background-position: -900px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_40_3_featurecolor01 {
+        .sprite_9_30_2_featurecolor01 {
             background-position: -900px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_30_2_featurecolor10 {
+        .sprite_9_30_0_featurecolor10 {
             background-position: 0 -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_30_2_featurecolor01 {
+        .sprite_9_30_0_featurecolor01 {
             background-position: -300px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_30_0_featurecolor10 {
+        .sprite_9_20_2_featurecolor10 {
             background-position: -600px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_30_0_featurecolor01 {
+        .sprite_9_20_2_featurecolor01 {
             background-position: -900px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_20_2_featurecolor10 {
+        .sprite_9_20_0_featurecolor10 {
             background-position: 0 -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_20_2_featurecolor01 {
+        .sprite_9_20_0_featurecolor01 {
             background-position: -300px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_20_0_featurecolor10 {
+        .sprite_9_10_2_featurecolor10 {
             background-position: -600px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_20_0_featurecolor01 {
+        .sprite_9_10_2_featurecolor01 {
             background-position: -900px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_10_2_featurecolor10 {
+        .sprite_9_10_1_featurecolor10 {
             background-position: -1200px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_10_2_featurecolor01 {
+        .sprite_9_10_1_featurecolor01 {
             background-position: -1200px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_10_1_featurecolor10 {
+        .sprite_8_80_7_featurecolor10 {
             background-position: -1200px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_9_10_1_featurecolor01 {
+        .sprite_8_80_7_featurecolor01 {
             background-position: -1200px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_7_featurecolor10 {
+        .sprite_8_80_6_featurecolor10 {
             background-position: -1200px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_7_featurecolor01 {
+        .sprite_8_80_6_featurecolor01 {
             background-position: -1200px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_6_featurecolor10 {
+        .sprite_8_80_2_featurecolor10 {
             background-position: 0 -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_6_featurecolor01 {
+        .sprite_8_80_2_featurecolor01 {
             background-position: -300px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_4_featurecolor10 {
+        .sprite_8_20_0_featurecolor10 {
             background-position: -600px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_80_4_featurecolor01 {
+        .sprite_8_20_0_featurecolor01 {
             background-position: -900px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_20_5_featurecolor10 {
+        .sprite_8_10_1_featurecolor10 {
             background-position: -1200px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_20_5_featurecolor01 {
+        .sprite_8_10_1_featurecolor01 {
             background-position: 0 -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_20_0_featurecolor10 {
+        .sprite_7_90_5_featurecolor10 {
             background-position: -300px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_20_0_featurecolor01 {
+        .sprite_7_90_5_featurecolor01 {
             background-position: -600px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_10_1_featurecolor10 {
+        .sprite_7_90_3_featurecolor10 {
             background-position: -900px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_8_10_1_featurecolor01 {
+        .sprite_7_90_3_featurecolor01 {
             background-position: -1200px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_5_featurecolor10 {
+        .sprite_7_90_2_featurecolor10 {
             background-position: -1500px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_5_featurecolor01 {
+        .sprite_7_90_2_featurecolor01 {
             background-position: -1500px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_3_featurecolor10 {
+        .sprite_7_90_1_featurecolor10 {
             background-position: -1500px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_3_featurecolor01 {
+        .sprite_7_90_1_featurecolor01 {
             background-position: -1500px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_2_featurecolor10 {
+        .sprite_7_90_0_featurecolor10 {
             background-position: -1500px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_2_featurecolor01 {
+        .sprite_7_90_0_featurecolor01 {
             background-position: -1500px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_1_featurecolor10 {
+        .sprite_7_80_6_featurecolor10 {
             background-position: -1500px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_1_featurecolor01 {
+        .sprite_7_80_6_featurecolor01 {
             background-position: -1500px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_0_featurecolor10 {
+        .sprite_7_80_5_featurecolor10 {
             background-position: 0 -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_90_0_featurecolor01 {
+        .sprite_7_80_5_featurecolor01 {
             background-position: -300px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_6_featurecolor10 {
+        .sprite_7_80_4_featurecolor10 {
             background-position: -600px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_6_featurecolor01 {
+        .sprite_7_80_4_featurecolor01 {
             background-position: -900px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_5_featurecolor10 {
+        .sprite_7_80_0_featurecolor10 {
             background-position: -1200px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_5_featurecolor01 {
+        .sprite_7_80_0_featurecolor01 {
             background-position: -1500px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_0_featurecolor10 {
+        .sprite_7_70_5_featurecolor10 {
             background-position: -1800px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_80_0_featurecolor01 {
+        .sprite_7_70_5_featurecolor01 {
             background-position: -1800px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_60_5_featurecolor10 {
+        .sprite_7_70_3_featurecolor10 {
             background-position: -1800px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_7_60_5_featurecolor01 {
+        .sprite_7_70_3_featurecolor01 {
             background-position: -1800px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_90_5_featurecolor10 {
+        .sprite_7_60_5_featurecolor10 {
             background-position: -1800px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_90_5_featurecolor01 {
+        .sprite_7_60_5_featurecolor01 {
             background-position: -1800px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_90_0_featurecolor10 {
+        .sprite_7_20_1_featurecolor10 {
             background-position: -1800px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_90_0_featurecolor01 {
+        .sprite_7_20_1_featurecolor01 {
             background-position: -1800px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_5_featurecolor10 {
+        .sprite_6_90_5_featurecolor10 {
             background-position: -1800px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_5_featurecolor01 {
+        .sprite_6_90_5_featurecolor01 {
             background-position: 0 -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_4_featurecolor10 {
+        .sprite_6_90_0_featurecolor10 {
             background-position: -300px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_4_featurecolor01 {
+        .sprite_6_90_0_featurecolor01 {
             background-position: -600px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_2_featurecolor10 {
+        .sprite_6_80_5_featurecolor10 {
             background-position: -900px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_80_2_featurecolor01 {
+        .sprite_6_80_5_featurecolor01 {
             background-position: -1200px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_70_1_featurecolor10 {
+        .sprite_6_80_2_featurecolor10 {
             background-position: -1500px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_70_1_featurecolor01 {
+        .sprite_6_80_2_featurecolor01 {
             background-position: -1800px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_60_0_featurecolor10 {
+        .sprite_6_70_1_featurecolor10 {
             background-position: 0 -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_6_60_0_featurecolor01 {
+        .sprite_6_70_1_featurecolor01 {
             background-position: -300px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_2_featurecolor10 {
+        .sprite_6_60_0_featurecolor10 {
             background-position: -600px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_2_featurecolor01 {
+        .sprite_6_60_0_featurecolor01 {
             background-position: -900px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_1_featurecolor10 {
+        .sprite_5_90_4_featurecolor10 {
             background-position: -1200px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_1_featurecolor01 {
+        .sprite_5_90_4_featurecolor01 {
             background-position: -1500px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_0_featurecolor10 {
+        .sprite_5_90_2_featurecolor10 {
             background-position: -1800px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_90_0_featurecolor01 {
+        .sprite_5_90_2_featurecolor01 {
             background-position: -2100px 0;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_80_3_featurecolor10 {
+        .sprite_5_90_1_featurecolor10 {
             background-position: -2100px -187px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_80_3_featurecolor01 {
+        .sprite_5_90_1_featurecolor01 {
             background-position: -2100px -374px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_70_4_featurecolor10 {
+        .sprite_5_90_0_featurecolor10 {
             background-position: -2100px -561px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_70_4_featurecolor01 {
+        .sprite_5_90_0_featurecolor01 {
             background-position: -2100px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_70_0_featurecolor10 {
+        .sprite_5_80_4_featurecolor10 {
             background-position: -2100px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_70_0_featurecolor01 {
+        .sprite_5_80_4_featurecolor01 {
             background-position: -2100px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_60_4_featurecolor10 {
+        .sprite_5_80_3_featurecolor10 {
             background-position: -2100px -1309px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_60_4_featurecolor01 {
+        .sprite_5_80_3_featurecolor01 {
             background-position: -2100px -1496px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_60_0_featurecolor10 {
+        .sprite_5_70_4_featurecolor10 {
             background-position: -2100px -1683px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_60_0_featurecolor01 {
+        .sprite_5_70_4_featurecolor01 {
             background-position: -2100px -1870px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_50_0_featurecolor10 {
+        .sprite_5_70_0_featurecolor10 {
             background-position: 0 -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_50_0_featurecolor01 {
+        .sprite_5_70_0_featurecolor01 {
             background-position: -300px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_40_2_featurecolor10 {
+        .sprite_5_60_4_featurecolor10 {
             background-position: -600px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_40_2_featurecolor01 {
+        .sprite_5_60_4_featurecolor01 {
             background-position: -900px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_20_1_featurecolor10 {
+        .sprite_5_50_0_featurecolor10 {
             background-position: -1200px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_20_1_featurecolor01 {
+        .sprite_5_50_0_featurecolor01 {
             background-position: -1500px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_10_2_featurecolor10 {
+        .sprite_5_20_1_featurecolor10 {
             background-position: -1800px -2057px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_5_10_2_featurecolor01 {
+        .sprite_5_20_1_featurecolor01 {
             background-position: -2100px -2057px;
             width: 300px;
             height: 187px;
@@ -783,13 +779,13 @@
             height: 187px;
         }
         
-        .sprite_4_70_1_featurecolor10 {
+        .sprite_4_50_0_featurecolor10 {
             background-position: -2400px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_4_70_1_featurecolor01 {
+        .sprite_4_50_0_featurecolor01 {
             background-position: -2400px -1309px;
             width: 300px;
             height: 187px;
@@ -951,25 +947,25 @@
             height: 187px;
         }
         
-        .sprite_10_90_1_featurecolor10 {
+        .sprite_10_80_8_featurecolor10 {
             background-position: -2700px -748px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_10_90_1_featurecolor01 {
+        .sprite_10_80_8_featurecolor01 {
             background-position: -2700px -935px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_10_80_8_featurecolor10 {
+        .sprite_10_80_0_featurecolor10 {
             background-position: -2700px -1122px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_10_80_8_featurecolor01 {
+        .sprite_10_80_0_featurecolor01 {
             background-position: -2700px -1309px;
             width: 300px;
             height: 187px;
@@ -1011,13 +1007,13 @@
             height: 187px;
         }
         
-        .sprite_10_60_3_featurecolor10 {
+        .sprite_10_60_1_featurecolor10 {
             background-position: 0 -2618px;
             width: 300px;
             height: 187px;
         }
         
-        .sprite_10_60_3_featurecolor01 {
+        .sprite_10_60_1_featurecolor01 {
             background-position: -300px -2618px;
             width: 300px;
             height: 187px;
@@ -1155,47 +1151,21 @@
             height: 187px;
         }
         
-        .sprite_0_70_2_featurecolor10 {
-            background-position: -3000px -748px;
-            width: 300px;
-            height: 187px;
-        }
-        
-        .sprite_0_70_2_featurecolor01 {
-            background-position: -3000px -935px;
-            width: 300px;
-            height: 187px;
-        }
-        
-        .sprite_0_50_4_featurecolor10 {
-            background-position: -3000px -1122px;
-            width: 300px;
-            height: 187px;
-        }
-        
-        .sprite_0_50_4_featurecolor01 {
-            background-position: -3000px -1309px;
-            width: 300px;
-            height: 187px;
-        }
-        
         @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
-            .sprite_9_80_5_featurecolor10,
-    .sprite_9_80_5_featurecolor01,
-    .sprite_9_80_4_featurecolor10,
+            .sprite_9_80_4_featurecolor10,
     .sprite_9_80_4_featurecolor01,
     .sprite_9_80_3_featurecolor10,
     .sprite_9_80_3_featurecolor01,
-    .sprite_9_80_0_featurecolor10,
-    .sprite_9_80_0_featurecolor01,
-    .sprite_9_70_3_featurecolor10,
-    .sprite_9_70_3_featurecolor01,
+    .sprite_9_70_2_featurecolor10,
+    .sprite_9_70_2_featurecolor01,
     .sprite_9_70_1_featurecolor10,
     .sprite_9_70_1_featurecolor01,
+    .sprite_9_60_1_featurecolor10,
+    .sprite_9_60_1_featurecolor01,
     .sprite_9_50_1_featurecolor10,
     .sprite_9_50_1_featurecolor01,
-    .sprite_9_40_3_featurecolor10,
-    .sprite_9_40_3_featurecolor01,
+    .sprite_9_40_2_featurecolor10,
+    .sprite_9_40_2_featurecolor01,
     .sprite_9_30_2_featurecolor10,
     .sprite_9_30_2_featurecolor01,
     .sprite_9_30_0_featurecolor10,
@@ -1212,10 +1182,8 @@
     .sprite_8_80_7_featurecolor01,
     .sprite_8_80_6_featurecolor10,
     .sprite_8_80_6_featurecolor01,
-    .sprite_8_80_4_featurecolor10,
-    .sprite_8_80_4_featurecolor01,
-    .sprite_8_20_5_featurecolor10,
-    .sprite_8_20_5_featurecolor01,
+    .sprite_8_80_2_featurecolor10,
+    .sprite_8_80_2_featurecolor01,
     .sprite_8_20_0_featurecolor10,
     .sprite_8_20_0_featurecolor01,
     .sprite_8_10_1_featurecolor10,
@@ -1234,30 +1202,40 @@
     .sprite_7_80_6_featurecolor01,
     .sprite_7_80_5_featurecolor10,
     .sprite_7_80_5_featurecolor01,
+    .sprite_7_80_4_featurecolor10,
+    .sprite_7_80_4_featurecolor01,
     .sprite_7_80_0_featurecolor10,
     .sprite_7_80_0_featurecolor01,
+    .sprite_7_70_5_featurecolor10,
+    .sprite_7_70_5_featurecolor01,
+    .sprite_7_70_3_featurecolor10,
+    .sprite_7_70_3_featurecolor01,
     .sprite_7_60_5_featurecolor10,
     .sprite_7_60_5_featurecolor01,
+    .sprite_7_20_1_featurecolor10,
+    .sprite_7_20_1_featurecolor01,
     .sprite_6_90_5_featurecolor10,
     .sprite_6_90_5_featurecolor01,
     .sprite_6_90_0_featurecolor10,
     .sprite_6_90_0_featurecolor01,
     .sprite_6_80_5_featurecolor10,
     .sprite_6_80_5_featurecolor01,
-    .sprite_6_80_4_featurecolor10,
-    .sprite_6_80_4_featurecolor01,
     .sprite_6_80_2_featurecolor10,
     .sprite_6_80_2_featurecolor01,
     .sprite_6_70_1_featurecolor10,
     .sprite_6_70_1_featurecolor01,
     .sprite_6_60_0_featurecolor10,
     .sprite_6_60_0_featurecolor01,
+    .sprite_5_90_4_featurecolor10,
+    .sprite_5_90_4_featurecolor01,
     .sprite_5_90_2_featurecolor10,
     .sprite_5_90_2_featurecolor01,
     .sprite_5_90_1_featurecolor10,
     .sprite_5_90_1_featurecolor01,
     .sprite_5_90_0_featurecolor10,
     .sprite_5_90_0_featurecolor01,
+    .sprite_5_80_4_featurecolor10,
+    .sprite_5_80_4_featurecolor01,
     .sprite_5_80_3_featurecolor10,
     .sprite_5_80_3_featurecolor01,
     .sprite_5_70_4_featurecolor10,
@@ -1266,24 +1244,18 @@
     .sprite_5_70_0_featurecolor01,
     .sprite_5_60_4_featurecolor10,
     .sprite_5_60_4_featurecolor01,
-    .sprite_5_60_0_featurecolor10,
-    .sprite_5_60_0_featurecolor01,
     .sprite_5_50_0_featurecolor10,
     .sprite_5_50_0_featurecolor01,
-    .sprite_5_40_2_featurecolor10,
-    .sprite_5_40_2_featurecolor01,
     .sprite_5_20_1_featurecolor10,
     .sprite_5_20_1_featurecolor01,
-    .sprite_5_10_2_featurecolor10,
-    .sprite_5_10_2_featurecolor01,
     .sprite_5_10_1_featurecolor10,
     .sprite_5_10_1_featurecolor01,
     .sprite_4_80_3_featurecolor10,
     .sprite_4_80_3_featurecolor01,
     .sprite_4_80_2_featurecolor10,
     .sprite_4_80_2_featurecolor01,
-    .sprite_4_70_1_featurecolor10,
-    .sprite_4_70_1_featurecolor01,
+    .sprite_4_50_0_featurecolor10,
+    .sprite_4_50_0_featurecolor01,
     .sprite_3_90_2_featurecolor10,
     .sprite_3_90_2_featurecolor01,
     .sprite_3_90_0_featurecolor10,
@@ -1310,18 +1282,18 @@
     .sprite_1_90_0_featurecolor01,
     .sprite_1_20_0_featurecolor10,
     .sprite_1_20_0_featurecolor01,
-    .sprite_10_90_1_featurecolor10,
-    .sprite_10_90_1_featurecolor01,
     .sprite_10_80_8_featurecolor10,
     .sprite_10_80_8_featurecolor01,
+    .sprite_10_80_0_featurecolor10,
+    .sprite_10_80_0_featurecolor01,
     .sprite_10_70_9_featurecolor10,
     .sprite_10_70_9_featurecolor01,
     .sprite_10_70_2_featurecolor10,
     .sprite_10_70_2_featurecolor01,
     .sprite_10_70_0_featurecolor10,
     .sprite_10_70_0_featurecolor01,
-    .sprite_10_60_3_featurecolor10,
-    .sprite_10_60_3_featurecolor01,
+    .sprite_10_60_1_featurecolor10,
+    .sprite_10_60_1_featurecolor01,
     .sprite_10_60_0_featurecolor10,
     .sprite_10_60_0_featurecolor01,
     .sprite_10_50_0_featurecolor10,
@@ -1343,11 +1315,7 @@
     .sprite_10_10_1_featurecolor10,
     .sprite_10_10_1_featurecolor01,
     .sprite_10_10_0_featurecolor10,
-    .sprite_10_10_0_featurecolor01,
-    .sprite_0_70_2_featurecolor10,
-    .sprite_0_70_2_featurecolor01,
-    .sprite_0_50_4_featurecolor10,
-    .sprite_0_50_4_featurecolor01 {
+    .sprite_10_10_0_featurecolor01 {
                 background-image: url('sprites.png');
                 -webkit-background-size: 3300px 2992px;
                 -moz-background-size: 3300px 2992px;
